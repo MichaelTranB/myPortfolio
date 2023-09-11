@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="content">
+    <section class="pt-28 pb-24 bg-white about-me-section" id="page-section">
+        <div class="container mx-auto px-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="md:w-full">
+                    <img src="{{url_for('static', filename='myWebsiteTeamPhoto.png')}}" alt="About me" class="w-4/5 rounded-md mx-auto">
+                </div>
+                <div class="md:w-full">
+                    <div class="about-me-title">
+                        <img src="{{ url_for('static', filename='icons8-binary-64.png') }}" class="icon-binary light-mode-icon" alt="Binary Icon">
+                        <img src="{{ url_for('static', filename='icons8-binary-dark-64.png') }}" class="icon-binary dark-mode-icon" alt="Binary Icon">
+                        <h2 class="text-2xl mb-4 font-bold text-indigo-600 about-me-text">A Bit About Me ...</h2>
+                    </div>                    
+                    <p class="text-gray-700 text-base mb-4">As an Information Technology & Systems major, my path took an unexpected turn during my senior year capstone project with Siliconvalley4U. Initially only having limited coding knowledge, I found myself heavily involved in building a web portal tool for the company, which not only transformed the trajectory of my career but also sparked a deep interest in software development.</p>
+
+                    <p class="text-gray-700 text-base mb-4">This newfound passion led me to work with innovative startups such as Yatsys, a company focusing on IoT-based home care for children with disablities, and Nexclap, a community oriented e-learning platform. There, I honed my skills in Python, Javascript, Flask, Tensorflow, and more, solidifying my foundation and shaping me into a dedicated software engineer.</p>
+
+                    <p class="text-gray-700 text-base mb-4">In this journey, I've learned that software engineering extends beyond mere lines of code—it's about fostering a collaborative spirit. I excel in team dynamics, merging my technical know-how with strong people skills—an attribute refined through teaching coding to younger students and creating engaging educational content.</p>
+
+                    <p class="text-gray-700 text-base mb-4">Fueled by my continuous drive to learn, I'm constantly expanding my skill set and love tackling complex problems. With a diverse experience portfolio, a love for innovation, and a strong commitment to growth, I am ready to join a team of forward-thinkers and together, create technology that makes an impact. Together, let's shape the future!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

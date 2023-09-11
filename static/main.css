@@ -1,0 +1,196 @@
+nav .my-name {
+    font-size: 1.6em;
+    margin-left: 3em;
+}
+
+.toggle-switch {
+    width: 3.5rem;
+    height: 1.75rem;
+    position: relative;
+    display: inline-block;
+    margin-top: 0.75rem;
+}
+
+.toggle__line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #818181;
+    border-radius: 1rem;
+    transition: background-color 0.2s;
+}
+
+.toggle__dot {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-15%);
+    left: 0.125rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    background-color: white;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+}
+
+#mode-switcher:checked + label .toggle__line {
+    background-color: #60A5FA;
+}
+
+#mode-switcher:checked + label .toggle__dot {
+    transform: translateX(1.5rem) translateY(-15%);
+}
+
+body.dark-mode * {
+    background-color: #111827;
+    color: #f1f5f9;
+}
+
+body.dark-mode .toggle__dot {
+    background-color: #ffffff;
+}
+
+body.dark-mode #navbar a {
+    color: #ffffff;
+}
+
+body.dark-mode #navbar a:hover {
+    color: #60A5FA;
+}
+
+body.dark-mode a:not(#navbar a) {
+    color: #60A5FA;
+}
+
+body.dark-mode .skill-card:hover {
+    background-color: #111827;
+    transform: translateY(-1rem) scale(1.05);
+}
+
+body.dark-mode .about-me-section {
+    background-color: #111827;
+}
+
+body.dark-mode {
+    padding-bottom: 0px;
+}
+
+body {
+    background-color: white;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: #888 transparent;
+    display: block;
+}
+
+body::-webkit-scrollbar {
+    width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #888;
+}
+
+#skills {
+    padding-top: 100px;
+}
+
+.skill-card {
+    transition: transform .3s ease-in-out;
+}
+
+.skill-card:hover {
+    transform: translateY(-1rem) scale(1.05);
+}
+
+.skill-card i, .skill-card svg {
+    color: #4F46E5; 
+    fill: #4F46E5; 
+}
+
+#navbar a.active {
+    color:#4F46E5;
+    border-bottom: 2px solid #4F46E5;
+}
+
+#navbar a {
+    margin-right: 24px;
+    padding: 12px;
+}
+
+body.dark-mode #navbar a.active {
+    color: #60A5FA;
+    border-bottom: 2px solid #60A5FA;
+}
+
+.lowered-link {
+    position: relative;
+    top: 4px;
+}
+
+#transition-layer {
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.20s ease-in-out;
+    visibility: hidden;
+}
+
+#transition-layer.uncover {
+    transform: scaleY(0);
+    transform-origin: 0% 50%;
+}
+
+body.dark-mode #transition-layer {
+    background-color: #111827;
+}
+
+
+.icon-binary {
+    height: 2em;
+    width: 2em;
+    vertical-align: middle;
+    display: none;
+}   
+
+
+.light-mode-icon {
+    display: inline-block;
+}
+
+.dark-mode-icon{
+    height: 2.5em;
+    width: 2.5em;
+}
+
+/* If the OS color scheme is dark, hide the light mode icon and show the dark mode icon */
+@media (prefers-color-scheme: dark) {
+    .light-mode-icon {
+        display: none;
+    }
+
+    .dark-mode-icon {
+        display: inline-block;
+    }
+}
+
+.text-2xl {
+    margin-top: 0.6em; /* adjust as needed */
+}
+.about-me-title {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 1em;
+}

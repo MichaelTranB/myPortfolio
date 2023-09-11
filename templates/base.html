@@ -1,0 +1,134 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+        <script>
+            (function() {
+                if(localStorage.getItem('mode') === 'dark-mode') {
+                    document.documentElement.classList.add('dark-mode');
+                }
+            })();
+        </script>
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital@0;1&family=Inter:wght@300&family=Libre+Baskerville&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/d9d2f2cac7.js" crossorigin="anonymous"></script>
+        <title>Personal Portfolio</title>
+    </head>
+    <body class="{{ 'dark-mode' if request.cookies.get('mode') == 'dark-mode' }}">
+        <header class="header">
+            <nav class="bg-white py-4 px-6 fixed w-full top-0 z-50 shadow-md" id="navbar">
+                <div class="flex justify-between items-center space-x-4">
+                    <a href="#" class="text-indigo-600 text-lg font-semibold font-orbitron my-name">&lt Michael Tran /></a>
+                    <div class="flex justify-between items-center">
+                        <div class="hidden md:flex items-center">
+                            <a href="{{ url_for('about') }}" class="mx-4 text-gray-700 font-orbitron hover:text-indigo-600 {{'active' if request.path == url_for('about') else ''}}">About</a>
+                            <a href="{{ url_for('skills') }}" class="mx-4 text-gray-700 font-orbitron hover:text-indigo-600 {{'active' if request.path == url_for('skills') else ''}}">Skills</a>
+                            <a href="{{ url_for('projects') }}" class="lowered-link block text-gray-700 mb-2 font-orbitron hover:text-indigo-600 {{'active' if request.path == url_for('projects') else ''}}">Projects</a>
+                            <a href="{{ url_for('contact') }}" class="lowered-link block text-gray-700 mb-2 font-orbitron hover:text-indigo-600 {{'active' if request.path == url_for('contact') else ''}}">Contact</a>
+                        </div>
+    
+                        <!-- Toggle switch -->
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="mode-switcher" class="hidden" />
+                            <label for="mode-switcher" class="flex items-center cursor-pointer">
+                                <div class="relative">
+                                    <div class="toggle__line w-10 h-4 bg-gray-400 rounded-full shadow-inner"></div>
+                                    <div class="toggle__dot absolute w-6 h-6 bg-white rounded-full shadow inset-y-0 left-0"></div>
+                                </div>
+                            </label>
+                        </div>
+                        <!-- End of Toggle switch -->
+    
+                        <div class="md:hidden">
+                            <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+                                <i class="fas fa-bars"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="mobile-menu" class="hidden md:hidden mt-4">
+                        <a href="{{ url_for('about') }}" class="mx-4 text-gray-700 font-orbitron hover:text-indigo-600 {{'active' if request.path == url_for('about') else ''}}">About</a>
+                        <a href="{{ url_for('skills') }}" class="mx-4 text-gray-700 font-orbitron hover:text-indigo-600 {{'active' if request.path == url_for('skills') else ''}}">Skills</a>
+                        <a href="{{ url_for('projects') }}" class="block text-gray-700 mb-2 font-orbitron hover:text-indigo-600 {{'active' if request.path == url_for('projects') else ''}}">Projects</a>
+                        <a href="{{ url_for('contact') }}" class="block text-gray-700 mb-2 font-orbitron hover:text-indigo-600 {{'active' if request.path == url_for('contact') else ''}}">Contact</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <div id="transition-layer"></div>
+        <script>
+            $(document).ready(function() {
+                var newLocation;
+    
+                $('a').on('click', function(event) {
+                    event.preventDefault();
+                    newLocation = this.href;
+    
+                    // Check if dark mode is active
+                    var isDarkMode = localStorage.getItem('mode') === 'dark-mode';
+    
+                    // Apply the corresponding color to the transition layer
+                    $('#transition-layer').css({
+                        'opacity': '1',
+                        'visibility': 'visible',
+                        'background-color': isDarkMode ? '#111827' : '#fff',
+                    });
+    
+                    setTimeout(function() {
+                        window.location = newLocation;
+                    }, 200); 
+                });
+    
+                $(window).on('load', function() {
+                    $('#transition-layer').css({
+                        'opacity': '0',
+                        'visibility': 'hidden'
+                    });
+                });
+            });
+    
+    
+        document.addEventListener('DOMContentLoaded', (event) => {
+            if(localStorage.getItem('mode') === 'dark-mode') {
+                document.body.classList.add('dark-mode');
+                document.getElementById('mode-switcher').checked = true;
+            }
+        });
+    
+        document.getElementById('mode-switcher').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+    
+            // Hide light mode icon and show dark mode icon if dark mode is activated, and vice versa
+            const lightModeIcon = document.querySelector('.light-mode-icon');
+            const darkModeIcon = document.querySelector('.dark-mode-icon');
+            if (document.body.classList.contains('dark-mode')) {
+                lightModeIcon.style.display = 'none';
+                darkModeIcon.style.display = 'inline-block';
+            } else {
+                lightModeIcon.style.display = 'inline-block';
+                darkModeIcon.style.display = 'none';
+            }
+    
+            // Save mode to localStorage and set mode cookie
+            var mode;
+            if (document.body.classList.contains('dark-mode')) {
+                mode = 'dark-mode';
+            } else {
+                mode = 'light-mode';
+            }
+            localStorage.setItem('mode', mode);
+    
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", '/set_mode', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.send('mode=' + mode);
+        });
+        </script>
+        
+        {% block content %}
+        {% endblock %}
+    </html>
