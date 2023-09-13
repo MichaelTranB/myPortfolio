@@ -17,10 +17,10 @@ def skills():
     mode = request.cookies.get('mode', 'light')
     return render_template('skills.html', mode=mode)
 
-@app.route('/projects')
-def projects():
+@app.route('/work')
+def work():
     mode = request.cookies.get('mode', 'light')
-    return render_template('projects.html', mode=mode)
+    return render_template('work.html', mode=mode)
 
 @app.route('/contact')
 def contact():
