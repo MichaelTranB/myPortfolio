@@ -16,18 +16,19 @@
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital@0;1&family=Inter:wght@300&family=Libre+Baskerville&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/d9d2f2cac7.js" crossorigin="anonymous"></script>
         <title>Personal Portfolio</title>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
     </head>
     <body class="{{ 'dark-mode' if request.cookies.get('mode') == 'dark-mode' }}">
         <header class="header">
             <nav class="bg-white py-4 px-6 fixed w-full top-0 z-50 shadow-md" id="navbar">
                 <div class="flex justify-between items-center space-x-4">
-                    <a href="#" class="text-indigo-600 text-lg font-semibold font-orbitron my-name">&lt Michael Tran /></a>
+                    <a href="#" class="text-indigo-600 text-lg font-semibold font-orbitron my-name shadow-text-bold">&lt Michael Tran /></a>
                     <div class="flex justify-between items-center">
                         <div class="hidden md:flex items-center">
-                            <a href="{{ url_for('about') }}" class="mx-4 text-gray-700 font-orbitron hover:text-indigo-600 {{'active' if request.path == url_for('about') else ''}}">About</a>
-                            <a href="{{ url_for('skills') }}" class="mx-4 text-gray-700 font-orbitron hover:text-indigo-600 {{'active' if request.path == url_for('skills') else ''}}">Skills</a>
-                            <a href="{{ url_for('work') }}" class="lowered-link block text-gray-700 mb-2 font-orbitron hover:text-indigo-600 {{'active' if request.path == url_for('work') else ''}}">Work</a>
-                            <a href="{{ url_for('contact') }}" class="lowered-link block text-gray-700 mb-2 font-orbitron hover:text-indigo-600 {{'active' if request.path == url_for('contact') else ''}}">Contact</a>
+                            <a href="#about" class="nav-link mx-4 text-gray-700 font-orbitron hover:text-indigo-600">About</a>
+                            <a href="#skills" class="nav-link mx-4 text-gray-700 font-orbitron hover:text-indigo-600">Skills</a>
+                            <a href="#work" class="nav-link mx-4 lowered-link block text-gray-700 mb-2 font-orbitron hover:text-indigo-600">Work</a>
+                            <a href="#contact" class="nav-link mx-4 text-gray-700 font-orbitron hover:text-indigo-600">Contact</a>
                         </div>
     
                         <!-- Toggle switch -->
@@ -49,86 +50,99 @@
                         </div>
                     </div>
                     <div id="mobile-menu" class="hidden md:hidden mt-4">
-                        <a href="{{ url_for('about') }}" class="mx-4 text-gray-700 font-orbitron hover:text-indigo-600 {{'active' if request.path == url_for('about') else ''}}">About</a>
-                        <a href="{{ url_for('skills') }}" class="mx-4 text-gray-700 font-orbitron hover:text-indigo-600 {{'active' if request.path == url_for('skills') else ''}}">Skills</a>
-                        <a href="{{ url_for('work') }}" class="lowered-link block text-gray-700 mb-2 font-orbitron hover:text-indigo-600 {{'active' if request.path == url_for('work') else ''}}">Work</a>
-                        <a href="{{ url_for('contact') }}" class="block text-gray-700 mb-2 font-orbitron hover:text-indigo-600 {{'active' if request.path == url_for('contact') else ''}}">Contact</a>
+                        <a href="#about" class="mx-4 text-gray-700 font-orbitron hover:text-indigo-600">About</a>
+                        <a href="#skills" class="mx-4 text-gray-700 font-orbitron hover:text-indigo-600">Skills</a>
+                        <a href="#work" class="lowered-link block text-gray-700 mb-2 font-orbitron hover:text-indigo-600">Work</a>
+                        <a href="#contact" class="block text-gray-700 mb-2 font-orbitron hover:text-indigo-600">Contact</a>
                     </div>
                 </div>
             </nav>
         </header>
     
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <div id="transition-layer"></div>
+    
         <script>
-            $(document).ready(function() {
-                var newLocation;
-    
-                $('a').on('click', function(event) {
-                    event.preventDefault();
-                    newLocation = this.href;
-    
-                    // Check if dark mode is active
-                    var isDarkMode = localStorage.getItem('mode') === 'dark-mode';
-    
-                    // Apply the corresponding color to the transition layer
-                    $('#transition-layer').css({
-                        'opacity': '1',
-                        'visibility': 'visible',
-                        'background-color': isDarkMode ? '#111827' : '#fff',
-                    });
-    
-                    setTimeout(function() {
-                        window.location = newLocation;
-                    }, 200); 
-                });
-    
-                $(window).on('load', function() {
-                    $('#transition-layer').css({
-                        'opacity': '0',
-                        'visibility': 'hidden'
-                    });
-                });
+            document.addEventListener('DOMContentLoaded', (event) => {
+                if(localStorage.getItem('mode') === 'dark-mode') {
+                    document.body.classList.add('dark-mode');
+                    document.getElementById('mode-switcher').checked = true;
+                }
             });
     
+            document.getElementById('mode-switcher').addEventListener('click', function() {
+                document.body.classList.toggle('dark-mode');
     
-        document.addEventListener('DOMContentLoaded', (event) => {
-            if(localStorage.getItem('mode') === 'dark-mode') {
-                document.body.classList.add('dark-mode');
-                document.getElementById('mode-switcher').checked = true;
-            }
-        });
+                const lightModeIcon = document.querySelector('.light-mode-icon');
+                const darkModeIcon = document.querySelector('.dark-mode-icon');
+                if (document.body.classList.contains('dark-mode')) {
+                    lightModeIcon.style.display = 'none';
+                    darkModeIcon.style.display = 'inline-block';
+                } else {
+                    lightModeIcon.style.display = 'inline-block';
+                    darkModeIcon.style.display = 'none';
+                }
     
-        document.getElementById('mode-switcher').addEventListener('click', function() {
-            document.body.classList.toggle('dark-mode');
+                var mode;
+                if (document.body.classList.contains('dark-mode')) {
+                    mode = 'dark-mode';
+                } else {
+                    mode = 'light-mode';
+                }
+                localStorage.setItem('mode', mode);
     
-            // Hide light mode icon and show dark mode icon if dark mode is activated, and vice versa
-            const lightModeIcon = document.querySelector('.light-mode-icon');
-            const darkModeIcon = document.querySelector('.dark-mode-icon');
-            if (document.body.classList.contains('dark-mode')) {
-                lightModeIcon.style.display = 'none';
-                darkModeIcon.style.display = 'inline-block';
-            } else {
-                lightModeIcon.style.display = 'inline-block';
-                darkModeIcon.style.display = 'none';
-            }
-    
-            // Save mode to localStorage and set mode cookie
-            var mode;
-            if (document.body.classList.contains('dark-mode')) {
-                mode = 'dark-mode';
-            } else {
-                mode = 'light-mode';
-            }
-            localStorage.setItem('mode', mode);
-    
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", '/set_mode', true);
-            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-            xhr.send('mode=' + mode);
-        });
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", '/set_mode', true);
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                xhr.send('mode=' + mode);
+            });
         </script>
         
         {% block content %}
         {% endblock %}
-    </html>
+
+        <script>
+           document.addEventListener("DOMContentLoaded", function() {
+    const lines = document.querySelectorAll(".typing-effect .line");
+    
+    let delay = 0;
+    let typingDuration = 40;  // Time per character
+    
+    lines.forEach((line, index) => {
+        let content = line.getAttribute('data-content');
+        let length = content.length;
+        line.textContent = "";
+
+        setTimeout(() => {
+            line.classList.remove("active-cursor");
+            line.classList.add("solid-cursor");  // Add solid cursor to the line that's starting to type
+
+            let typeDelay = 0;
+            for (let i = 0; i < length; i++) {
+                setTimeout(() => {
+                    line.textContent += content[i];
+
+                    if (i === length - 1) {
+                        // If it's NOT the last line, remove all cursors
+                        if (index !== lines.length - 1) {
+                            setTimeout(() => {
+                                line.classList.remove("solid-cursor");
+                                lines[index + 1].classList.add("active-cursor"); // Start the blinking cursor on the next line
+                            }, typingDuration);
+                        } else {
+                            // If it's the last line, keep the blinking cursor
+                            line.classList.add("active-cursor");
+                        }
+                    }
+                }, typeDelay);
+                typeDelay += typingDuration;
+            }
+        }, delay);
+        delay += length * typingDuration + 400;  // Adding a pause after each line
+    });
+});
+
+
+        </script>
+                
+    </body>
+</html>
