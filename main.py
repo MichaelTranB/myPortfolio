@@ -14,5 +14,16 @@ def set_mode():
     resp.set_cookie('mode', mode, max_age=30*24*60*60)  
     return resp
 
+@app.route('/student_api')
+def student_api():
+    mode = request.cookies.get('mode', 'light')
+    return render_template('student_api.html', mode=mode)
+
+@app.route('/py2a_dsa')
+def py2a_dsa():
+    mode = request.cookies.get('mode', 'light')
+    return render_template('py2a_dsa.html', mode=mode)
+
+
 if __name__ == '__main__':  
     app.run(debug=True)

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section id="project-detail">
+    <div class="container mx-auto max-w-7xl px-10 py-40">
+
+        <div class="w-4/5 pr-10">
+            <h2 class="text-5xl mb-12 font-orbitron text-indigo-600 bold-title">Python 2A Course: Data Structures & Algorithms</h2>
+            <p class="font-orbitron text-base mb-4">This course, available on Nexclap.com, to which I significantly contributed in its creation, is designed to guide students on a comprehensive journey through data structures and algorithms using Python. Merging theoretical insights with hands-on exercises, it sets the path for learners with the goal to master the intricacies of DSA, laying the foundation for more advanced computational challenges.</p>
+
+            <a href="{{ url_for('static', filename='documentation_link_here.pdf') }}" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-2 px-4 rounded">
+                View Course Here
+            </a>
+        </div>
+    
+        <div class="w-full pl-10 mt-20">
+            <img src="{{ url_for('static', filename='Screenshot 2023-10-10 224922.png') }}" alt="Project Screenshot" class="rounded-lg shadow-lg mb-5">
+            <img src="{{ url_for('static', filename='Screenshot 2023-10-10 224943.png') }}" alt="Project Screenshot" class="rounded-lg shadow-lg mb-5">
+            <img src="{{ url_for('static', filename='Screenshot 2023-10-10 225127.png') }}" alt="Project Screenshot" class="rounded-lg shadow-lg mb-5">
+        </div>
+    </div>
+</section>
+
+{% endblock %}

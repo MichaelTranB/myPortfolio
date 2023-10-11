@@ -162,7 +162,7 @@
                     </div>
                     <div class="w-2/3 project-text">
                         <h2 class="text-lg text-gray-900 font-medium title-font mb-2 bold-title">Yatsys</h2>
-                        <p class="leading-relaxed text-base">A scalable, cloud-based MVP built using Flask and Google Cloud, focusing on automated IoT home care utilizing facial and emotion recognition to send real-time alerts to parents of children with disabilities.</p>
+                        <p class="leading-relaxed text-base">An MVP built using Flask and Google Cloud, focusing on automated IoT home care utilizing facial and emotion recognition to send real-time alerts to parents of children with disabilities.</p>
                         <a href="#" class="text-indigo-500 inline-flex items-center mt-3">Learn More
                             <i class="fas fa-arrow-right ml-2"></i>
                         </a>
@@ -179,7 +179,7 @@
                     <div class="border border-gray-200 p-6 rounded-lg mb-4 border-rounded-lg" style="min-height: 400px;">
                         <h3 class="text-md text-gray-900 font-medium bold-title">Python 2A Course</h3>
                         <p>Data structures and algorithms.</p>
-                        <a href="#" class="text-indigo-500 inline-flex items-center mt-3">Learn More
+                        <a href="{{ url_for('py2a_dsa') }}" class="text-indigo-500 inline-flex items-center mt-3">Learn More
                             <i class="fas fa-arrow-right ml-2"></i>
                         </a>
                     </div>
@@ -190,7 +190,7 @@
                     <div class="border border-gray-200 p-6 rounded-lg mb-4 border-rounded-lg" style="flex: 1;">
                         <h3 class="text-md text-gray-900 font-medium bold-title">Introduction to APIs</h3>
                         <p>With a Simple Weather App.</p>
-                        <a href="#" class="text-indigo-500 inline-flex items-center mt-3">Learn More
+                        <a href="{{ url_for('student_api') }}" class="text-indigo-500 inline-flex items-center mt-3">Learn More
                             <i class="fas fa-arrow-right ml-2"></i>
                         </a>
                     </div>
@@ -263,20 +263,6 @@
             </a>
         </div>
     </div>
-</section>
-
-<script>
-    document.querySelectorAll('a.nav-link').forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const href = this.getAttribute('href');
-            const offsetTop = document.querySelector(href).offsetTop;
-            scroll({
-                top: offsetTop,
-                behavior: "smooth"
-            });
-        });
-    });
-</script>
+</section>    
 
 {% endblock %}
