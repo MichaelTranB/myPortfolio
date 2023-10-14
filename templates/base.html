@@ -140,10 +140,10 @@
         delay += length * typingDuration + 400;  // Adding a pause after each line
     });
 });
-
-
         </script>
-        <script>
+
+
+        <!-- <script>
            document.addEventListener('DOMContentLoaded', function () {
     var links = document.querySelectorAll('a.nav-link[href^="#"]');
 
@@ -180,8 +180,7 @@
         });
     }
 });
-
-        </script>
+        </script> -->
 
 <script>
     $(document).ready(function(){
@@ -201,7 +200,7 @@
                     scrollTop: $(hash).offset().top
                 }, 800, function(){
                     // Add hash (#) to URL when done scrolling (default click behavior)
-                    window.location.hash = hash;
+                    history.pushState(null, null, hash);
                 });
             } // End if
         });
