@@ -22,7 +22,7 @@
         <header class="header">
             <nav class="bg-white py-4 px-6 fixed w-full top-0 z-50 shadow-md" id="navbar">
                 <div class="flex justify-between items-center space-x-4">
-                    <a href="#" class="text-indigo-600 text-lg font-semibold font-orbitron my-name shadow-text-bold">&lt Michael Tran /></a>
+                    <a href="#" id="home-link" class="text-indigo-600 text-lg font-semibold font-orbitron my-name shadow-text-bold">&lt Michael Tran /></a>
                     <div class="flex justify-between items-center">
                         <div class="hidden md:flex items-center">
                             <a href="/#about" class="nav-link mx-4 text-gray-700 font-orbitron hover:text-indigo-600">About</a>
@@ -101,111 +101,91 @@
         {% endblock %}
 
         <script>
-           document.addEventListener("DOMContentLoaded", function() {
-    const lines = document.querySelectorAll(".typing-effect .line");
-    
-    let delay = 0;
-    let typingDuration = 40;  // Time per character
-    
-    lines.forEach((line, index) => {
-        let content = line.getAttribute('data-content');
-        let length = content.length;
-        line.textContent = "";
+            document.addEventListener("DOMContentLoaded", function() {
+                const lines = document.querySelectorAll(".typing-effect .line");
+                
+                let delay = 0;
+                let typingDuration = 40;  // Time per character
+                
+                lines.forEach((line, index) => {
+                    let content = line.getAttribute('data-content');
+                    let length = content.length;
+                    line.textContent = "";
 
-        setTimeout(() => {
-            line.classList.remove("active-cursor");
-            line.classList.add("solid-cursor");  // Add solid cursor to the line that's starting to type
+                    setTimeout(() => {
+                        line.classList.remove("active-cursor");
+                        line.classList.add("solid-cursor");  // Add solid cursor to the line that's starting to type
 
-            let typeDelay = 0;
-            for (let i = 0; i < length; i++) {
-                setTimeout(() => {
-                    line.textContent += content[i];
-
-                    if (i === length - 1) {
-                        // If it's NOT the last line, remove all cursors
-                        if (index !== lines.length - 1) {
+                        let typeDelay = 0;
+                        for (let i = 0; i < length; i++) {
                             setTimeout(() => {
-                                line.classList.remove("solid-cursor");
-                                lines[index + 1].classList.add("active-cursor"); // Start the blinking cursor on the next line
-                            }, typingDuration);
-                        } else {
-                            // If it's the last line, keep the blinking cursor
-                            line.classList.add("active-cursor");
+                                line.textContent += content[i];
+
+                                if (i === length - 1) {
+                                    // If it's NOT the last line, remove all cursors
+                                    if (index !== lines.length - 1) {
+                                        setTimeout(() => {
+                                            line.classList.remove("solid-cursor");
+                                            lines[index + 1].classList.add("active-cursor"); // Start the blinking cursor on the next line
+                                        }, typingDuration);
+                                    } else {
+                                        // If it's the last line, keep the blinking cursor
+                                        line.classList.add("active-cursor");
+                                    }
+                                }
+                            }, typeDelay);
+                            typeDelay += typingDuration;
                         }
-                    }
-                }, typeDelay);
-                typeDelay += typingDuration;
-            }
-        }, delay);
-        delay += length * typingDuration + 400;  // Adding a pause after each line
-    });
-});
+                    }, delay);
+                    delay += length * typingDuration + 400;  // Adding a pause after each line
+                });
+            });
         </script>
 
+        <script>
+           $(document).ready(function(){
+    // Add smooth scrolling to all nav links
+    $("a.nav-link").on('click', function(event) {
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+            // Prevent default behavior
+            event.preventDefault();
 
-        <!-- <script>
-           document.addEventListener('DOMContentLoaded', function () {
-    var links = document.querySelectorAll('a.nav-link[href^="#"]');
+            // Store hash
+            var hash = this.hash;
 
-    for (let link of links) {
-        link.addEventListener('click', function (e) {
-            e.preventDefault();
-
-            var targetId = this.getAttribute('href');
-            var targetElement = document.querySelector(targetId);
-
-            if (targetElement) {
-                var targetPosition = targetElement.getBoundingClientRect().top;
-                var startPosition = window.pageYOffset;
-                var distance = targetPosition;
-                var startTime = null;
-
-                function animation(currentTime) {
-                    if (!startTime) startTime = currentTime;
-                    var timeElapsed = currentTime - startTime;
-                    var run = ease(timeElapsed, startPosition, distance, 1000);
-                    window.scrollTo(0, run);
-                    if (timeElapsed < 1000) requestAnimationFrame(animation);
-                }
-
-                function ease(t, b, c, d) {
-                    t /= d / 2;
-                    if (t < 1) return c / 2 * t * t + b;
-                    t--;
-                    return -c / 2 * (t * (t - 2) - 1) + b;
-                }
-
-                requestAnimationFrame(animation);
-            }
-        });
-    }
-});
-        </script> -->
-
-<script>
-    $(document).ready(function(){
-        // Add smooth scrolling to all links
-        $("a.nav-link").on('click', function(event) {
-            // Make sure this.hash has a value before overriding default behavior
-            if (this.hash !== "") {
-                // Prevent default anchor click behavior
-                event.preventDefault();
-
-                // Store hash
-                var hash = this.hash;
-
-                // Using jQuery's animate() method to add smooth page scroll
-                // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-                $('html, body').animate({
-                    scrollTop: $(hash).offset().top
-                }, 800, function(){
-                    // Add hash (#) to URL when done scrolling (default click behavior)
-                    history.pushState(null, null, hash);
-                });
-            } // End if
-        });
+            // Using jQuery's animate() method to add smooth page scroll
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 800, function(){
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
+            });
+        } // End if
     });
-</script>
+
+    // Add smooth scrolling for "Michael Tran" link and "Scroll to Top" button
+    $("a#home-link, #scrollToTop").on('click', function(event) {
+        // Prevent default behavior
+        event.preventDefault();
+
+        // Using jQuery's animate() method to add smooth page scroll
+        $('html, body').animate({
+            scrollTop: 0
+        }, 800);
+    });
+
+    // Show or hide the "scroll to top" button
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 200) { // Adjust this value for when you want the button to appear
+            $('#scrollToTop').fadeIn();
+        } else {
+            $('#scrollToTop').fadeOut();
+        }
+    });
+});
+
+        </script>
 
                 
     </body>

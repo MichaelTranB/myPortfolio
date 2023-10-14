@@ -3,6 +3,36 @@ nav .my-name {
     margin-left: 3em;
 }
 
+#scrollToTop {
+    background-color: #6A5ACD; /* This is a shade of purple */
+    border: none;
+    border-radius: 50%; /* This makes it circular */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+    color: #FFFFFF; /* Text/icon color */
+    cursor: pointer;
+    display: none; /* Initially hidden until scrolled */
+    font-size: 24px;
+    height: 50px;
+    opacity: 0.8;
+    outline: none; /* Removes focus outline */
+    position: fixed; /* Keeps it positioned on the screen */
+    right: 10px;
+    bottom: 10px;
+    width: 50px;
+    z-index: 1000; /* Ensures it's above most other elements */
+}
+
+#scrollToTop:hover {
+    background-color: #9370DB; /* A slightly lighter purple for hover */
+    opacity: 1; /* Full opacity on hover */
+}
+
+#scrollToTop:active {
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); /* Subtle change in shadow for click effect */
+    transform: translateY(2px); /* Moves it down slightly for a click effect */
+}
+
+
 .toggle-switch {
     width: 3.5rem;
     height: 1.75rem;
