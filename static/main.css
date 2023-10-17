@@ -325,13 +325,13 @@ a.text-indigo-500:hover {
 
 
 body.dark-mode .border-rounded-lg:hover {
-    box-shadow: 0px 15px 25px rgba(255, 255, 255, 0.2); /* Increased Y-offset, blur, and opacity */
+    box-shadow: 0px 15px 25px rgba(255, 255, 255, 0.2); 
     transform: translateY(-5px);  
 }
 
-body.dark-mode .border-rounded-lg:hover .project-text,
+
 body.dark-mode .border-rounded-lg:hover .mb-4  {
-    background-color: rgba(255, 255, 255, 0.1); /* Increased opacity for better visibility */
+    background-color: rgba(255, 255, 255, 0.1); 
 }
 
 
