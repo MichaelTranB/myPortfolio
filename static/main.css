@@ -123,6 +123,7 @@ body {
     scrollbar-width: thin;
     scrollbar-color: #888 transparent;
     display: block;
+    overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {
@@ -396,3 +397,89 @@ body.dark-mode .typing-effect .solid-cursor::after {
     from, to { background-color: transparent; }
     50% { background-color: gold; }  /* Dark mode color */
 }
+
+/* Initial state of elements (not visible) */
+.fade-in {
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+/* Animation sequence for fading in */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply the animation when the element is in the viewport */
+.active {
+    animation-name: fadeIn;
+    animation-duration: .75s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+
+/* Initial state for slide-in from the left */
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+/* Animation sequence for slide-in from the left */
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Apply the slide-in from the left animation when the element is in the viewport */
+.slide-in-left.active {
+    animation-name: slideInLeft;
+    animation-duration: .75s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+/* Initial state for slide-in from the right */
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+/* Animation sequence for slide-in from the right */
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Apply the slide-in from the right animation when the element is in the viewport */
+.slide-in-right.active {
+    animation-name: slideInRight;
+    animation-duration: .75s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.force-visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+
