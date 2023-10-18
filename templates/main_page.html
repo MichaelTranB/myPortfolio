@@ -170,7 +170,7 @@
             </div>
 
        <!-- Coding Instructor Work -->
-       <div class="xl:w-3/4 lg:w-3/4 md:w-full p-4 mb-8">
+       <div class="xl:w-3/4 lg:w-3/4 md:w-full p-4 mb-8 fade-in">
             <h2 class="text-lg text-gray-900 font-medium title-font mb-4 bold-title">Coding Instructor Work</h2>
             <div class="flex flex-wrap">
                 <!-- Big Card on Left -->
@@ -206,7 +206,7 @@
         </div>
 
         <!-- LeetCode Challenges -->
-        <div class="xl:w-3/4 lg:w-3/4 md:w-full p-4 mb-8">
+        <div class="xl:w-3/4 lg:w-3/4 md:w-full p-4 mb-8 slide-in-right">
             <h2 class="text-lg text-gray-900 font-medium title-font mb-4 bold-title">LeetCode Challenges</h2>
             <div class="flex flex-wrap">
                 
@@ -247,23 +247,52 @@
     </div>
 </section>
 
+<style>
+    a.effect {
+        position: relative;
+        overflow: hidden;
+    }
+
+    a.effect::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0%;
+        height: 2px;
+        background-color: #4F46E5; /* This is the color of text-indigo-600 */
+        transition: all 0.3s;
+    }
+
+    a.effect:hover::after {
+        left: 0;
+        width: 100%;
+    }
+</style>
+
 <section id="contact">
     <div class="container mx-auto mt-0 pt-32 text-center contact-section fade-in" style="padding-bottom: 100px; min-height: 100vh;">
         <h1 class="text-5xl font-bold mb-6 bold-title">Contact Me ☎️</h1>
-    
-        <a href="mailto:michaeltranb@outlook.com" class="text-2xl text-indigo-600 hover:underline">
-          michaeltranb@outlook.com
+
+        <a href="mailto:michaeltranb@outlook.com" class="text-2xl text-indigo-600 effect">
+            michaeltranb@outlook.com
         </a>
-        <div class="mt-8">
-            <a href="https://www.linkedin.com/in/michaeltranb" target="_blank" class="text-2xl text-indigo-600 mx-4 hover:text-indigo-800">
+        <div class="mt-8 flex flex-col items-center">
+            <a href="https://www.linkedin.com/in/michaeltranb" target="_blank" class="text-2xl text-indigo-600 my-2 hover:text-indigo-800 flex items-center space-x-2 effect">
                 <i class="fab fa-linkedin"></i>
+                <span>LinkedIn</span>
             </a>
-            <a href="https://twitter.com/michaeltran_dev" target="_blank" class="text-2xl text-indigo-600 mx-4 hover:text-indigo-800">
+            <a href="https://twitter.com/michaeltran_dev" target="_blank" class="text-2xl text-indigo-600 my-2 hover:text-indigo-800 flex items-center space-x-2 effect">
                 <i class="fab fa-twitter"></i>
+                <span>Twitter</span>
+            </a>
+            <a href="https://github.com/michaeltranb" target="_blank" class="text-2xl text-indigo-600 my-2 hover:text-indigo-800 flex items-center space-x-2 effect">
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
             </a>
         </div>
     </div>
-</section>    
+</section>
 
 <button id="scrollToTop" title="Scroll to Top" style="display:none;position:fixed;bottom:20px;right:20px;z-index:1000;padding:10px 15px;font-size:24px;">&uarr;</button>
 
