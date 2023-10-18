@@ -247,46 +247,71 @@
     </div>
 </section>
 
-<style>
-    a.effect {
-        position: relative;
-        overflow: hidden;
-    }
+<script>
+   document.addEventListener("DOMContentLoaded", function() {
+    const experienceCards = document.querySelectorAll('.experience-card');
 
-    a.effect::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        width: 0%;
-        height: 2px;
-        background-color: #4F46E5; /* This is the color of text-indigo-600 */
-        transition: all 0.3s;
-    }
+    experienceCards.forEach(card => {
+        card.addEventListener('click', function() {
+            const details = card.querySelector('.experience-details');
 
-    a.effect:hover::after {
-        left: 0;
-        width: 100%;
-    }
-</style>
+            // Toggle hidden class on details
+            details.classList.toggle('hidden');
+
+            // Toggle expanded class on card
+            card.classList.toggle('expanded');
+        });
+    });
+});
+</script>
+<section id="experience">
+    <div class="container mx-auto px-10 py-24">
+        <h2 class="text-5xl mb-12 font-orbitron text-indigo-600 bold-title fade-in">Professional Experience</h2>
+        
+        <!-- Experience Card 1 -->
+        <div class="experience-card mb-10 border border-gray-200 p-6 rounded-lg border-rounded-lg fade-in cursor-pointer">
+            <div class="flex items-center justify-between">
+                <!-- Left content: Job title and duration -->
+                <div class="flex items-center w-11/12 ">
+                    <h3 class="text-lg text-gray-900 font-medium title-font mb-2 bold-title">Siliconvalley4u - Coding Instructor</h3>
+                    <p class="text-sm ml-4">Jan 2020 - Present</p>
+                </div>
+                <!-- Right content: Expand/collapse icon -->
+                <div class="toggle-experience w-1/12 text-center">
+                    <i class="fas fa-plus"></i>
+                </div>
+            </div>
+            <div class="experience-details hidden mt-4">
+                <img src="{{url_for('static', filename='company_logo.png')}}" alt="Company Logo" class="w-24 h-24 rounded-full mb-4">
+                <p class="text-gray-700">Brief description of the role and responsibilities, accomplishments, technologies used, etc.</p>
+            </div>
+        </div>
+
+        <!-- More Experience Cards can be added in similar fashion -->
+
+    </div>
+</section>
+
+
+
 
 <section id="contact">
     <div class="container mx-auto mt-0 pt-32 text-center contact-section fade-in" style="padding-bottom: 100px; min-height: 100vh;">
         <h1 class="text-5xl font-bold mb-6 bold-title">Contact Me ☎️</h1>
 
-        <a href="mailto:michaeltranb@outlook.com" class="text-2xl text-indigo-600 effect">
+        <a href="mailto:michaeltranb@outlook.com" class="text-2xl text-indigo-600 contact-link-effect">
             michaeltranb@outlook.com
         </a>
         <div class="mt-8 flex flex-col items-center">
-            <a href="https://www.linkedin.com/in/michaeltranb" target="_blank" class="text-2xl text-indigo-600 my-2 hover:text-indigo-800 flex items-center space-x-2 effect">
+            <a href="https://www.linkedin.com/in/michaeltranb" target="_blank" class="text-2xl text-indigo-600 my-2 hover:text-indigo-800 flex items-center space-x-2 contact-link-effect">
                 <i class="fab fa-linkedin"></i>
                 <span>LinkedIn</span>
             </a>
-            <a href="https://twitter.com/michaeltran_dev" target="_blank" class="text-2xl text-indigo-600 my-2 hover:text-indigo-800 flex items-center space-x-2 effect">
+            <a href="https://twitter.com/michaeltran_dev" target="_blank" class="text-2xl text-indigo-600 my-2 hover:text-indigo-800 flex items-center space-x-2 contact-link-effect">
                 <i class="fab fa-twitter"></i>
                 <span>Twitter</span>
             </a>
-            <a href="https://github.com/michaeltranb" target="_blank" class="text-2xl text-indigo-600 my-2 hover:text-indigo-800 flex items-center space-x-2 effect">
+            <a href="https://github.com/michaeltranb" target="_blank" class="text-2xl text-indigo-600 my-2 hover:text-indigo-800 flex items-center space-x-2 contact-link-effect">
                 <i class="fab fa-github"></i>
                 <span>GitHub</span>
             </a>

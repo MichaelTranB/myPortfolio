@@ -4,10 +4,10 @@ nav .my-name {
 }
 
 #scrollToTop {
-    background-color: #6A5ACD; /* This is a shade of purple */
+    background-color: #6A5ACD; 
     border: none;
-    border-radius: 50%; /* This makes it circular */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+    border-radius: 50%; 
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* subtle shadow */
     color: #FFFFFF; /* Text/icon color */
     cursor: pointer;
     display: none; /* Initially hidden until scrolled */
@@ -24,7 +24,7 @@ nav .my-name {
 
 #scrollToTop:hover {
     background-color: #9370DB; /* A slightly lighter purple for hover */
-    opacity: 1; /* Full opacity on hover */
+    opacity: 1; 
 }
 
 #scrollToTop:active {
@@ -477,24 +477,88 @@ body.dark-mode .typing-effect .solid-cursor::after {
     animation-fill-mode: forwards;
 }
 
-a.effect {
+a.contact-link-effect {
     position: relative;
     overflow: hidden;
 }
 
-a.effect::after {
+a.contact-link-effect::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 50%;
     width: 0%;
     height: 2px;
-    background-color: #4F46E5; /* This is the color of text-indigo-600 */
+    background-color: #4F46E5; 
     transition: all 0.3s;
 }
 
-a.effect:hover::after {
+a.contact-link-effect:hover::after {
     left: 0;
     width: 100%;
+}
+
+
+
+
+
+/* Card in minimized state */
+.experience-card {
+    transition: all 0.3s ease;
+    height: 80px;
+    background-color: #430d79;
+    color: #f1f5f9; /* Assuming you want white text for better contrast */
+}
+
+
+.experience-card:hover {
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Card in expanded state */
+.experience-card.expanded {
+    height: auto;
+    background-color: #740cdc;
+}
+
+/* Color of the text inside the card when expanded */
+.experience-card.expanded h3, 
+.experience-card.expanded p, 
+.experience-card.expanded .text-gray-700 {
+    color: #f1f5f9;  /* White text for better contrast */
+}
+
+.toggle-experience i {
+    transition: transform 0.3s ease;
+}
+
+.experience-card.expanded .toggle-experience i {
+    transform: rotate(45deg); /* Transform "+" to "x" */
+}
+
+/* Ensuring the entire experience card has the correct background color when minimized in dark mode */
+body.dark-mode .experience-card {
+    background-color: #430d79;
+}
+
+/* Set the color of the job title when the card is minimized in dark mode */
+body.dark-mode .experience-card h3 {
+    color: #f1f5f9;  /* White text for better contrast */
+}
+
+/* Ensuring the entire experience card has the correct background color when expanded in dark mode */
+body.dark-mode .experience-card.expanded {
+    background-color: #740cdc;
+}
+
+/* Ensure all direct child elements of the expanded card have the correct background color in dark mode */
+body.dark-mode .experience-card.expanded > * {
+    background-color: #740cdc;
+}
+
+/* Ensure all nested child elements within the expanded card details section have the correct background color in dark mode */
+body.dark-mode .experience-card.expanded .experience-details * {
+    background-color: #740cdc;
+    color: #f1f5f9;  /* White text for better contrast */
 }
 
