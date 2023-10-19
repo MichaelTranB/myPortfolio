@@ -251,25 +251,40 @@
    document.addEventListener("DOMContentLoaded", function() {
     const experienceCards = document.querySelectorAll('.experience-card');
 
+    // Initialize the Siliconvalley4u card as expanded
+    const siliconValleyCard = document.querySelector('.experience-card');
+    siliconValleyCard.classList.add('expanded');
+
     experienceCards.forEach(card => {
         card.addEventListener('click', function() {
             const details = card.querySelector('.experience-details');
+            const icon = card.querySelector('.toggle-experience i');
 
             // Toggle hidden class on details
             details.classList.toggle('hidden');
+
+            // Toggle icon between '+' and '-'
+            if (icon.classList.contains('fa-plus')) {
+                icon.classList.remove('fa-plus');
+                icon.classList.add('fa-minus');
+            } else {
+                icon.classList.remove('fa-minus');
+                icon.classList.add('fa-plus');
+            }
 
             // Toggle expanded class on card
             card.classList.toggle('expanded');
         });
     });
 });
+
 </script>
 
 <section id="experience" class="pt-8"> <!-- Added pt-10 for padding-top -->
     <div class="container mx-auto px-10 py-24">
         <h2 class="text-5xl mb-12 font-orbitron text-indigo-600 bold-title fade-in">Professional Experience</h2>
         
-        <!-- Siliconvalley4u -->
+       <!-- Siliconvalley4u -->
 <div class="experience-card mb-2 border border-gray-200 p-6 rounded-lg border-rounded-lg fade-in cursor-pointer">
     <div class="flex items-center justify-between">
         <!-- Left content: Job title and duration -->
@@ -279,10 +294,10 @@
         </div>
         <!-- Right content: Expand/collapse icon -->
         <div class="toggle-experience w-1/12 text-center">
-            <i class="fas fa-plus"></i>
+            <i class="fas fa-plus"></i> 
         </div>
     </div>
-    <div class="experience-details hidden mt-4 flex">
+    <div class="experience-details mt-4 flex"> 
         <!-- Company Logo -->
         <div class="flex-none w-1/7 text-right">
             <img src="{{url_for('static', filename='siliconvalley4u_logo.png')}}" alt="Company Logo" class="w-24 h-24 rounded-full mb-4">
