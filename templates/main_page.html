@@ -265,17 +265,50 @@
 });
 </script>
 
-<section id="experience">
+<section id="experience" class="pt-8"> <!-- Added pt-10 for padding-top -->
     <div class="container mx-auto px-10 py-24">
         <h2 class="text-5xl mb-12 font-orbitron text-indigo-600 bold-title fade-in">Professional Experience</h2>
         
-        <!-- Experience Card 1 -->
-        <div class="experience-card mb-10 border border-gray-200 p-6 rounded-lg border-rounded-lg fade-in cursor-pointer">
+        <!-- Siliconvalley4u -->
+<div class="experience-card mb-2 border border-gray-200 p-6 rounded-lg border-rounded-lg fade-in cursor-pointer">
+    <div class="flex items-center justify-between">
+        <!-- Left content: Job title and duration -->
+        <div class="flex items-center w-11/12 justify-between">
+            <h3 class="text-lg text-gray-900 font-medium title-font mb-2 bold-title">Siliconvalley4u - Coding Instructor</h3>
+            <p class="text-sm ml-auto mt-1">Jan 2020 - Present</p>
+        </div>
+        <!-- Right content: Expand/collapse icon -->
+        <div class="toggle-experience w-1/12 text-center">
+            <i class="fas fa-plus"></i>
+        </div>
+    </div>
+    <div class="experience-details hidden mt-4 flex">
+        <!-- Company Logo -->
+        <div class="flex-none w-1/7 text-right">
+            <img src="{{url_for('static', filename='siliconvalley4u_logo.png')}}" alt="Company Logo" class="w-24 h-24 rounded-full mb-4">
+        </div>
+        <!-- Brief description and location -->
+        <div class="flex-grow w-6/7 ml-8 pt-2">
+            <p class="text-base text-gray-500 mb-2 flex items-center"><i class="fas fa-map-marker-alt mr-2"></i>Remote - San Ramon, CA</p>
+            <!-- Using unordered list for descriptions and text-base for increased font size -->
+            <ul class="text-base text-gray-700 pl-5 list-disc">
+                <li>Developing comprehensive course material to mentor over 100 middle and high school students in data structures, algorithms, NLP, Python, Java, HTML, CSS, and JavaScript</li>
+                <li>Incorporating interactive teaching methods, resulting in an average student satisfaction rating of 4.8/5 and a retention rate of 90%</li>
+                <li>Conducting virtual class meetings with coordinated parent scheduling, achieving a 98% attendance rate while boosting parent engagement by 30% through timely reminders and weekly progress reports</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+        <!-- Yatsys -->
+        <div class="experience-card mb-2 border border-gray-200 p-6 rounded-lg border-rounded-lg fade-in cursor-pointer">
             <div class="flex items-center justify-between">
                 <!-- Left content: Job title and duration -->
                 <div class="flex items-center w-11/12 justify-between">
-                    <h3 class="text-lg text-gray-900 font-medium title-font mb-2 bold-title">Siliconvalley4u - Coding Instructor</h3>
-                    <p class="text-sm ml-auto mt-1">Jan 2020 - Present</p>
+                    <h3 class="text-lg text-gray-900 font-medium title-font mb-2 bold-title">Yatsys – Software Developer</h3>
+                    <p class="text-sm ml-auto mt-1">June 2023 – July 2023</p>
                 </div>
                 <!-- Right content: Expand/collapse icon -->
                 <div class="toggle-experience w-1/12 text-center">
@@ -284,24 +317,109 @@
             </div>
             <div class="experience-details hidden mt-4 flex">
                 <!-- Company Logo -->
-                <div class="flex-none w-1/7 text-right"> <!-- Added "flex-none" to prevent shrinking -->
-                    <img src="{{url_for('static', filename='siliconvalley4u_logo.png')}}" alt="Company Logo" class="w-24 h-24 rounded-full mb-4">
-                </div>
-                <!-- Brief description and location -->
-                <div class="flex-grow w-6/7 ml-8 pt-2"> <!-- Added "flex-grow" to allow this content to grow and occupy the available space -->
-                    <p class="text-sm text-gray-500 mb-2 flex items-center"><i class="fas fa-map-marker-alt mr-2"></i>San Ramon, CA</p>
-                    <p class="text-gray-700">• Developing comprehensive course material to mentor over 100 middle and high school students in data structures, algorithms, NLP, Python, Java, HTML, CSS, and JavaScript</p>
-                    <p class="text-gray-700">• Incorporating interactive teaching methods, resulting in an average student satisfaction rating of 4.8/5 and a retention rate of 90%</p>
-                    <p class="text-gray-700">• Conducting virtual class meetings with coordinated parent scheduling, achieving a 98% attendance rate while boosting parent engagement by 30% through timely reminders and weekly progress reports</p>
+                <div class="flex-none w-1/7 text-right">
+                    <img src="{{url_for('static', filename='YatsysLogo.jpg')}}" alt="Yatsys Logo" class="w-24 h-24 rounded-full mb-4"> <!-- NOTE: Replace 'yatsys_logo.png' with the correct filename for the Yatsys logo. -->
                 </div>
                 
+                <!-- Brief description -->
+                <div class="flex-grow w-6/7 ml-8 pt-2">
+                    <p class="text-base text-gray-500 mb-2 flex items-center"><i class="fas fa-map-marker-alt mr-2"></i>Remote - United States</p>
+                    <!-- Using unordered list for descriptions and text-base for increased font size -->
+                    <ul class="text-base text-gray-700 pl-5 list-disc">
+                        <li>Engineered an MVP in an agile scrum environment using Flask and Google Cloud, for automated IoT-based home care utilizing facial and emotion recognition to send real-time alerts to parents of children with disabilities.</li>
+                        <li>Implemented client-side emotion detection and facial recognition using TensorFlow.js with a Firebase backend, leveraging custom-trained deep learning models with user-uploaded data to adapt to each child's personal emotional cues.</li>
+                        <li>Designed and built a user-friendly front-end UI based on Figma diagrams using HTML, CSS, and JavaScript.</li>
+                        <li>Collaborated with a cross-functional team across multiple time zones to gather stakeholder requirements from the founders, delivering a viable solution for the first phase of the prototype within two months.</li>
+                        <li>Created comprehensive technical documentation outlining the architecture, providing development recommendations, and ensuring a successful hand-off for future work.</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
-        <!-- More Experience Cards can be added in similar fashion -->
+
+        <!-- DHL Supply Chain – Business Data Analyst Intern Card -->
+        <div class="experience-card mb-2 border border-gray-200 p-6 rounded-lg border-rounded-lg fade-in cursor-pointer">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center w-11/12 justify-between">
+                    <h3 class="text-lg text-gray-900 font-medium title-font mb-2 bold-title">DHL Supply Chain – Business Data Analyst Intern</h3>
+                    <p class="text-sm ml-auto mt-1">June 2021 – July 2021</p>
+                </div>
+                <div class="toggle-experience w-1/12 text-center">
+                    <i class="fas fa-plus"></i>
+                </div>
+            </div>
+            <div class="experience-details hidden mt-4 flex">
+                <div class="w-1/7 text-right">
+                    <div class="flex-none w-1/7 text-right">
+                        <img src="{{url_for('static', filename='siliconvalley4u_logo.png')}}" alt="Company Logo" class="w-24 h-24 rounded-full mb-4">
+                    </div>
+                </div>
+                <div class="w-6/7 ml-8 pt-2">
+                    <ul class="text-sm text-gray-700 pl-5 list-disc">
+                        <li>Constructed a feasibility analysis model to examine warehouse inefficiencies, advancing the implementation of an RPA solution that reduced labor costs by 20%.</li>
+                        <li>Utilized Power BI and Excel for visualization of labor planning and warehouse management data to aid in decision-making and enhanced data reliability.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Zen Distributions – Product Consultant Card -->
+        <div class="experience-card mb-2 border border-gray-200 p-6 rounded-lg border-rounded-lg fade-in cursor-pointer">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center w-11/12 justify-between">
+                    <h3 class="text-lg text-gray-900 font-medium title-font mb-2 bold-title">Zen Distributions – Product Consultant</h3>
+                    <p class="text-sm ml-auto mt-1">May 2020 – June 2020</p>
+                </div>
+                <div class="toggle-experience w-1/12 text-center">
+                    <i class="fas fa-plus"></i>
+                </div>
+            </div>
+            <div class="experience-details hidden mt-4 flex">
+                <div class="w-1/7 text-right">
+                    <div class="flex-none w-1/7 text-right">
+                        <img src="{{url_for('static', filename='siliconvalley4u_logo.png')}}" alt="Company Logo" class="w-24 h-24 rounded-full mb-4">
+                    </div>
+                </div>
+                <div class="w-6/7 ml-8 pt-2">
+                    <ul class="text-sm text-gray-700 pl-5 list-disc">
+                        <li>Established an effective distribution channel for medical masks for 14 critical access hospitals and pop-up clinics during a global supply chain crisis, ensuring a reliable supply of PPE when most needed.</li>
+                        <li>Contributed to a 15% increase in sales by implementing a CRM system to improve order processing speeds and customer follow-up.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kaizen Guest Properties – Co-Founder & Property Manager Card -->
+        <div class="experience-card mb-2 border border-gray-200 p-6 rounded-lg border-rounded-lg fade-in cursor-pointer">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center w-11/12 justify-between">
+                    <h3 class="text-lg text-gray-900 font-medium title-font mb-2 bold-title">Kaizen Guest Properties – Co-Founder & Property Manager</h3>
+                    <p class="text-sm ml-auto mt-1">Feb 2019 – Sept 2019</p>
+                </div>
+                <div class="toggle-experience w-1/12 text-center">
+                    <i class="fas fa-plus"></i>
+                </div>
+            </div>
+            <div class="experience-details hidden mt-4 flex">
+                <div class="w-1/7 text-right">
+                    <div class="flex-none w-1/7 text-right">
+                        <img src="{{url_for('static', filename='siliconvalley4u_logo.png')}}" alt="Company Logo" class="w-24 h-24 rounded-full mb-4">
+                    </div>
+                </div>
+                <div class="w-6/7 ml-8 pt-2">
+                    <ul class="text-sm text-gray-700 pl-5 list-disc">
+                        <li>Spearheaded a property management startup focused on providing fully furnished corporate housing and short-term leases.</li>
+                        <li>Directed logistics for the entire property portfolio including four apartment units, three houses, and a duplex, generating $75,000 in revenue within 4 months.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
 
     </div>
 </section>
+
 
 
 
