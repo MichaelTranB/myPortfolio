@@ -507,9 +507,8 @@ a.contact-link-effect:hover::after {
     transition: all 0.3s ease;
     height: 80px;
     background-color: #430d79;
-    color: #f1f5f9; /* Assuming you want white text for better contrast */
+    color: #f1f5f9; /* White text for better contrast */
 }
-
 
 .experience-card:hover {
     box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
@@ -525,7 +524,7 @@ a.contact-link-effect:hover::after {
 .experience-card.expanded h3, 
 .experience-card.expanded p, 
 .experience-card.expanded .text-gray-700 {
-    color: #f1f5f9;  /* White text for better contrast */
+    color: inherit;  /* White text for better contrast */
 }
 
 .toggle-experience i {
@@ -536,13 +535,18 @@ a.contact-link-effect:hover::after {
     transform: rotate(45deg); /* Transform "+" to "x" */
 }
 
+/* Adjustments for making the description and location text closer to the company logo */
+.experience-details {
+    gap: 16px; /* Adjusts the gap between flex items */
+}
 /* Ensuring the entire experience card has the correct background color when minimized in dark mode */
 body.dark-mode .experience-card {
     background-color: #430d79;
 }
 
 /* Set the color of the job title when the card is minimized in dark mode */
-body.dark-mode .experience-card h3 {
+body.dark-mode .experience-card h3,
+body.dark-mode .experience-card p {
     color: #f1f5f9;  /* White text for better contrast */
 }
 
@@ -562,3 +566,6 @@ body.dark-mode .experience-card.expanded .experience-details * {
     color: #f1f5f9;  /* White text for better contrast */
 }
 
+.experience-card h3.bold-title {
+    color: #f1f5f9;  /* White text for better contrast */
+}

@@ -264,6 +264,7 @@
     });
 });
 </script>
+
 <section id="experience">
     <div class="container mx-auto px-10 py-24">
         <h2 class="text-5xl mb-12 font-orbitron text-indigo-600 bold-title fade-in">Professional Experience</h2>
@@ -272,18 +273,28 @@
         <div class="experience-card mb-10 border border-gray-200 p-6 rounded-lg border-rounded-lg fade-in cursor-pointer">
             <div class="flex items-center justify-between">
                 <!-- Left content: Job title and duration -->
-                <div class="flex items-center w-11/12 ">
+                <div class="flex items-center w-11/12 justify-between">
                     <h3 class="text-lg text-gray-900 font-medium title-font mb-2 bold-title">Siliconvalley4u - Coding Instructor</h3>
-                    <p class="text-sm ml-4">Jan 2020 - Present</p>
+                    <p class="text-sm ml-auto mt-1">Jan 2020 - Present</p>
                 </div>
                 <!-- Right content: Expand/collapse icon -->
                 <div class="toggle-experience w-1/12 text-center">
                     <i class="fas fa-plus"></i>
                 </div>
             </div>
-            <div class="experience-details hidden mt-4">
-                <img src="{{url_for('static', filename='company_logo.png')}}" alt="Company Logo" class="w-24 h-24 rounded-full mb-4">
-                <p class="text-gray-700">Brief description of the role and responsibilities, accomplishments, technologies used, etc.</p>
+            <div class="experience-details hidden mt-4 flex">
+                <!-- Company Logo -->
+                <div class="flex-none w-1/7 text-right"> <!-- Added "flex-none" to prevent shrinking -->
+                    <img src="{{url_for('static', filename='siliconvalley4u_logo.png')}}" alt="Company Logo" class="w-24 h-24 rounded-full mb-4">
+                </div>
+                <!-- Brief description and location -->
+                <div class="flex-grow w-6/7 ml-8 pt-2"> <!-- Added "flex-grow" to allow this content to grow and occupy the available space -->
+                    <p class="text-sm text-gray-500 mb-2 flex items-center"><i class="fas fa-map-marker-alt mr-2"></i>San Ramon, CA</p>
+                    <p class="text-gray-700">• Developing comprehensive course material to mentor over 100 middle and high school students in data structures, algorithms, NLP, Python, Java, HTML, CSS, and JavaScript</p>
+                    <p class="text-gray-700">• Incorporating interactive teaching methods, resulting in an average student satisfaction rating of 4.8/5 and a retention rate of 90%</p>
+                    <p class="text-gray-700">• Conducting virtual class meetings with coordinated parent scheduling, achieving a 98% attendance rate while boosting parent engagement by 30% through timely reminders and weekly progress reports</p>
+                </div>
+                
             </div>
         </div>
 
@@ -291,6 +302,10 @@
 
     </div>
 </section>
+
+
+
+
 
 
 
