@@ -280,7 +280,7 @@
 
 </script>
 
-<section id="experience" class="pt-8"> <!-- Added pt-10 for padding-top -->
+<section id="experience" class="pt-8"> 
     <div class="container mx-auto px-10 py-24">
         <h2 class="text-5xl mb-12 font-orbitron text-indigo-600 bold-title fade-in">Professional Experience</h2>
         
@@ -314,8 +314,6 @@
         </div>
     </div>
 </div>
-
-
 
         <!-- Yatsys -->
         <div class="experience-card mb-2 border border-gray-200 p-6 rounded-lg border-rounded-lg fade-in cursor-pointer">
@@ -365,9 +363,10 @@
             </div>
             <div class="experience-details hidden mt-4 flex">
                 <div class="w-1/7 text-right">
-                    <div class="flex-none w-1/7 text-right">
-                        <img src="{{url_for('static', filename='siliconvalley4u_logo.png')}}" alt="Company Logo" class="w-24 h-24 rounded-full mb-4">
+                    <div class="flex-none w-1/7 text-right overflow-hidden">
+                        <img src="{{url_for('static', filename='DHL_logo.png')}}" alt="Company Logo" class="w-28 h-28 rounded-full mb-4 transition transform hover:scale-110">
                     </div>
+                    
                 </div>
                 <div class="w-6/7 ml-8 pt-2">
                     <ul class="text-sm text-gray-700 pl-5 list-disc">
@@ -392,7 +391,7 @@
             <div class="experience-details hidden mt-4 flex">
                 <div class="w-1/7 text-right">
                     <div class="flex-none w-1/7 text-right">
-                        <img src="{{url_for('static', filename='siliconvalley4u_logo.png')}}" alt="Company Logo" class="w-24 h-24 rounded-full mb-4">
+                        <img src="{{url_for('static', filename='zendistributionslogo.jpg')}}" alt="Company Logo" class="w-24 h-24 rounded-full mb-4">
                     </div>
                 </div>
                 <div class="w-6/7 ml-8 pt-2">
@@ -435,37 +434,43 @@
     </div>
 </section>
 
-
-
-
-
-
-
-
-
 <section id="contact">
     <div class="container mx-auto mt-0 pt-32 text-center contact-section fade-in" style="padding-bottom: 100px; min-height: 100vh;">
-        <h1 class="text-5xl font-bold mb-6 bold-title">Contact Me ☎️</h1>
+        
+        <div class="flex justify-center items-center">
+            <!-- Vertically adjusted Circular Image to the left with increased spacing -->
+            <div class="mr-40 self-center">
+                <img src="static\LinkedIn Headshot.jpg" alt="Your Image Description" class="w-96 h-96 object-cover rounded-full">
+            </div>
 
-        <a href="mailto:michaeltranb@outlook.com" class="text-2xl text-indigo-600 contact-link-effect">
-            michaeltranb@outlook.com
-        </a>
-        <div class="mt-8 flex flex-col items-center">
-            <a href="https://www.linkedin.com/in/michaeltranb" target="_blank" class="text-2xl text-indigo-600 my-2 hover:text-indigo-800 flex items-center space-x-2 contact-link-effect">
-                <i class="fab fa-linkedin"></i>
-                <span>LinkedIn</span>
-            </a>
-            <a href="https://twitter.com/michaeltran_dev" target="_blank" class="text-2xl text-indigo-600 my-2 hover:text-indigo-800 flex items-center space-x-2 contact-link-effect">
-                <i class="fab fa-twitter"></i>
-                <span>Twitter</span>
-            </a>
-            <a href="https://github.com/michaeltranb" target="_blank" class="text-2xl text-indigo-600 my-2 hover:text-indigo-800 flex items-center space-x-2 contact-link-effect">
-                <i class="fab fa-github"></i>
-                <span>GitHub</span>
-            </a>
+            <!-- Contact details on the right including the title -->
+            <div class="text-left">
+                <h1 class="text-5xl font-bold mb-8 bold-title">Contact Me ☎️</h1>
+                <a href="mailto:michaeltranb@outlook.com" class="text-2xl text-indigo-600 contact-link-effect block text-center">
+                    michaeltranb@outlook.com
+                </a>
+                <div class="mt-8 flex flex-col">
+                    <a href="https://www.linkedin.com/in/michaeltranb" target="_blank" class="text-2xl text-indigo-600 my-2 hover:text-indigo-800 flex items-center justify-center space-x-2 contact-link-effect">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://twitter.com/michaeltran_dev" target="_blank" class="text-2xl text-indigo-600 my-2 hover:text-indigo-800 flex items-center justify-center space-x-2 contact-link-effect">
+                        <i class="fab fa-twitter"></i>
+                        <span>Twitter</span>
+                    </a>
+                    <a href="https://github.com/michaeltranb" target="_blank" class="text-2xl text-indigo-600 my-2 hover:text-indigo-800 flex items-center justify-center space-x-2 contact-link-effect">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </section>
+
+
+
+
 
 <button id="scrollToTop" title="Scroll to Top" style="display:none;position:fixed;bottom:20px;right:20px;z-index:1000;padding:10px 15px;font-size:24px;">&uarr;</button>
 
