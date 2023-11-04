@@ -28,29 +28,28 @@ def py2a_dsa():
 def generative_ai():
     course_materials = [
         {
-            'title': 'Introduction to Neural Networks',
-            'description': 'An introductory slide about Neural Networks.',
-            'link': '/path/to/material1',
-            'image': 'static\Screenshot 2023-10-10 224922.png'
+            'title': 'Generative Networks: GANs and VAEs',
+            'description': 'An introduction to Neural Networks.',
+            'link': 'https://gamma.app/docs/w5x6kc483k62dq2',
+            'image': 'static\Screenshot 2023-11-03 205218.png'
         },
         {
-            'title': 'Basics of NLP',
+            'title': 'NLP: Introduction to Natural Language Processing',
             'description': 'Understanding the basics of Natural Language Processing.',
-            'link': '/path/to/material2',
-            'image': 'static\Screenshot 2023-10-10 224922.png'
+            'link': 'https://gamma.app/docs/0r46z0in5jnpv1f',
+            'image': 'static\Screenshot 2023-11-03 205339.png'
         },
-
         {
-            'title': 'Basics of NLP',
-            'description': 'Understanding the basics of Natural Language Processing.',
-            'link': '/path/to/material2',
-            'image': 'static\Screenshot 2023-10-10 224922.png'
+            'title': 'NLP Chatbot',
+            'description': 'A simple chatbot applying the basics of natural language processing ',
+            'link': 'https://colab.research.google.com/drive/1zdkPmYsYBVoQN_KWxM3v5AKO8jAuoLTY?usp=sharing',
+            'image': 'static\Screenshot 2023-11-03 213059.png'
         },
-         {
-            'title': 'Basics of NLP',
-            'description': 'Understanding the basics of Natural Language Processing.',
-            'link': '/path/to/material2',
-            'image': 'static\Screenshot 2023-10-10 224922.png'
+        {
+            'title': 'TensorFlow Chatbot',
+            'description': 'Simple chatbot using a neural network/TensorFlow ',
+            'link': 'https://gamma.app/public/TensorFlow-Chatbot-vc4hp8yz8pwmsdh',
+            'image': 'static\Screenshot 2023-11-03 212134.png'
         }
        
     ]
