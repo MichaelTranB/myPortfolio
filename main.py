@@ -24,6 +24,41 @@ def py2a_dsa():
     mode = request.cookies.get('mode', 'light')
     return render_template('py2a_dsa.html', mode=mode)
 
+@app.route('/generative_ai')
+def generative_ai():
+    course_materials = [
+        {
+            'title': 'Introduction to Neural Networks',
+            'description': 'An introductory slide about Neural Networks.',
+            'link': '/path/to/material1',
+            'image': 'static\Screenshot 2023-10-10 224922.png'
+        },
+        {
+            'title': 'Basics of NLP',
+            'description': 'Understanding the basics of Natural Language Processing.',
+            'link': '/path/to/material2',
+            'image': 'static\Screenshot 2023-10-10 224922.png'
+        },
 
-if __name__ == '__main__':  
+        {
+            'title': 'Basics of NLP',
+            'description': 'Understanding the basics of Natural Language Processing.',
+            'link': '/path/to/material2',
+            'image': 'static\Screenshot 2023-10-10 224922.png'
+        },
+         {
+            'title': 'Basics of NLP',
+            'description': 'Understanding the basics of Natural Language Processing.',
+            'link': '/path/to/material2',
+            'image': 'static\Screenshot 2023-10-10 224922.png'
+        }
+       
+    ]
+
+    mode = request.cookies.get('mode', 'light')
+    # Make sure to pass the course_materials to the template here
+    return render_template('generative_ai.html', mode=mode, course_materials=course_materials)
+
+if __name__ == '__main__':
     app.run(debug=True)
+
