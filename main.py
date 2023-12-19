@@ -47,7 +47,7 @@ def generative_ai():
         },
         {
             'title': 'TensorFlow Chatbot',
-            'description': 'Simple chatbot using a neural network/TensorFlow ',
+            'description': 'Chatbot using a neural network/TensorFlow ',
             'link': 'https://gamma.app/public/TensorFlow-Chatbot-vc4hp8yz8pwmsdh',
             'image': 'static\Screenshot 2023-11-03 212134.png'
         }
