@@ -500,8 +500,6 @@ a.contact-link-effect:hover::after {
 
 
 
-
-
 /* Card in minimized state */
 .experience-card {
     transition: all 0.3s ease;
@@ -529,10 +527,6 @@ a.contact-link-effect:hover::after {
 
 .toggle-experience i {
     transition: transform 0.3s ease;
-}
-
-.experience-card.expanded .toggle-experience i {
-    transform: rotate(45deg); /* Transform "+" to "x" */
 }
 
 /* Adjustments for making the description and location text closer to the company logo */
@@ -568,4 +562,31 @@ body.dark-mode .experience-card.expanded .experience-details * {
 
 .experience-card h3.bold-title {
     color: #f1f5f9;  /* White text for better contrast */
+}
+
+
+
+/* Ensuring the entire experience card has the correct background color when minimized in dark mode */
+body.dark-mode .experience-card {
+    background-color: #430d79; /* Minimized card background color */
+    /* Other styles remain the same */
+}
+
+/* Ensuring the entire experience card has the correct background color when expanded in dark mode */
+body.dark-mode .experience-card.expanded {
+    background-color: #740cdc; /* Expanded card background color */
+    /* Ensure that the text color for the expanded card remains consistent */
+    color: #f1f5f9; /* Adjust if a different text color is desired */
+}
+
+/* Ensure all child elements within the card, such as job titles, dates, and icons, 
+   do not have a different background color in dark mode */
+body.dark-mode .experience-card * {
+    background-color: inherit; /* Inherits background color from .experience-card */
+    color: inherit; /* Inherits text color from .experience-card */
+}
+
+/* Reset the rotation for the minus icon in dark mode when the card is expanded */
+body.dark-mode .experience-card.expanded .toggle-experience i.fa-minus {
+    transform: rotate(0); /* Resets rotation to default for minus sign */
 }
