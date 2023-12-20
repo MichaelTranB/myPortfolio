@@ -16,8 +16,28 @@ def set_mode():
 
 @app.route('/student_api')
 def student_api():
+    course_materials = [
+        {
+            'title': 'Introduction to APIs',
+            'description': 'With a Simple Weather App',
+            'link': 'https://gamma.app/docs/Introduction-to-APIs-with-a-Simple-Weather-App-l6ttjedomwep6qc',
+            'image': '\static\Screenshot 2023-12-20 160859.png'
+        },
+        {
+            'title': 'Cat Facts API',
+            'description': 'Understanding the basics of Natural Language Processing.',
+            'link': 'Mini Project implementing the Cat Facts API ',
+            'image': 'static\Screenshot 2023-12-20 165037.png'
+        },
+        {
+            'title': 'Google Maps API Project',
+            'description': 'Student Project using the Google Maps API',
+            'link': 'https://gamma.app/docs/Google-Maps-API-Project-38pmes92j8ba820',
+            'image': 'static\Screenshot 2023-12-20 160503.png'
+        }
+    ]
     mode = request.cookies.get('mode', 'light')
-    return render_template('student_api.html', mode=mode)
+    return render_template('student_api.html', mode=mode, course_materials=course_materials)
 
 @app.route('/py2a_dsa')
 def py2a_dsa():

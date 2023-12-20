@@ -25,11 +25,12 @@
                     <a href="#" id="home-link" class="text-indigo-600 text-lg font-semibold font-orbitron my-name shadow-text-bold">&lt Michael Tran /></a>
                     <div class="flex justify-between items-center">
                         <div class="hidden md:flex items-center">
-                            <a href="/#about" class="nav-link mx-4 text-gray-700 font-orbitron hover:text-indigo-600">About</a>
-                            <a href="/#skills" class="nav-link mx-4 text-gray-700 font-orbitron hover:text-indigo-600">Skills</a>
+                            <a href="/#about" class="nav-link">About</a>
+                            <a href="/#skills" class="nav-link">Skills</a>
                             <a href="/#work" class="nav-link mx-4 text-gray-700 font-orbitron hover:text-indigo-600">Work</a>
                             <a href="/#experience" class="nav-link mx-4 text-gray-700 font-orbitron hover:text-indigo-600">Experience</a>
                             <a href="/#contact" class="nav-link mx-4 text-gray-700 font-orbitron hover:text-indigo-600">Contact</a>
+                           
                         </div>
     
                         <!-- Toggle switch -->
@@ -139,73 +140,109 @@
             });
         </script>
 
-<script>
-    $(document).ready(function() {
+        <script>
 
-        // Smooth scrolling for nav links
-        $("a.nav-link").on('click', function(event) {
-            event.preventDefault();
-            var target = this.hash ? $(this.hash) : 0;
-            $('html, body').animate({
-                scrollTop: target.offset().top || 0
-            }, 800);
-        });
+            // Script for smooth scrolling when navigating from another page
+            window.addEventListener('load', () => {
+                if (window.location.hash) {
+                    const section = document.querySelector(window.location.hash);
+                    if (section) {
+                        section.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
 
-        // For home link and scroll to top button
-        $("a#home-link, #scrollToTop").on('click', function(event) {
-            event.preventDefault();
-            $('html, body').animate({
-                scrollTop: 0
-            }, 800);
-        });
+            $(document).ready(function() {
 
-        // Show or hide the "scroll to top" button
-        function toggleScrollToTop() {
-            if ($(window).scrollTop() > 200) {
-                $('#scrollToTop').fadeIn();
-            } else {
-                $('#scrollToTop').fadeOut();
+                // Smooth scrolling for nav links
+                $("a.nav-link").on('click', function(event) {
+                    event.preventDefault();
+                    var target = this.hash ? $(this.hash) : 0;
+                    $('html, body').animate({
+                        scrollTop: target.offset().top || 0
+                    }, 800);
+                });
+
+                // For home link and scroll to top button
+                $("a#home-link, #scrollToTop").on('click', function(event) {
+                    event.preventDefault();
+                    $('html, body').animate({
+                        scrollTop: 0
+                    }, 800);
+                });
+
+                // Show or hide the "scroll to top" button
+                function toggleScrollToTop() {
+                    if ($(window).scrollTop() > 200) {
+                        $('#scrollToTop').fadeIn();
+                    } else {
+                        $('#scrollToTop').fadeOut();
+                    }
+                }
+                toggleScrollToTop(); // Call once on page load
+
+            // Function to check if the element is in viewport
+            function isElementInViewport(el) {
+                var rect = el.getBoundingClientRect();
+                return (
+                    rect.top <= (window.innerHeight || document.documentElement.clientHeight) + 100 &&  // Added +100 for some buffer
+                    rect.bottom >= 0
+                );
             }
-        }
-        toggleScrollToTop(); // Call once on page load
+            // Function to check and apply animations
+            function checkAnimations() {
+                $('.fade-in, .slide-in-left, .slide-in-right').each(function() {
+                    if (isElementInViewport(this)) {
+                        $(this).addClass('active').addClass('animated');
+                    } else if (!$(this).hasClass('animated')) {
+                        $(this).removeClass('active');
+                    }
+                });
+            }
 
-// Function to check if the element is in viewport
-function isElementInViewport(el) {
-    var rect = el.getBoundingClientRect();
-    return (
-        rect.top <= (window.innerHeight || document.documentElement.clientHeight) + 100 &&  // Added +100 for some buffer
-        rect.bottom >= 0
-    );
-}
-// Function to check and apply animations
-function checkAnimations() {
-    $('.fade-in, .slide-in-left, .slide-in-right').each(function() {
-        if (isElementInViewport(this)) {
-            $(this).addClass('active').addClass('animated');
-        } else if (!$(this).hasClass('animated')) {
-            $(this).removeClass('active');
-        }
-    });
-}
+            // Check animations and toggle "scroll to top" button during scroll
+            $(window).on('scroll', function() {
+                checkAnimations();
+                toggleScrollToTop();
+            });
 
-// Check animations and toggle "scroll to top" button during scroll
-$(window).on('scroll', function() {
-    checkAnimations();
-    toggleScrollToTop();
-});
+            // Check animations when user stops scrolling
+            var scrollTimeout;
+            $(window).on('scroll', function() {
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(checkAnimations, 250);
+            });
 
-// Check animations when user stops scrolling
-var scrollTimeout;
-$(window).on('scroll', function() {
-    clearTimeout(scrollTimeout);
-    scrollTimeout = setTimeout(checkAnimations, 250);
-});
-
-// Check animations initially
-checkAnimations();
-});
+            // Check animations initially
+            checkAnimations();
+            });
 
         </script>
-                
+        <script>
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    window.location.href = link.getAttribute('href');
+                });
+            });
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function(event) {
+            const currentPath = window.location.pathname;
+            const isMainPage = currentPath === '/' || currentPath === '/main_page.html'; // Adjust as needed
+            const sectionId = new URL(link.href).hash;
+
+            if (isMainPage && sectionId) {
+                event.preventDefault();
+                const section = document.querySelector(sectionId);
+                if (section) {
+                    section.scrollIntoView({ behavior: 'smooth' });
+                }
+            } else {
+                // External navigation - let the default behavior happen
+            }
+        });
+    });
+        </script>
     </body>
 </html>

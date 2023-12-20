@@ -2,27 +2,36 @@
 
 {% block content %}
 
-<section id="project-detail">
-    <div class="container mx-auto max-w-7xl px-10 py-40">
-
-        <div class="w-4/5 pr-10">
-            <h2 class="text-5xl mb-12 font-orbitron text-indigo-600 bold-title">Introduction to APIs</h2>
-            <p class="font-orbitron text-base mb-4">This educational module and guided project I created for my students offers a comprehensive exploration of RESTful APIs through engaging, hands-on applications in Python. 
-
-                It covers the foundational principles of REST to practical implementations, like creating a simple Weather App with Python and a fun Cat Facts Generator. 
-                </p>
-
-            <a href="{{ url_for('static', filename='documentation_link_here.pdf') }}" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-2 px-4 rounded">
-                View Documentation
-            </a>
-        </div>
-    
-        <div class="w-full pl-10 mt-20">
-            <img src="{{ url_for('static', filename='Screenshot 2023-10-10 231216.png') }}" alt="Project Screenshot" class="rounded-lg shadow-lg mb-5">
-            <img src="{{ url_for('static', filename='Screenshot 2023-10-10 231207.png') }}" alt="Project Screenshot" class="rounded-lg shadow-lg mb-5">
-        </div>
+<div class="container mx-auto max-w-7xl px-10 py-40">
+    <div class="w-full mb-8">
+        <h2 class="text-5xl font-orbitron text-indigo-600 bold-title mb-8">Introduction to APIs</h2>
+        <p class="font-orbitron text-lg pb-8">
+            These educational modules, guided projects, and assignments I created for my students offer a comprehensive exploration of RESTful APIs through engaging, hands-on applications in Python. 
+            It covers the foundational principles of REST to practical implementations, like creating a simple Weather App with Python and a fun Cat Facts Generator</p>
     </div>
-</section>
+
+    <!-- Course materials section -->
+    <div class="grid grid-cols-1 gap-4 mt-8">
+        {% for material in course_materials %}
+        <div class="border border-gray-200 rounded-lg shadow flex flex-col md:flex-row overflow-hidden">
+            <!-- Image on the left -->
+            <div class="md:w-1/2">
+                <img src="{{ material.image }}" alt="{{ material.title }}" class="w-full h-full object-cover">
+            </div>
+            <!-- Content on the right -->
+            <div class="p-4 md:w-1/2 flex flex-col justify-center">
+                <div>
+                    <h4 class="text-lg text-gray-900 font-semibold bold-title mb-2">{{ material.title }}</h4>
+                    <p class="text-md mb-3">{{ material.description }}</p>
+                </div>
+                <a href="{{ material.link }}" class="text-indigo-500 inline-flex items-center mt-2 text-sm">View Material
+                    <i class="fas fa-eye ml-2"></i>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 
 {% endblock %}
 
