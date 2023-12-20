@@ -25,8 +25,8 @@ def student_api():
         },
         {
             'title': 'Cat Facts API',
-            'description': 'Understanding the basics of Natural Language Processing.',
-            'link': 'Mini Project implementing the Cat Facts API ',
+            'description': 'Mini Project implementing the Cat Facts API',
+            'link': 'https://gamma.app/docs/Mini-Project-Random-Cat-Fact-Generator-8het0l1i3fvmy3q',
             'image': 'static\Screenshot 2023-12-20 165037.png'
         },
         {
