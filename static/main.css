@@ -590,3 +590,67 @@ body.dark-mode .experience-card * {
 body.dark-mode .experience-card.expanded .toggle-experience i.fa-minus {
     transform: rotate(0); /* Resets rotation to default for minus sign */
 }
+
+@media (max-width: 768px) {
+    /* Ensure no horizontal scrolling */
+    html, body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* Navbar adjustments */
+    nav#navbar {
+        padding: 0 5px; /* Adjust the padding for mobile view */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Align logo to the left */
+    #home-link {
+        font-size: 1.1rem; /* Slightly smaller font for mobile */
+        margin-left: 0; /* Align logo to the left */
+        padding-left: 5px; /* A little padding to not stick to the edge */
+    }
+
+    /* Ensure dark mode toggle is displayed and positioned correctly */
+    .toggle-switch {
+        display: flex;
+        align-items: center;
+        margin-left: 10px; /* Spacing from the logo */
+    }
+
+    /* Adjust mobile menu display */
+    #mobile-menu {
+        display: none; /* Hide menu initially */
+        position: absolute;
+        top: 100%; /* Position menu below the navbar */
+        left: 0;
+        right: 0;
+        background-color: #000; /* Menu background */
+        z-index: 1000; /* Make sure it's above other content */
+    }
+
+    /* Style mobile menu links */
+    #mobile-menu a {
+        display: block;
+        padding: 15px;
+        color: #fff; /* Text color for menu items */
+        border-bottom: 1px solid #333; /* Separator between menu items */
+        text-align: left;
+    }
+
+    /* Remove bottom border for the last menu item */
+    #mobile-menu a:last-child {
+        border-bottom: none;
+    }
+
+    /* Style changes for the main page image */
+    #home .container .w-2/5 img {
+        width: 100%; /* Full width */
+        margin-top: 1rem; /* Space above image */
+        display: block; /* Ensure it's a block to take full width */
+        margin-left: auto; /* Center align the image */
+        margin-right: auto; /* Center align the image */
+    }
+}
