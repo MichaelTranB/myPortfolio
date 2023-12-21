@@ -140,109 +140,81 @@
             });
         </script>
 
-        <script>
+<script>
+    $(document).ready(function() {
+        // Function for smooth scrolling to a specific target
+        function smoothScrollTo(target) {
+            var scrollTarget = target === 0 ? 0 : $(target).offset().top;
+            $('html, body').animate({
+                scrollTop: scrollTarget
+            }, 800);
+        }
 
-            // Script for smooth scrolling when navigating from another page
-            window.addEventListener('load', () => {
-                if (window.location.hash) {
-                    const section = document.querySelector(window.location.hash);
-                    if (section) {
-                        section.scrollIntoView({ behavior: 'smooth' });
-                    }
-                }
-            });
+        // Event handler for nav links, home link, and scroll to top button
+        $("a.nav-link, a#home-link, #scrollToTop").on('click', function(event) {
+            var target = this.hash;
+            var isMainPage = window.location.pathname.endsWith('/main_page.html') || window.location.pathname.endsWith('/');
 
-            $(document).ready(function() {
-
-                // Smooth scrolling for nav links
-                $("a.nav-link").on('click', function(event) {
-                    event.preventDefault();
-                    var target = this.hash ? $(this.hash) : 0;
-                    $('html, body').animate({
-                        scrollTop: target.offset().top || 0
-                    }, 800);
-                });
-
-                // For home link and scroll to top button
-                $("a#home-link, #scrollToTop").on('click', function(event) {
-                    event.preventDefault();
-                    $('html, body').animate({
-                        scrollTop: 0
-                    }, 800);
-                });
-
-                // Show or hide the "scroll to top" button
-                function toggleScrollToTop() {
-                    if ($(window).scrollTop() > 200) {
-                        $('#scrollToTop').fadeIn();
-                    } else {
-                        $('#scrollToTop').fadeOut();
-                    }
-                }
-                toggleScrollToTop(); // Call once on page load
-
-            // Function to check if the element is in viewport
-            function isElementInViewport(el) {
-                var rect = el.getBoundingClientRect();
-                return (
-                    rect.top <= (window.innerHeight || document.documentElement.clientHeight) + 100 &&  // Added +100 for some buffer
-                    rect.bottom >= 0
-                );
-            }
-            // Function to check and apply animations
-            function checkAnimations() {
-                $('.fade-in, .slide-in-left, .slide-in-right').each(function() {
-                    if (isElementInViewport(this)) {
-                        $(this).addClass('active').addClass('animated');
-                    } else if (!$(this).hasClass('animated')) {
-                        $(this).removeClass('active');
-                    }
-                });
-            }
-
-            // Check animations and toggle "scroll to top" button during scroll
-            $(window).on('scroll', function() {
-                checkAnimations();
-                toggleScrollToTop();
-            });
-
-            // Check animations when user stops scrolling
-            var scrollTimeout;
-            $(window).on('scroll', function() {
-                clearTimeout(scrollTimeout);
-                scrollTimeout = setTimeout(checkAnimations, 250);
-            });
-
-            // Check animations initially
-            checkAnimations();
-            });
-
-        </script>
-        <script>
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.addEventListener('click', function(event) {
-                    event.preventDefault();
-                    window.location.href = link.getAttribute('href');
-                });
-            });
-
-            document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', function(event) {
-            const currentPath = window.location.pathname;
-            const isMainPage = currentPath === '/' || currentPath === '/main_page.html'; // Adjust as needed
-            const sectionId = new URL(link.href).hash;
-
-            if (isMainPage && sectionId) {
+            // Check if on the main page and the target is a valid selector
+            if (isMainPage && $(target).length) {
                 event.preventDefault();
-                const section = document.querySelector(sectionId);
-                if (section) {
-                    section.scrollIntoView({ behavior: 'smooth' });
-                }
-            } else {
-                // External navigation - let the default behavior happen
+                smoothScrollTo(target);
+            }
+
+            // Special handling for "home-link" and "scrollToTop" to scroll to the top of the page
+            if (this.id === 'home-link' || this.id === 'scrollToTop') {
+                event.preventDefault();
+                smoothScrollTo(0);
             }
         });
+
+        // Function to show or hide the "scroll to top" button
+        function toggleScrollToTop() {
+            if ($(window).scrollTop() > 200) {
+                $('#scrollToTop').fadeIn();
+            } else {
+                $('#scrollToTop').fadeOut();
+            }
+        }
+        toggleScrollToTop(); // Call once on page load
+
+        // Event listener for scroll events to toggle the "scroll to top" button
+        $(window).on('scroll', function() {
+            toggleScrollToTop();
+        });
+
+        // Function to check if an element is in the viewport
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+            return (
+                rect.top <= (window.innerHeight || document.documentElement.clientHeight) + 100 &&
+                rect.bottom >= 0
+            );
+        }
+
+        // Function to check and apply animations to elements in the viewport
+        function checkAnimations() {
+            $('.fade-in, .slide-in-left, .slide-in-right').each(function() {
+                if (isElementInViewport(this)) {
+                    $(this).addClass('active').addClass('animated');
+                } else if (!$(this).hasClass('animated')) {
+                    $(this).removeClass('active');
+                }
+            });
+        }
+
+        // Event listener for scroll events to check and apply animations
+        $(window).on('scroll', function() {
+            checkAnimations();
+        });
+
+        // Initial check for animations when the page loads
+        checkAnimations();
     });
-        </script>
+</script>
+
+
+
+       
     </body>
 </html>
