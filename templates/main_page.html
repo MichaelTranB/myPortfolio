@@ -3,11 +3,12 @@
 {% block content %}
 
 <section id="home">
-    <div class="container mx-auto max-w-7xl px-10 py-40 flex items-center">
+    <div class="container mx-auto max-w-7xl px-10 py-10 sm:py-40 flex flex-col sm:flex-row items-center">
 
-        <div class="w-3/5 pr-10">
-            <h2 class="text-5xl mb-12 font-orbitron text-indigo-600 bold-title fade-in">Hey, I'm Michael!</h2>
-            <div class="typing-effect">
+        <div class="w-full sm:w-3/5 mb-10 sm:mb-0 flex flex-col">
+            <!-- Increase margin bottom specifically for mobile views -->
+            <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl mb-16 sm:mb-16 font-orbitron text-indigo-600 bold-title fade-in">Hey, I'm Michael!</h2>
+            <div class="typing-effect mt-8 sm:mt-0">
                 <div class="line" data-content="- Full Stack Developer"></div>
                 <div class="line" data-content="- Coding Teacher and Mentor"></div>
                 <div class="line" data-content="- Team Player"></div>
@@ -15,25 +16,26 @@
             </div>
         </div>
     
-        <div class="w-2/5 pl-10 fade-in">
-            <img src="{{ url_for('static', filename='Michael_Tran_Illustrated1.png') }}" alt="Michael's Photo" class="rounded-lg">
+        <div class="w-full sm:w-2/5 pl-10 fade-in">
+            <img src="{{ url_for('static', filename='Michael_Tran_Illustrated1.png') }}" alt="Michael's Photo" class="rounded-lg max-w-full h-auto">
         </div>
     </div>
-</section> 
+</section>
+
 
 <section id="about">
     <div id="content">
-        <section class="pt-28 pb-10 bg-white san-serif-font mb-28 " id="page-section">
+        <section class="pt-20 sm:pt-28 pb-10 bg-white san-serif-font mb-28 " id="page-section">
             <div class="container mx-auto px-10">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                     <div class="md:w-full slide-in-left">
-                        <img src="{{url_for('static', filename='myWebsiteTeamPhoto.png')}}" alt="About me" class="w-4/5 rounded-md mx-auto">
+                        <img src="{{url_for('static', filename='myWebsiteTeamPhoto.png')}}" alt="About me" class="w-full sm:w-4/5 rounded-md mx-auto">
                     </div>
                     <div class="md:w-full slide-in-right">
                         <div class="about-me-title">
-                            <img src="{{ url_for('static', filename='icons8-binary-64.png') }}" class="icon-binary light-mode-icon" alt="Binary Icon">
-                            <img src="{{ url_for('static', filename='icons8-binary-dark-64.png') }}" class="icon-binary dark-mode-icon" alt="Binary Icon">
-                            <h2 class="text-5xl mb-6 pt-2 font-orbitron text-indigo-600 bold-title">A Bit About Me ...</h2>
+                            <!-- <img src="{{ url_for('static', filename='icons8-binary-64.png') }}" class="icon-binary light-mode-icon" alt="Binary Icon">
+                            <img src="{{ url_for('static', filename='icons8-binary-dark-64.png') }}" class="icon-binary dark-mode-icon" alt="Binary Icon"> -->
+                            <h2 class="text-3xl sm:text-4xl lg:text-5xl mb-6 pt-2 font-orbitron text-indigo-600 bold-title">A Bit About Me ...</h2>
                         </div>                    
                         <p class="font-orbitron text-base mb-4">As an Information Technology & Systems major, my path took an unexpected turn during my senior year capstone project with Siliconvalley4U. Initially only having limited coding knowledge, I found myself heavily involved in building a web portal tool for the company, which not only transformed the trajectory of my career but also sparked a deep interest in software development.</p>
     
@@ -55,10 +57,10 @@
             <section id="skills" class="custom-padding skills-section">
                 <div class="container mx-auto max-w-5xl px-10">
                     <div class="text-center fade-in">
-                        <h2 class="text-5xl mb-6 font-orbitron text-indigo-600 bold-title">My Skills</h2>
+                        <h2 class="text-3xl sm:text-4xl lg:text-5xl mb-6 font-orbitron text-indigo-600 bold-title">My Skills</h2>
                         <p class="text-gray-700">Here are some of the tech I'm proficient in:</p>
                     </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mt-8 fade-in">
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mt-8 fade-in">
                         <!-- Python -->
                         <div class="skill-card flex flex-col items-center justify-center p-2">
                             <i class="fab fa-python fa-3x text-indigo-600 mb-1"></i>
@@ -148,7 +150,7 @@
 <section id="work" class="text-gray-600 body-font">
     <div class="container px-5 py-24 mx-auto">
         <div class="flex flex-wrap w-full mb-20 flex-col items-center text-center slide-in-right">
-            <h1 class="text-5xl mb-6 pt-8 font-orbitron text-indigo-600 bold-title">✍ My Work</h1> 
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl mb-6 pt-8 font-orbitron text-indigo-600 bold-title">✍ My Work</h1> 
             <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">
                 Below are some of the projects and works I've been involved in
         </div>

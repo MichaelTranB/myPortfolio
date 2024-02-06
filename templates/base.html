@@ -107,6 +107,14 @@
             });
         </script>
         
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                // Adjust body padding-top to match navbar height dynamically
+                const navbarHeight = document.getElementById('navbar').offsetHeight;
+                document.body.style.paddingTop = `${navbarHeight}px`;
+            });
+        </script>
+
         {% block content %}
         {% endblock %}
 

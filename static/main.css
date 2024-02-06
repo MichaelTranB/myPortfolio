@@ -698,5 +698,23 @@ body.dark-mode .experience-card.expanded .toggle-experience i.fa-minus {
         height: auto; /* Maintain aspect ratio */
         margin-top: 15px; /* Space above the image */
     }
+
+    /* Centers the content and image in the home section */
+    .container.mx-auto.max-w-7xl.px-10.py-40.flex.items-center {
+        flex-direction: column;
+    }
+
+    /* Adjusts the image size to maintain its size better and centers it */
+    .w-2/5 img {
+        width: 1000px; /* Adjust this value as needed to maintain the desired size */
+        margin: 20px auto; /* Adds some space around the image and centers it */
+    }
+
+    /* Adjusts the text block width to fit smaller screens better */
+    .w-3/5.pr-10 {
+        width: 100%; /* Allows the text to take full width on smaller screens */
+        padding-right: 0; /* Removes the right padding on smaller screens */
+        text-align: center; /* Centers the text */
+    }
 }
 
