@@ -618,6 +618,8 @@ body.dark-mode .experience-card.expanded .toggle-experience i.fa-minus {
         display: flex;
         align-items: center;
         margin-left: 10px; /* Spacing from the logo */
+        margin-bottom: 30px;
+        margin-right: 5px;
     }
 
     /* Adjust mobile menu display */
@@ -645,12 +647,56 @@ body.dark-mode .experience-card.expanded .toggle-experience i.fa-minus {
         border-bottom: none;
     }
 
-    /* Style changes for the main page image */
-    #home .container .w-2/5 img {
+
+     /* Adjust the main heading size and alignment */
+     #home h2 {
+        font-size: 1.8rem; /* Adjust the size to fit on one line */
+        margin: 0;
+        padding: -30px; /* Padding to not touch the edges */
+        margin-bottom: 10px;
+        text-align: left; /* Align text to the left */
+    }
+
+    /* Adjust the bullet points to take full width */
+    #home .typing-effect .line {
+        font-size: 1rem; /* Adjust font size */
+        margin: 0;
+        padding: 0 5px; /* Padding to not touch the edges */
+        margin-left: -25px;
+        text-align: left; /* Align text to the left */
+        display: block; /* Display block to take full width */
+
+        overflow: visible;
+    }
+
+    /* Ensure the text container takes up the full width */
+    #home .container .w-3/5 {
         width: 100%; /* Full width */
-        margin-top: 1rem; /* Space above image */
-        display: block; /* Ensure it's a block to take full width */
-        margin-left: auto; /* Center align the image */
-        margin-right: auto; /* Center align the image */
+        padding: 0; /* Remove padding */
+    }
+
+    /* Position the image container below the text */
+    #home .container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Align items to the start of the container */
+    }
+
+    #home .container .w-3/5 {
+        order: 1; /* Ensure text is above the image */
+    }
+
+    #home .container .w-2/5 {
+        order: 2; /* Ensure image is below the text */
+        width: 100%; /* Full width for the image container */
+        padding: 0; /* No padding to maximize space for the image */
+    }
+
+    /* Adjust the image size */
+    #home .container .w-2/5 img {
+        width: 100%; /* Full width of its container */
+        height: auto; /* Maintain aspect ratio */
+        margin-top: 15px; /* Space above the image */
     }
 }
+
