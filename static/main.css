@@ -1,3 +1,16 @@
+body {
+    transform: scale(0.95);
+    transform-origin: top center; /* Adjust as needed to control the scale origin */
+    overflow-x: hidden; /* Prevent horizontal scrollbar caused by scaling */
+}
+
+/* Adjust root font-size for rem units to scale accordingly, if you're using rem units */
+:root {
+    font-size: calc(1.0rem * 0.95); /* Adjust base font size */
+}
+
+
+
 nav .my-name {
     font-size: 1.6em;
     margin-left: 3em;
@@ -589,6 +602,13 @@ body.dark-mode .experience-card * {
 /* Reset the rotation for the minus icon in dark mode when the card is expanded */
 body.dark-mode .experience-card.expanded .toggle-experience i.fa-minus {
     transform: rotate(0); /* Resets rotation to default for minus sign */
+}
+
+
+@media (min-width: 1024px) { /* Adjust this breakpoint as necessary */
+    body {
+        padding-top: 0px !important; /* Adjust this value to reduce the space */
+    }
 }
 
 @media (max-width: 768px) {

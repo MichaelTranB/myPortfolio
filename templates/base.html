@@ -109,9 +109,19 @@
         
         <script>
             document.addEventListener("DOMContentLoaded", function() {
-                // Adjust body padding-top to match navbar height dynamically
-                const navbarHeight = document.getElementById('navbar').offsetHeight;
-                document.body.style.paddingTop = `${navbarHeight}px`;
+                // Function to update body padding-top based on navbar height
+                function updateBodyPadding() {
+                    const navbarHeight = document.getElementById('navbar').offsetHeight;
+                    const isMobileView = window.innerWidth < 640; // Assuming 640px as the breakpoint for mobile view
+                    const additionalPadding = isMobileView ? 20 : 10; // Additional padding in pixels
+                    document.body.style.paddingTop = `${navbarHeight + additionalPadding}px`;
+                }
+        
+                // Call the function to initially set the padding
+                updateBodyPadding();
+        
+                // Add event listener for window resize to update padding dynamically
+                window.addEventListener('resize', updateBodyPadding);
             });
         </script>
 
