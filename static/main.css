@@ -1,14 +1,3 @@
-body {
-    transform: scale(0.95);
-    transform-origin: top center; /* Adjust as needed to control the scale origin */
-    overflow-x: hidden; /* Prevent horizontal scrollbar caused by scaling */
-}
-
-/* Adjust root font-size for rem units to scale accordingly, if you're using rem units */
-:root {
-    font-size: calc(1.0rem * 0.95); /* Adjust base font size */
-}
-
 
 
 nav .my-name {
@@ -366,13 +355,13 @@ p {
     white-space: nowrap;
     overflow: hidden;
     position: relative;
-    height: 2.5em;  /* Adjust according to your new font size */
-    font-size: 1.5em;  /* Increase font size */
+    height: 2.5em;  
+    font-size: 1.5em;  
 }
 
 .typing-effect .active-cursor,
 .typing-effect .solid-cursor {
-    margin-right: -0.15em;  /* compensate for the width of the cursor */
+    margin-right: -0.15em;  
 }
 
 .typing-effect .active-cursor::after,
@@ -380,44 +369,44 @@ p {
     content: '';
     display: inline-block;
     vertical-align: middle; 
-    height: 1.5em;  /* Increased height */
-    width: 0.2em;   /* Increased width */
-    margin-left: 0.12em; /* space between text and cursor */
+    height: 1.5em;  
+    width: 0.2em;   
+    margin-left: 0.12em; 
     background-color: currentColor;
-    color: #4F46E5;  /* Color for light mode */
+    color: #4F46E5;  
 }
 
 .typing-effect .active-cursor::after {
-    animation: blink-caret-light 1s infinite;  /* Using light mode keyframe by default */
+    animation: blink-caret-light 1s infinite;  
 }
 
 body.dark-mode .typing-effect .active-cursor::after {
-    animation: blink-caret-dark 1s infinite;  /* Using dark mode keyframe */
+    animation: blink-caret-dark 1s infinite;  
 }
 
 body.dark-mode .typing-effect .active-cursor::after,
 body.dark-mode .typing-effect .solid-cursor::after {
-    background-color: gold;  /* Make the solid cursor gold in dark mode */
-    color: gold;  /* Make the blinking cursor gold in dark mode */
+    background-color: gold;  
+    color: gold;  
 }
 
 @keyframes blink-caret-light {
     from, to { background-color: transparent; }
-    50% { background-color: #4F46E5; }  /* Light mode color */
+    50% { background-color: #4F46E5; }  
 }  
 
 @keyframes blink-caret-dark {
     from, to { background-color: transparent; }
-    50% { background-color: gold; }  /* Dark mode color */
+    50% { background-color: gold; }  
 }
 
-/* Initial state of elements (not visible) */
+
 .fade-in {
     opacity: 0;
     transform: translateY(100px);
 }
 
-/* Animation sequence for fading in */
+
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -429,7 +418,7 @@ body.dark-mode .typing-effect .solid-cursor::after {
     }
 }
 
-/* Apply the animation when the element is in the viewport */
+
 .active {
     animation-name: fadeIn;
     animation-duration: .75s;
@@ -438,13 +427,13 @@ body.dark-mode .typing-effect .solid-cursor::after {
 }
 
 
-/* Initial state for slide-in from the left */
+
 .slide-in-left {
     opacity: 0;
     transform: translateX(-100%);
 }
 
-/* Animation sequence for slide-in from the left */
+
 @keyframes slideInLeft {
     0% {
         opacity: 0;
@@ -456,7 +445,7 @@ body.dark-mode .typing-effect .solid-cursor::after {
     }
 }
 
-/* Apply the slide-in from the left animation when the element is in the viewport */
+
 .slide-in-left.active {
     animation-name: slideInLeft;
     animation-duration: .75s;
@@ -464,13 +453,13 @@ body.dark-mode .typing-effect .solid-cursor::after {
     animation-fill-mode: forwards;
 }
 
-/* Initial state for slide-in from the right */
+
 .slide-in-right {
     opacity: 0;
     transform: translateX(100%);
 }
 
-/* Animation sequence for slide-in from the right */
+
 @keyframes slideInRight {
     0% {
         opacity: 0;
@@ -482,7 +471,7 @@ body.dark-mode .typing-effect .solid-cursor::after {
     }
 }
 
-/* Apply the slide-in from the right animation when the element is in the viewport */
+
 .slide-in-right.active {
     animation-name: slideInRight;
     animation-duration: .75s;
@@ -513,228 +502,209 @@ a.contact-link-effect:hover::after {
 
 
 
-/* Card in minimized state */
+
 .experience-card {
     transition: all 0.3s ease;
     height: 80px;
     background-color: #430d79;
-    color: #f1f5f9; /* White text for better contrast */
+    color: #f1f5f9; 
 }
 
 .experience-card:hover {
     box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Card in expanded state */
+
 .experience-card.expanded {
     height: auto;
     background-color: #740cdc;
 }
 
-/* Color of the text inside the card when expanded */
+
 .experience-card.expanded h3, 
 .experience-card.expanded p, 
 .experience-card.expanded .text-gray-700 {
-    color: inherit;  /* White text for better contrast */
+    color: inherit; 
 }
 
 .toggle-experience i {
     transition: transform 0.3s ease;
 }
 
-/* Adjustments for making the description and location text closer to the company logo */
+
 .experience-details {
-    gap: 16px; /* Adjusts the gap between flex items */
+    gap: 16px; 
 }
-/* Ensuring the entire experience card has the correct background color when minimized in dark mode */
+
 body.dark-mode .experience-card {
     background-color: #430d79;
 }
 
-/* Set the color of the job title when the card is minimized in dark mode */
+
 body.dark-mode .experience-card h3,
 body.dark-mode .experience-card p {
-    color: #f1f5f9;  /* White text for better contrast */
+    color: #f1f5f9;  
 }
 
-/* Ensuring the entire experience card has the correct background color when expanded in dark mode */
+
 body.dark-mode .experience-card.expanded {
     background-color: #740cdc;
 }
 
-/* Ensure all direct child elements of the expanded card have the correct background color in dark mode */
+
 body.dark-mode .experience-card.expanded > * {
     background-color: #740cdc;
 }
 
-/* Ensure all nested child elements within the expanded card details section have the correct background color in dark mode */
+
 body.dark-mode .experience-card.expanded .experience-details * {
     background-color: #740cdc;
-    color: #f1f5f9;  /* White text for better contrast */
+    color: #f1f5f9;  
 }
 
 .experience-card h3.bold-title {
-    color: #f1f5f9;  /* White text for better contrast */
+    color: #f1f5f9;  
 }
 
 
 
-/* Ensuring the entire experience card has the correct background color when minimized in dark mode */
+
 body.dark-mode .experience-card {
-    background-color: #430d79; /* Minimized card background color */
-    /* Other styles remain the same */
+    background-color: #430d79; 
+   
 }
 
-/* Ensuring the entire experience card has the correct background color when expanded in dark mode */
+
 body.dark-mode .experience-card.expanded {
-    background-color: #740cdc; /* Expanded card background color */
-    /* Ensure that the text color for the expanded card remains consistent */
-    color: #f1f5f9; /* Adjust if a different text color is desired */
+    background-color: #740cdc;
+    color: #f1f5f9; 
 }
 
-/* Ensure all child elements within the card, such as job titles, dates, and icons, 
-   do not have a different background color in dark mode */
 body.dark-mode .experience-card * {
-    background-color: inherit; /* Inherits background color from .experience-card */
-    color: inherit; /* Inherits text color from .experience-card */
+    background-color: inherit;
+    color: inherit; 
 }
 
-/* Reset the rotation for the minus icon in dark mode when the card is expanded */
 body.dark-mode .experience-card.expanded .toggle-experience i.fa-minus {
-    transform: rotate(0); /* Resets rotation to default for minus sign */
+    transform: rotate(0); 
 }
 
 
-@media (min-width: 1024px) { /* Adjust this breakpoint as necessary */
+@media (min-width: 1024px) { 
     body {
-        padding-top: 0px !important; /* Adjust this value to reduce the space */
+        padding-top: 0px !important; 
     }
 }
 
 @media (max-width: 768px) {
-    /* Ensure no horizontal scrolling */
+
     html, body {
         max-width: 100%;
         overflow-x: hidden;
     }
 
-    /* Navbar adjustments */
+   
     nav#navbar {
-        padding: 0 5px; /* Adjust the padding for mobile view */
+        padding: 0 5px; 
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
 
-    /* Align logo to the left */
     #home-link {
-        font-size: 1.1rem; /* Slightly smaller font for mobile */
-        margin-left: 0; /* Align logo to the left */
-        padding-left: 5px; /* A little padding to not stick to the edge */
+        font-size: 1.1rem; 
+        margin-left: 0; 
+        padding-left: 5px; 
     }
 
-    /* Ensure dark mode toggle is displayed and positioned correctly */
     .toggle-switch {
         display: flex;
         align-items: center;
-        margin-left: 10px; /* Spacing from the logo */
+        margin-left: 10px; 
         margin-bottom: 30px;
         margin-right: 5px;
     }
 
-    /* Adjust mobile menu display */
     #mobile-menu {
-        display: none; /* Hide menu initially */
+        display: none; 
         position: absolute;
-        top: 100%; /* Position menu below the navbar */
+        top: 100%; 
         left: 0;
         right: 0;
-        background-color: #000; /* Menu background */
-        z-index: 1000; /* Make sure it's above other content */
+        background-color: #000; 
+        z-index: 1000; 
     }
 
-    /* Style mobile menu links */
     #mobile-menu a {
         display: block;
         padding: 15px;
-        color: #fff; /* Text color for menu items */
-        border-bottom: 1px solid #333; /* Separator between menu items */
+        color: #fff; 
+        border-bottom: 1px solid #333; 
         text-align: left;
     }
 
-    /* Remove bottom border for the last menu item */
     #mobile-menu a:last-child {
         border-bottom: none;
     }
 
-
-     /* Adjust the main heading size and alignment */
      #home h2 {
-        font-size: 1.8rem; /* Adjust the size to fit on one line */
+        font-size: 1.8rem; 
         margin: 0;
-        padding: -30px; /* Padding to not touch the edges */
+        padding: -30px; 
         margin-bottom: 10px;
-        text-align: left; /* Align text to the left */
+        text-align: left; 
     }
 
-    /* Adjust the bullet points to take full width */
     #home .typing-effect .line {
-        font-size: 1rem; /* Adjust font size */
+        font-size: 1rem; 
         margin: 0;
-        padding: 0 5px; /* Padding to not touch the edges */
+        padding: 0 5px; 
         margin-left: -25px;
-        text-align: left; /* Align text to the left */
-        display: block; /* Display block to take full width */
+        text-align: left; 
+        display: block;
 
         overflow: visible;
     }
 
-    /* Ensure the text container takes up the full width */
     #home .container .w-3/5 {
-        width: 100%; /* Full width */
-        padding: 0; /* Remove padding */
+        width: 100%; 
+        padding: 0; 
     }
 
-    /* Position the image container below the text */
     #home .container {
         display: flex;
         flex-direction: column;
-        align-items: flex-start; /* Align items to the start of the container */
+        align-items: flex-start; 
     }
 
     #home .container .w-3/5 {
-        order: 1; /* Ensure text is above the image */
+        order: 1; 
     }
 
     #home .container .w-2/5 {
-        order: 2; /* Ensure image is below the text */
-        width: 100%; /* Full width for the image container */
-        padding: 0; /* No padding to maximize space for the image */
+        order: 2; 
+        width: 100%; 
+        padding: 0; 
     }
 
-    /* Adjust the image size */
     #home .container .w-2/5 img {
-        width: 100%; /* Full width of its container */
-        height: auto; /* Maintain aspect ratio */
-        margin-top: 15px; /* Space above the image */
+        width: 100%; 
+        height: auto; 
+        margin-top: 15px; 
     }
 
-    /* Centers the content and image in the home section */
     .container.mx-auto.max-w-7xl.px-10.py-40.flex.items-center {
         flex-direction: column;
     }
 
-    /* Adjusts the image size to maintain its size better and centers it */
     .w-2/5 img {
-        width: 1000px; /* Adjust this value as needed to maintain the desired size */
-        margin: 20px auto; /* Adds some space around the image and centers it */
+        width: 1000px; 
+        margin: 20px auto; 
     }
 
-    /* Adjusts the text block width to fit smaller screens better */
     .w-3/5.pr-10 {
-        width: 100%; /* Allows the text to take full width on smaller screens */
-        padding-right: 0; /* Removes the right padding on smaller screens */
-        text-align: center; /* Centers the text */
+        width: 100%; 
+        padding-right: 0; 
+        text-align: center; 
     }
 }
-

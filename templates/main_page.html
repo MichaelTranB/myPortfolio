@@ -4,9 +4,7 @@
 
 <section id="home">
     <div class="container mx-auto max-w-7xl px-10 py-10 sm:py-40 flex flex-col sm:flex-row items-center">
-
         <div class="w-full sm:w-3/5 mb-10 sm:mb-0 flex flex-col">
-            <!-- Increase margin bottom specifically for mobile views -->
             <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl mb-16 sm:mb-16 font-orbitron text-indigo-600 bold-title fade-in">Hey, I'm Michael!</h2>
             <div class="typing-effect mt-8 sm:mt-0">
                 <div class="line" data-content="- Full Stack Developer"></div>
@@ -23,18 +21,13 @@
 </section>
 
 
-<section id="about">
+<section id="about" class="mt-10 sm:mt-0">
     <div id="content">
-        <section class="pt-20 sm:pt-28 pb-10 bg-white san-serif-font mb-28 " id="page-section">
+        <section class="pt-10 sm:pt-20 pb-4 sm:pb-10 bg-white san-serif-font mb-2 sm:mb-8" id="page-section">
             <div class="container mx-auto px-10">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                    <div class="md:w-full slide-in-left">
-                        <img src="{{url_for('static', filename='myWebsiteTeamPhoto.png')}}" alt="About me" class="w-full sm:w-4/5 rounded-md mx-auto">
-                    </div>
-                    <div class="md:w-full slide-in-right">
+                    <div class="md:w-full md:order-2 slide-in-right">
                         <div class="about-me-title">
-                            <!-- <img src="{{ url_for('static', filename='icons8-binary-64.png') }}" class="icon-binary light-mode-icon" alt="Binary Icon">
-                            <img src="{{ url_for('static', filename='icons8-binary-dark-64.png') }}" class="icon-binary dark-mode-icon" alt="Binary Icon"> -->
                             <h2 class="text-3xl sm:text-4xl lg:text-5xl mb-6 pt-2 font-orbitron text-indigo-600 bold-title">A Bit About Me ...</h2>
                         </div>                    
                         <p class="font-orbitron text-base mb-4">As an Information Technology & Systems major, my path took an unexpected turn during my senior year capstone project with Siliconvalley4U. Initially only having limited coding knowledge, I found myself heavily involved in building a web portal tool for the company, which not only transformed the trajectory of my career but also sparked a deep interest in software development.</p>
@@ -45,11 +38,16 @@
     
                         <p class="text-gray-700 text-base mb-4">Fueled by my continuous drive to learn, I'm constantly expanding my skill set and love tackling complex problems. With a diverse experience portfolio, a love for innovation, and a strong commitment to growth, I am ready to join a team of forward-thinkers and together, create technology that makes an impact. Together, let's shape the future!</p>
                     </div>
+
+                    <div class="md:w-full md:order-1 slide-in-left">
+                        <img src="{{url_for('static', filename='myWebsiteTeamPhoto.png')}}" alt="About me" class="w-full sm:w-4/5 rounded-md mx-auto">
+                    </div>
                 </div>
             </div>
         </section>
     </div>
 </section>
+
 
 <section id="skills">
     <div id="content">
@@ -60,7 +58,7 @@
                         <h2 class="text-3xl sm:text-4xl lg:text-5xl mb-6 font-orbitron text-indigo-600 bold-title">My Skills</h2>
                         <p class="text-gray-700">Here are some of the tech I'm proficient in:</p>
                     </div>
-                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mt-8 fade-in">
+                    <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-8 fade-in">
                         <!-- Python -->
                         <div class="skill-card flex flex-col items-center justify-center p-2">
                             <i class="fab fa-python fa-3x text-indigo-600 mb-1"></i>
@@ -145,109 +143,100 @@
             </section>
         </div>
     </div>
-</section>    
+</section>   
 
 <section id="work" class="text-gray-600 body-font">
     <div class="container px-5 py-24 mx-auto">
-        <div class="flex flex-wrap w-full mb-20 flex-col items-center text-center slide-in-right">
-            <h1 class="text-3xl sm:text-4xl lg:text-5xl mb-6 pt-8 font-orbitron text-indigo-600 bold-title">✍ My Work</h1> 
-            <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">
-                Below are some of the projects and works I've been involved in
+      <div class="flex flex-wrap w-full mb-20 flex-col items-center text-center slide-in-right">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl mb-6 pt-8 font-orbitron text-indigo-600 bold-title">✍ My Work</h1>
+        <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">Below are some of the projects and works I've been involved in.</p>
+      </div>
+
+      <div class="flex flex-wrap -mx-2 justify-center">
+        <!-- Nexclap Card -->
+        <div class="xl:w-5/6 lg:w-5/6 md:w-full px-2">
+          <div class="flex border border-gray-200 p-10 rounded-lg items-center flex-col md:flex-row">
+            <div class="md:w-1/3 flex justify-center mb-4 md:mb-0">
+              <img src="static\nexclapMockup.png" alt="Nexclap Logo" class="h-auto w-auto max-w-full md:max-w-xs lg:max-w-sm">
+            </div>
+            <div class="w-full md:w-2/3 lg:w-3/4 md:pl-6">
+              <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Nexclap - Startup Learning Platform</h2>
+              <p class="leading-relaxed text-base">Leading the development of Nexclap, integrating new features for an enhanced learning experience and investor engagement.</p>
+              <a href="#" class="text-indigo-500 inline-flex items-center mt-3">Learn More<i class="fas fa-arrow-right ml-2"></i></a>
+            </div>
+          </div>
         </div>
-        <div class="flex flex-wrap -m-4 justify-center ">
-            <!-- Yatsys -->
-            <div class="xl:w-3/4 lg:w-3/4 md:w-full p-4 slide-in-left">
-                <div class="border border-gray-200 p-6 rounded-lg flex border-rounded-lg">
-                    <div class="w-1/3">
-                        <img src="{{ url_for('static', filename='YatsysLogo.jpg') }}" alt="Company Logo" class="project-logo">
+      </div>
+  
+    
+      <div class="flex flex-wrap -m-4 justify-center">
+        <div class="xl:w-5/6 lg:w-5/6 md:w-full px-2 flex flex-col md:flex-row mt-16">
+            <!-- Yatsys Card -->
+            <div class="w-full md:w-1/2 px-2">
+                <div class="flex border border-gray-200 p-10 rounded-lg items-center flex-col md:flex-col hover:shadow-lg transition-shadow duration-300 ease-in-out h-full">
+                <div class="w-full md:w-full lg:w-full md:pl-6 mb-12">
+                    <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Yatsys</h2>
+                    <p class="leading-relaxed text-base">An MVP built using Flask and Google Cloud, focusing on automated IoT home care utilizing facial and emotion recognition to send real-time alerts to parents of children with disabilities.</p>
+                    <a href="#" class="text-indigo-500 inline-flex items-center mt-3">Learn More<i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+                <div class="flex justify-center mt-4 md:mt-4">
+                    <img src="{{ url_for('static', filename='YatsysLogo.jpg') }}" alt="Company Logo" class="h-auto w-auto max-w-full md:max-w-xs lg:max-w-sm">
+                </div>
+                </div>
+            </div>
+          
+           <!-- Valentine's Day Card -->
+        <div class="w-full md:w-1/2 px-2">
+                <div class="flex border border-gray-200 p-10 rounded-lg items-center flex-col md:flex-col hover:shadow-lg transition-shadow duration-300 ease-in-out h-full">
+                    <div class="w-full md:w-full lg:w-full md:pl-6 mb-12 ">
+                        <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Valentine's Day Card Website</h2>
+                        <p class="leading-relaxed text-base">A creative project combining JavaScript and CSS animations to craft a personalized Valentine's Day card</p>
+                        <a href="#" class="text-indigo-500 inline-flex items-center mt-3">Learn More<i class="fas fa-arrow-right ml-2"></i></a>
                     </div>
-                    <div class="w-2/3 ">
-                        <h2 class="text-lg text-gray-900 font-medium title-font mb-2 bold-title">Yatsys</h2>
-                        <p class="leading-relaxed text-base">An MVP built using Flask and Google Cloud, focusing on automated IoT home care utilizing facial and emotion recognition to send real-time alerts to parents of children with disabilities.</p>
-                        <a href="#" class="text-indigo-500 inline-flex items-center mt-3">Learn More
-                            <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
+                    <div class="md:flex justify-center mt-4 md:mt-4">
+                        <img src="static\valentinesMockup.png" alt="Valentine's Day Card" class="h-auto w-auto max-w-full md:max-w-xs lg:max-w-sm">
                     </div>
                 </div>
             </div>
-
-       <!-- Coding Instructor Work -->
-       <div class="xl:w-3/4 lg:w-3/4 md:w-full p-4 mb-8 fade-in">
-            <h2 class="text-lg text-gray-900 font-medium title-font mb-4 bold-title">Coding Instructor Work</h2>
-            <div class="flex flex-wrap">
-                <!-- Big Card on Left -->
-                <div class="xl:w-1/2 lg:w-1/2 md:w-1/2 p-4">
-                    <div class="border border-gray-200 p-6 rounded-lg mb-4 border-rounded-lg" style="min-height: 400px;">
-                        <h3 class="text-md text-gray-900 font-medium bold-title">Python 2A Course</h3>
-                        <p>Data structures and algorithms</p>
-                        <a href="{{ url_for('py2a_dsa') }}" class="text-indigo-500 inline-flex items-center mt-3">Learn More
-                            <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-                <!-- Small Cards on Right -->
-                <div class="xl:w-1/2 lg:w-1/2 md:w-1/2 p-4 flex flex-col justify-between ">
-                    <!-- Top Small Card -->
-                    <div class="border border-gray-200 p-6 rounded-lg mb-4 border-rounded-lg" style="flex: 1;">
-                        <h3 class="text-md text-gray-900 font-medium bold-title">Introduction to APIs</h3>
-                        <p>Modules and Assignments</p>
-                        <a href="{{ url_for('student_api') }}" class="text-indigo-500 inline-flex items-center mt-3">Learn More
-                            <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                    <!-- Bottom Small Card -->
-                    <div class="border border-gray-200 p-6 rounded-lg mb-4 border-rounded-lg" style="flex: 1;">
-                        <h3 class="text-md text-gray-900 font-medium bold-title">Intro to Generative AI Course</h3>
-                        <p>Teaching 8th-grade advanced Python students topics of Neural Networks, NLP, and Generative AI</p>
-                        <a href="{{ url_for('generative_ai') }}" class="text-indigo-500 inline-flex items-center mt-3">Learn More
-                            <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- LeetCode Challenges -->
-        <!-- <div class="xl:w-3/4 lg:w-3/4 md:w-full p-4 mb-8 slide-in-right">
-            <h2 class="text-lg text-gray-900 font-medium title-font mb-4 bold-title">LeetCode Challenges</h2>
-            <div class="flex flex-wrap">
-                
-                
-                <div class="xl:w-1/2 lg:w-1/2 md:w-1/2 p-4">
-                    <div class="border border-gray-200 p-6 rounded-lg mb-4 border-rounded-lg" style="min-height: 400px;">
-                        <h3 class="text-md text-gray-900 font-medium">Median of Two Sorted Arrays</h3>
-                        <p>Hard Level Problem.</p>
-                        <a href="#" class="text-indigo-500 inline-flex items-center mt-3">Learn More
-                            <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-
-                
-                <div class="xl:w-1/2 lg:w-1/2 md:w-1/2 p-4 flex flex-col justify-between">
-                    
-                    <div class="border border-gray-200 p-6 rounded-lg mb-4 border-rounded-lg" style="flex: 1;">
-                        <h3 class="text-md text-gray-900 font-medium">Add Two Numbers</h3>
-                        <p>Medium Level Problem.</p>
-                        <a href="#" class="text-indigo-500 inline-flex items-center mt-3">Learn More
-                            <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                    
-                    <div class="border border-gray-200 p-6 rounded-lg mb-4 border-rounded-lg" style="flex: 1;">
-                        <h3 class="text-md text-gray-900 font-medium">Two Sum</h3>
-                        <p>Easy Level Problem.</p>
-                        <a href="#" class="text-indigo-500 inline-flex items-center mt-3">Learn More
-                            <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
-        </div>
+          </div>
     </div>
-</section>
+  
+      <!-- Coding Instructor Work -->
+      <div class="xl:w-5/6 lg:w-5/6 md:w-full p-4 mt-12 ">
+        <h2 class="text-lg text-gray-900 font-medium title-font mb-4 bold-title">Coding Instructor Work</h2>
+        <div class="flex flex-wrap">
+          <!-- Python 2A Course -->
+          <div class="xl:w-1/2 lg:w-1/2 md:w-1/2 p-4">
+            <div class="border border-gray-200 p-6 rounded-lg mb-4" style="min-height: 400px;">
+              <h3 class="text-md text-gray-900 font-medium bold-title">Python 2A Course: Data Structures & Algorithms</h3>
+              <p>Data structures and algorithms course material and examples</p>
+              <a href="{{ url_for('py2a_dsa') }}" class="text-indigo-500 inline-flex items-center mt-3">Learn More<i class="fas fa-arrow-right ml-2"></i></a>
+            </div>
+          </div>
+            <!-- Introduction to APIs -->
+            <div class="xl:w-1/2 lg:w-1/2 md:w-1/2 p-4 flex flex-col justify-between">
+                <div class="border border-gray-200 p-6 rounded-lg mb-4" style="flex: 1;">
+                  <h3 class="text-md text-gray-900 font-medium bold-title">Introduction to APIs</h3>
+                  <p>Modules and Assignments</p>
+                  <a href="{{ url_for('student_api') }}" class="text-indigo-500 inline-flex items-center mt-3">Learn More
+                    <i class="fas fa-arrow-right ml-2"></i>
+                  </a>
+                </div>
+                <!-- Intro to Generative AI Course -->
+                <div class="border border-gray-200 p-6 rounded-lg" style="flex: 1;">
+                  <h3 class="text-md text-gray-900 font-medium bold-title">Intro to Generative AI Course</h3>
+                  <p>Teaching 8th-grade advanced Python students topics of Neural Networks, NLP, and Generative AI</p>
+                  <a href="{{ url_for('generative_ai') }}" class="text-indigo-500 inline-flex items-center mt-3">Learn More
+                    <i class="fas fa-arrow-right ml-2"></i>
+                  </a>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
 <script>
    document.addEventListener("DOMContentLoaded", function() {
@@ -478,9 +467,6 @@
         </div>
     </div>
 </section>
-
-
-
 
 
 <button id="scrollToTop" title="Scroll to Top" style="display:none;position:fixed;bottom:20px;right:20px;z-index:1000;padding:10px 15px;font-size:24px;">&uarr;</button>
