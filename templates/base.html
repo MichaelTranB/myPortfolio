@@ -171,87 +171,65 @@
             });
         </script>
 
-    <script>
-        $(document).ready(function() {
-            // Function for smooth scrolling to a specific target
-            function smoothScrollTo(target) {
-                var scrollTarget = target === 0 ? 0 : $(target).offset().top;
-                $('html, body').animate({
-                    scrollTop: scrollTarget
-                }, 800);
-            }
-
-            // Event handler for nav links, home link, and scroll to top button
-            $("a.nav-link, a#home-link, #scrollToTop").on('click', function(event) {
-                var target = this.hash;
-                var isMainPage = window.location.pathname.endsWith('/main_page.html') || window.location.pathname.endsWith('/');
-
-                // Check if on the main page and the target is a valid selector
-                if (isMainPage && $(target).length) {
-                    event.preventDefault();
-                    smoothScrollTo(target);
-                }
-
-                // Special handling for "home-link" and "scrollToTop" to scroll to the top of the page
-                if (this.id === 'home-link' || this.id === 'scrollToTop') {
-                    event.preventDefault();
-                    smoothScrollTo(0);
-                }
-            });
-
-            // Function to show or hide the "scroll to top" button
-            function toggleScrollToTop() {
-                if ($(window).scrollTop() > 200) {
-                    $('#scrollToTop').fadeIn();
-                } else {
-                    $('#scrollToTop').fadeOut();
-                }
-            }
-            toggleScrollToTop(); // Call once on page load
-
-            // Event listener for scroll events to toggle the "scroll to top" button
-            $(window).on('scroll', function() {
-                toggleScrollToTop();
-            });
-
-            // Function to check if an element is in the viewport
-            function isElementInViewport(el) {
-                var rect = el.getBoundingClientRect();
-                return (
-                    rect.top <= (window.innerHeight || document.documentElement.clientHeight) + 100 &&
-                    rect.bottom >= 0
-                );
-            }
-
-            // Function to check and apply animations to elements in the viewport
-            function checkAnimations() {
-                $('.fade-in, .slide-in-left, .slide-in-right').each(function() {
-                    if (isElementInViewport(this)) {
-                        $(this).addClass('active').addClass('animated');
-                    } else if (!$(this).hasClass('animated')) {
-                        $(this).removeClass('active');
-                    }
-                });
-            }
-
-            // Event listener for scroll events to check and apply animations
-            $(window).on('scroll', function() {
-                checkAnimations();
-            });
-
-            // Initial check for animations when the page loads
-            checkAnimations();
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Simplified Scroll to Top functionality using native JavaScript
+        const scrollToTopButton = document.getElementById('scrollToTop');
+        scrollToTopButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
-
-        document.getElementById('menu-toggle').addEventListener('click', function() {
-        var menu = document.getElementById('mobile-menu');
-        if (menu.style.display === 'block') {
-            menu.style.display = 'none';
-        } else {
-            menu.style.display = 'block';
+    
+        // Toggle visibility of Scroll to Top button based on scroll position
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 200) {
+                scrollToTopButton.style.display = 'block';
+            } else {
+                scrollToTopButton.style.display = 'none';
+            }
+        });
+    
+        // Smooth scrolling for navigation links using native JavaScript
+        document.querySelectorAll('a.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').replace("/", "");
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    
+        // Mobile menu toggle using jQuery for consistency with existing script
+        $('#menu-toggle').click(function() {
+            $('#mobile-menu').toggle();
+        });
+    
+        // Animation check for elements in the viewport
+        function checkAnimations() {
+            document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(element => {
+                if (isElementInViewport(element)) {
+                    element.classList.add('active', 'animated');
+                } else if (!element.classList.contains('animated')) {
+                    element.classList.remove('active');
+                }
+            });
         }
+    
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top <= (window.innerHeight || document.documentElement.clientHeight) + 100 &&
+                rect.bottom >= 0
+            );
+        }
+    
+        // Attach scroll event listener for animation checks
+        window.addEventListener('scroll', checkAnimations);
+        checkAnimations(); // Perform an initial check when the page loads
     });
     </script>
-       
+    
     </body>
 </html>

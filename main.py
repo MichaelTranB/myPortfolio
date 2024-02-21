@@ -78,6 +78,25 @@ def generative_ai():
     # Make sure to pass the course_materials to the template here
     return render_template('generative_ai.html', mode=mode, course_materials=course_materials)
 
+
+@app.route('/valentines')
+def valentines():
+    mode = request.cookies.get('mode', 'light')
+    return render_template('valentines.html', mode=mode)
+
+
+@app.route('/yatsys')
+def yatsys():
+    mode = request.cookies.get('mode', 'light')
+    return render_template('yatsys.html', mode=mode)
+
+
+@app.route('/nexclap')
+def nexclap():
+    mode = request.cookies.get('mode', 'light')
+    return render_template('nexclap.html', mode=mode)
+
+
 if __name__ == '__main__':
     app.run(debug=True)
 
