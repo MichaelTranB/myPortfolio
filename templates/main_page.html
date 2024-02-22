@@ -157,18 +157,21 @@
         <div class="flex w-full xl:w-5/6 lg:w-5/6 md:w-full px-4 justify-center slide-in-left"> 
             <div class="flex border border-rounded-lg p-10 rounded-lg items-center flex-col md:flex-row" style="max-width: calc(100% - 1.5rem); margin: auto;"> 
                 <div class="md:w-1/3 flex justify-center mb-4 md:mb-0">
-                    <img src="static\nexclapMockup.png" alt="Nexclap Logo" class="h-auto w-auto max-w-full md:max-w-xs lg:max-w-sm">
+                    <img src="static\nexclapMockup2.png" alt="Nexclap Logo" class="h-auto w-auto max-w-full md:max-w-xs lg:max-w-sm">
                 </div>
                 <div class="w-full md:w-2/3 lg:w-3/4 md:pl-6">
                     <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Nexclap - Startup Learning Platform</h2>
                     <p class="leading-relaxed text-base">Leading the development of Nexclap, integrating new features for an enhanced learning experience and investor engagement.</p>
-                    <a href="#" class="text-indigo-500 inline-flex items-center mt-3">Learn More<i class="fas fa-arrow-right ml-2"></i></a>
+                    <a href="{{ url_for('nexclap') }}" class="text-indigo-600 font-bold inline-flex items-center mt-3">View Project<i class="fas fa-arrow-right ml-2"></i></a>
                 </div>
                 </div>
             </div>
         </div>
 
-        <!-- Yatsys and Valentine's Day Container -->
+
+
+        
+    <!-- Yatsys and Valentine's Day Container -->
     <div class="flex flex-wrap justify-center">
         <div class="w-full xl:w-5/6 lg:w-5/6 md:w-full px-4 flex flex-col md:flex-row mt-12 gap-x-5 justify-center items-center slide-in-right">
         <!-- Yatsys Card -->
@@ -176,11 +179,11 @@
             <div class="flex border border-rounded-lg p-10 rounded-lg items-center flex-col md:flex-col" style="margin: auto;">
                 <div class="w-full md:w-full lg:w-full md:pl-6 mb-12">
                     <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Yatsys</h2>
-                    <p class="leading-relaxed text-base">An MVP built using Flask and Google Cloud, focusing on automated IoT home care utilizing facial and emotion recognition to send real-time alerts to parents of children with disabilities.</p>
-                    <a href="#" class="text-indigo-500 inline-flex items-center mt-3">Learn More<i class="fas fa-arrow-right ml-2"></i></a>
+                    <p class="leading-relaxed text-base">A prototype focused on facial and emotion recognition, part of a larger initiative to enable real-time alert dispatch for parents of children with disabilities</p>
+                    <a href="{{ url_for('yatsys') }}" class="text-indigo-600 font-bold inline-flex items-center mt-3">View Project<i class="fas fa-arrow-right ml-2"></i></a>
                 </div>
                 <div class="flex justify-center mt-4 md:mt-4">
-                    <img src="{{ url_for('static', filename='YatsysLogo.jpg') }}" alt="Company Logo" class="h-auto w-auto max-w-full md:max-w-xs lg:max-w-sm">
+                    <img src="{{ url_for('static', filename='yatsysMockup.png') }}" alt="Company Logo" class="h-auto w-auto max-w-full md:max-w-xs lg:max-w-sm">
                 </div>
             </div>
         </div>
@@ -189,9 +192,9 @@
         <div class="w-full md:w-1/2 px-4">
             <div class="flex border p-10 rounded-lg border-rounded-lg items-center flex-col md:flex-col h-full" style="margin: auto;">
                 <div class="w-full md:w-full lg:w-full md:pl-6 mb-12">
-                    <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Valentine's Day Card Website</h2>
-                    <p class="leading-relaxed text-base">A creative project combining JavaScript and CSS animations to craft a personalized Valentine's Day card</p>
-                    <a href="#" class="text-indigo-500 inline-flex items-center mt-3">Learn More<i class="fas fa-arrow-right ml-2"></i></a>
+                    <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Valentine's Card Website</h2>
+                    <p class="leading-relaxed text-base">A personal project combining JavaScript and CSS animations to craft a personalized Valentine's Day card - polaroid pics, music, and confetti included 🎉</p>
+                    <a href="{{ url_for('valentines') }}" class="text-indigo-600 font-bold inline-flex items-center mt-3">View Project<i class="fas fa-arrow-right ml-2"></i></a>
                 </div>
                 <div class="md:flex justify-center mt-4 md:mt-4">
                     <img src="static\valentinesMockup.png" alt="Valentine's Day Card" class="h-auto w-auto max-w-full md:max-w-xs lg:max-w-sm">
@@ -211,7 +214,7 @@
                 <div class="flex flex-col border border-gray-200 p-6 rounded-lg  border-rounded-lg flex-grow" style="min-height: 400px;">
                     <h3 class="text-md text-gray-900 font-medium bold-title">Python 2A Course: Data Structures & Algorithms</h3>
                     <p>Data structures and algorithms course material and examples</p>
-                    <a href="#" class="mt-auto text-indigo-500 inline-flex items-center mt-3">Learn More<i class="fas fa-arrow-right ml-2"></i></a>
+                    <a href="{{ url_for('py2a_dsa') }}" class="mt-auto text-indigo-600 font-bold inline-flex items-center mt-3">Learn More<i class="fas fa-arrow-right ml-2"></i></a>
                 </div>
                 </div>
                 
@@ -221,13 +224,13 @@
                     <div class="flex flex-col border border-gray-200 p-6 rounded-lg border-rounded-lg mb-4" style="min-height: 200px;">
                     <h3 class="text-md text-gray-900 font-medium bold-title">Introduction to APIs</h3>
                     <p>Modules and Assignments</p>
-                    <a href="#" class="mt-auto text-indigo-500 inline-flex items-center mt-3">Learn More<i class="fas fa-arrow-right ml-2"></i></a>
+                    <a href="{{ url_for('student_api') }}" class="mt-auto text-indigo-600 font-bold inline-flex items-center mt-3">Learn More<i class="fas fa-arrow-right ml-2"></i></a>
                     </div>
                     <!-- Intro to Generative AI Course -->
                     <div class="flex flex-col border border-gray-200 p-6 rounded-lg  border-rounded-lg" style="min-height: 200px;">
                     <h3 class="text-md text-gray-900 font-medium bold-title">Intro to Generative AI Course</h3>
                     <p>Teaching 8th-grade advanced Python students topics of Neural Networks, NLP, and Generative AI</p>
-                    <a href="#" class="mt-auto text-indigo-500 inline-flex items-center mt-3">Learn More<i class="fas fa-arrow-right ml-2"></i></a>
+                    <a href="{{ url_for('generative_ai') }}" class="mt-auto text-indigo-600 font-bold inline-flex items-center mt-3">Learn More<i class="fas fa-arrow-right ml-2"></i></a>
                     </div>
                 </div>
             </div>
@@ -302,9 +305,10 @@
                 <p class="text-base text-gray-500 mb-2 flex items-center"><i class="fas fa-map-marker-alt mr-2"></i>Remote - San Ramon, CA</p>
                 <!-- Using unordered list for descriptions and text-base for increased font size -->
                 <ul class="text-base text-gray-700 pl-5 list-disc">
-                    <li>Spearheading the development initiative to launch the 2.0 version of Nexclap, transforming it into a robust learning and recruiting platform for students and industry partners, resulting in a 40% increase in user engagement metrics.</li>
-                    <li>Integrating Zoom API for in house video meeting features</li>
-                    <li>Using OpenAI API to create a custom chatbot assistant</li>
+                    <li>Spearheading the expansion of an eLearning platform into an AI-enhanced social network for recruitment and career development, connecting students, job seekers, and recruiters</li>
+                    <li>Developing an in-house chatroom and video conference feature to facilitate direct interaction between recruiters and students</li>
+                    <li>Implementing a custom chatbot service using the OpenAI REST API, Flask, and OpenAI's Python SDK  for career advising and educational support</li>
+                    <li>Modernized development by migrating to a local PostgreSQL environment, resolving dependencies, integrating Mailtrap for email testing, and using Docker for containerization, saving hundreds of development hours and streamlining patch management</li>
                 </ul>
             </div>
         </div>
@@ -333,9 +337,9 @@
             <div class="flex-grow w-6/7 ml-8 pt-2">
                 <p class="text-base text-gray-500 mb-2 flex items-center"><i class="fas fa-map-marker-alt mr-2"></i>Remote - San Ramon, CA</p>
                 <ul class="text-base text-gray-700 pl-5 list-disc">
-                    <li>Developing comprehensive course material to mentor over 100 middle and high school students in data structures, algorithms, NLP, Python, Java, HTML, CSS, and JavaScript</li>
-                    <li>Incorporating interactive teaching methods, resulting in an average student satisfaction rating of 4.8/5 and a retention rate of 90%</li>
-                    <li>Conducting virtual class meetings with coordinated parent scheduling, achieving a 98% attendance rate while boosting parent engagement by 30% through timely reminders and weekly progress reports</li>
+                    <li>Developing comprehensive course material to mentor over 200 middle and high school students in data structures, algorithms, Python, Java, web development, and more</li>
+                    <li>Self-taught introductory Generative AI & NLP principles to teach a semester long class, achieving a 95% student satisfaction rating</li>
+                    <li>Conducting virtual class meetings with coordinated parent scheduling, boosting parent engagement by 30% through timely reminders and weekly progress reports</li>
                 </ul>
             </div>
         </div>
@@ -366,11 +370,9 @@
             <div class="flex-grow w-6/7 ml-8 pt-2">
                 <p class="text-base text-gray-500 mb-2 flex items-center"><i class="fas fa-map-marker-alt mr-2"></i>Remote - United States</p>
                 <ul class="text-base text-gray-700 pl-5 list-disc">
-                    <li>Engineered an MVP in an agile scrum environment using Flask and Google Cloud, for automated IoT-based home care utilizing facial and emotion recognition to send real-time alerts to parents of children with disabilities.</li>
-                    <li>Implemented client-side emotion detection and facial recognition using TensorFlow.js with a Firebase backend, leveraging custom-trained deep learning models with user-uploaded data to adapt to each child's personal emotional cues.</li>
-                    <li>Designed and built a user-friendly front-end UI based on Figma diagrams using HTML, CSS, and JavaScript.</li>
-                    <li>Collaborated with a cross-functional team across multiple time zones to gather stakeholder requirements from the founders, delivering a viable solution for the first phase of the prototype within two months.</li>
-                    <li>Created comprehensive technical documentation outlining the architecture, providing development recommendations, and ensuring a successful hand-off for future work.</li>
+                    <li>Contributed to an agile team developing a prototype using Flask and Google Cloud technologies focused on facial and emotion recognition, part of a larger initiative to enable real-time alert dispatch for parents of children with disabilities</li>
+                    <li>Assisted in developing custom deep learning models for personalized emotional cue recognition using TensorFlow.js and a Firebase-backend UI for user uploaded facial data, successfully meeting phase one requirements within a two-month timeline</li>
+                    <li>Authored technical documentation outlining the architecture, providing development recommendations, and ensuring a successful hand-off for future work</li>
                 </ul>
             </div>
         </div>
@@ -400,8 +402,8 @@
                 <p class="text-base text-gray-500 mb-2 flex items-center"><i class="fas fa-map-marker-alt mr-2"></i>Fort Worth, TX</p>
                 <!-- Using unordered list for descriptions and text-base for increased font size -->
                 <ul class="text-base text-gray-700 pl-5 list-disc">
-                    <li>Constructed a feasibility analysis model to examine warehouse inefficiencies, advancing the implementation of an RPA solution that reduced labor costs by 20%.</li>
-                    <li>Utilized Power BI and Excel for visualization of labor planning and warehouse management data to aid in decision-making and enhanced data reliability.</li>
+                    <li>Constructed a feasibility analysis model to examine warehouse inefficiencies, advancing the implementation of an RPA solution that reduced labor costs by 20%</li>
+                    <li>Utilized Power BI and Excel for visualization of labor planning and warehouse management data to aid in decision-making and enhanced data reliability</li>
                 </ul>
             </div>
         </div>
@@ -431,8 +433,8 @@
                 <p class="text-base text-gray-500 mb-2 flex items-center"><i class="fas fa-map-marker-alt mr-2"></i>Dallas, TX</p>
                 <!-- Using unordered list for descriptions and text-base for increased font size -->
                 <ul class="text-base text-gray-700 pl-5 list-disc">
-                    <li>Established an effective distribution channel for medical masks for 14 critical access hospitals and pop-up clinics during a global supply chain crisis, ensuring a reliable supply of PPE when most needed.</li>
-                    <li>Contributed to a 15% increase in sales by implementing a CRM system to improve order processing speeds and customer follow-up.</li>
+                    <li>Established an effective distribution channel for medical masks for 14 critical access hospitals and pop-up clinics during a global supply chain crisis, ensuring a reliable supply of PPE when most needed</li>
+                    <li>Contributed to a 15% increase in sales by implementing a CRM system to improve order processing speeds and customer follow-up</li>
                 </ul>
             </div>
         </div>
@@ -462,8 +464,8 @@
                 <p class="text-base text-gray-500 mb-2 flex items-center"><i class="fas fa-map-marker-alt mr-2"></i>Austin, TX</p>
                 <!-- Using unordered list for descriptions and text-base for increased font size -->
                 <ul class="text-base text-gray-700 pl-5 list-disc">
-                    <li>Spearheaded a property management startup focused on providing fully furnished corporate housing and short-term leases.</li>
-                    <li>Directed logistics for the entire property portfolio including four apartment units, three houses, and a duplex, generating $75,000 in revenue within 4 months.</li>
+                    <li>Co-founded a property management startup focused on providing fully furnished corporate housing and short-term leases</li>
+                    <li>Directed logistics for the entire property portfolio including four apartment units, one house and a duplex, generating $75,000 in revenue over 4 months</li>
                 </ul>
             </div>
         </div>
