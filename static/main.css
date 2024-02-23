@@ -10,29 +10,29 @@ nav .my-name {
     background-color: #6A5ACD; 
     border: none;
     border-radius: 50%; 
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* subtle shadow */
-    color: #FFFFFF; /* Text/icon color */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); 
+    color: #FFFFFF; 
     cursor: pointer;
-    display: none; /* Initially hidden until scrolled */
+    display: none; 
     font-size: 24px;
     height: 50px;
     opacity: 0.8;
-    outline: none; /* Removes focus outline */
-    position: fixed; /* Keeps it positioned on the screen */
+    outline: none;
+    position: fixed; 
     right: 10px;
     bottom: 10px;
     width: 50px;
-    z-index: 1000; /* Ensures it's above most other elements */
+    z-index: 1000; 
 }
 
 #scrollToTop:hover {
-    background-color: #9370DB; /* A slightly lighter purple for hover */
+    background-color: #9370DB; 
     opacity: 1; 
 }
 
 #scrollToTop:active {
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); /* Subtle change in shadow for click effect */
-    transform: translateY(2px); /* Moves it down slightly for a click effect */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); 
+    transform: translateY(2px); 
 }
 
 
@@ -629,21 +629,31 @@ body.dark-mode .experience-card.expanded .toggle-experience i.fa-minus {
     #mobile-menu {
         display: none; 
         position: absolute;
-        top: 100%; 
+        top: 77%; 
         left: 0;
         right: 0;
-        background-color: #000; 
+        background-color: #fff; 
         z-index: 1000; 
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2); 
+        background-color: #ffffff;
     }
 
     #mobile-menu a {
         display: block;
         padding: 15px;
-        color: #fff; 
+        color: #4f46e5; 
         border-bottom: 1px solid #333; 
         text-align: left;
+        font-size: calc(1rem + 0.5vw);
+        padding: 20px 15px;
+        transition: background-color 0.3s ease, color 0.3s ease;
     }
 
+    body.dark-mode #mobile-menu {
+        background-color: #111827; 
+        border: none; 
+    }
+    
     #mobile-menu a:last-child {
         border-bottom: none;
     }

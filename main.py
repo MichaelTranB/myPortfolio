@@ -75,7 +75,6 @@ def generative_ai():
     ]
 
     mode = request.cookies.get('mode', 'light')
-    # Make sure to pass the course_materials to the template here
     return render_template('generative_ai.html', mode=mode, course_materials=course_materials)
 
 

@@ -5,16 +5,14 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
         <script>
             (function() {
-                // Default to dark mode if no mode is set or if dark mode is explicitly set
                 var mode = localStorage.getItem('mode');
                 if (!mode) {
-                    document.documentElement.classList.add('dark-mode'); // Apply dark mode
-                    localStorage.setItem('mode', 'dark-mode'); // Save dark mode as the preference
+                    document.documentElement.classList.add('dark-mode'); 
+                    localStorage.setItem('mode', 'dark-mode'); 
                 } else if (mode === 'dark-mode') {
-                    document.documentElement.classList.add('dark-mode'); // Ensure dark mode if already set
+                    document.documentElement.classList.add('dark-mode'); 
                 }
         
-                // Toggle theme and save preference in local storage
                 document.getElementById('mode-switcher').addEventListener('change', function() {
                     document.documentElement.classList.toggle('dark-mode');
                     var newMode = document.documentElement.classList.contains('dark-mode') ? 'dark-mode' : 'light-mode';
@@ -110,18 +108,15 @@
         <script>
             
             document.addEventListener("DOMContentLoaded", function() {
-                // Function to update body padding-top based on navbar height
                 function updateBodyPadding() {
                     const navbarHeight = document.getElementById('navbar').offsetHeight;
-                    const isMobileView = window.innerWidth < 640; // Assuming 640px as the breakpoint for mobile view
-                    const additionalPadding = isMobileView ? 20 : 10; // Additional padding in pixels
+                    const isMobileView = window.innerWidth < 640; 
+                    const additionalPadding = isMobileView ? 20 : 10; 
                     document.body.style.paddingTop = `${navbarHeight + additionalPadding}px`;
                 }
         
-                // Call the function to initially set the padding
                 updateBodyPadding();
         
-                // Add event listener for window resize to update padding dynamically
                 window.addEventListener('resize', updateBodyPadding);
             });
         </script>
@@ -143,7 +138,7 @@
 
                     setTimeout(() => {
                         line.classList.remove("active-cursor");
-                        line.classList.add("solid-cursor");  // Add solid cursor to the line that's starting to type
+                        line.classList.add("solid-cursor");  
 
                         let typeDelay = 0;
                         for (let i = 0; i < length; i++) {
@@ -151,14 +146,13 @@
                                 line.textContent += content[i];
 
                                 if (i === length - 1) {
-                                    // If it's NOT the last line, remove all cursors
+                                   
                                     if (index !== lines.length - 1) {
                                         setTimeout(() => {
                                             line.classList.remove("solid-cursor");
-                                            lines[index + 1].classList.add("active-cursor"); // Start the blinking cursor on the next line
+                                            lines[index + 1].classList.add("active-cursor"); 
                                         }, typingDuration);
                                     } else {
-                                        // If it's the last line, keep the blinking cursor
                                         line.classList.add("active-cursor");
                                     }
                                 }
@@ -173,7 +167,6 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        // Simplified Scroll to Top functionality using native JavaScript
         const scrollToTopButton = document.getElementById('scrollToTop');
         scrollToTopButton.addEventListener('click', function(e) {
             e.preventDefault();
@@ -201,12 +194,10 @@
             });
         });
     
-        // Mobile menu toggle using jQuery for consistency with existing script
         $('#menu-toggle').click(function() {
             $('#mobile-menu').toggle();
         });
     
-        // Animation check for elements in the viewport
         function checkAnimations() {
             document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(element => {
                 if (isElementInViewport(element)) {
@@ -225,9 +216,8 @@
             );
         }
     
-        // Attach scroll event listener for animation checks
         window.addEventListener('scroll', checkAnimations);
-        checkAnimations(); // Perform an initial check when the page loads
+        checkAnimations(); 
     });
     </script>
     
