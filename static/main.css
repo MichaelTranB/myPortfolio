@@ -597,7 +597,7 @@ body.dark-mode .experience-card.expanded .toggle-experience i.fa-minus {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 769px) {
 
     html, body {
         max-width: 100%;
