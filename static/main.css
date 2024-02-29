@@ -343,9 +343,15 @@ p {
     font-family: 'Roboto Mono', monospace;
 }
 
-.san-serif-font p {
+.sans-serif-font, .sans-serif-font p {
     font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+
+.font-roboto-mono {
+    font-family: 'Roboto Mono', monospace;
+    color: #4F46E5;
+}
+
 
 .custom-padding {
     margin-top: -4.5em; 
@@ -597,7 +603,7 @@ body.dark-mode .experience-card.expanded .toggle-experience i.fa-minus {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 769px) {
 
     html, body {
         max-width: 100%;

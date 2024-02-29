@@ -32,7 +32,7 @@
         <header class="header">
             <nav class="bg-white py-4 px-6 fixed w-full top-0 z-50 shadow-md" id="navbar">
                 <div class="flex justify-between items-center space-x-4">
-                    <a href="#" id="home-link" class="text-indigo-600 text-lg font-semibold font-orbitron my-name shadow-text-bold">&lt Michael Tran /></a>
+                    <a href="/" id="home-link" class="text-indigo-600 text-lg font-semibold font-orbitron my-name shadow-text-bold">&lt; Michael Tran /></a>
                     <div class="flex justify-between items-center">
                         <div class="hidden md:flex items-center">
                             <a href="/#about" class="nav-link">About</a>
@@ -218,8 +218,41 @@
     
         window.addEventListener('scroll', checkAnimations);
         checkAnimations(); 
+
+         document.getElementById('home-link').addEventListener('click', function(e) {
+            e.preventDefault();
+
+            if(window.location.pathname !== '/') {
+                window.location.href = '/';
+            } else {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+        });
     });
     </script>
-    
+
+<script>
+    //Script for Toggling dark/light mode and remembering the choice
+    (function() {
+        var mode = localStorage.getItem('mode');
+        if (!mode) {
+            document.documentElement.classList.add('dark-mode'); 
+            localStorage.setItem('mode', 'dark-mode'); 
+        } else if (mode === 'dark-mode') {
+            document.documentElement.classList.add('dark-mode'); 
+        }
+
+        document.getElementById('mode-switcher').addEventListener('change', function() {
+            document.documentElement.classList.toggle('dark-mode');
+            var newMode = document.documentElement.classList.contains('dark-mode') ? 'dark-mode' : 'light-mode';
+            localStorage.setItem('mode', newMode);
+        });
+    })();
+</script>
+
+
     </body>
 </html>

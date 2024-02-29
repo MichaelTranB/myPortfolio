@@ -23,20 +23,28 @@
 
 <section id="about" class="mt-10 sm:mt-0">
     <div id="content">
-        <section class="pt-10 sm:pt-20 pb-4 sm:pb-10 bg-white san-serif-font mb-2 sm:mb-8" id="page-section">
+        <section class="pt-10 sm:pt-20 pb-4 sm:pb-10 bg-white sans-serif-font mb-2 sm:mb-8" id="page-section">
             <div class="container mx-auto px-10">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                     <div class="md:w-full md:order-2 slide-in-right">
                         <div class="about-me-title">
                             <h2 class="text-3xl sm:text-4xl lg:text-5xl mb-6 pt-2 font-orbitron text-indigo-600 bold-title">A Bit About Me ...</h2>
                         </div>                    
-                        <p class="font-orbitron text-base mb-4">As an Information Technology & Systems major, my path took an unexpected turn during my senior year capstone project with Siliconvalley4U. Initially only having limited coding knowledge, I found myself heavily involved in building a web portal tool for the company, which not only transformed the trajectory of my career but also sparked a deep interest in software development.</p>
+                        <p class="font-orbitron text-gray-700 text-base md:text-lg mb-4">
+                            During my last semester as an Information Technology & Systems major, I was matched with Siliconvalley4U for my senior capstone project to build a web portal tool for the company. 
+                            Despite having limited coding experience initially, I quickly became our team lead and learned on the fly how to work with JSON, Firebase, and Java syntax. 
+                            This experience sparked my interest in programming, leading me to switch careers and join the company as an apprentice after graduating.
+                        </p>
     
-                        <p class="text-gray-700 text-base mb-4">This newfound passion led me to work with innovative startups such as Yatsys, a company focusing on IoT-based home care for children with disablities, and Nexclap, a community oriented e-learning platform. There, I honed my skills in Python, Javascript, Flask, Tensorflow, and more, solidifying my foundation and shaping me into a dedicated software engineer.</p>
+                        <p class="text-gray-700 text-base md:text-lg mb-4">
+                            Since then, I've had the opportunity to contribute to some unique startup projects and have grown a full-stack skill set. 
+                            I now teach coding classes to kids at Siliconvalley4U while working part-time at Nexclap, an e-learning platform startup.
+                        </p>
     
-                        <p class="text-gray-700 text-base mb-4">In this journey, I've learned that software engineering extends beyond mere lines of code—it's about fostering a collaborative spirit. I excel in team dynamics, merging my technical know-how with strong people skills—an attribute refined through teaching coding to younger students and creating engaging educational content.</p>
-    
-                        <p class="text-gray-700 text-base mb-4">Fueled by my continuous drive to learn, I'm constantly expanding my skill set and love tackling complex problems. With a diverse experience portfolio, a love for innovation, and a strong commitment to growth, I am ready to join a team of forward-thinkers and together, create technology that makes an impact. Together, let's shape the future!</p>
+                        <p class="text-gray-700 text-base md:text-lg mb-4">
+                            This journey has helped me discover my passion, expand my technical skills, and fuel my continuous drive to learn. 
+                            Looking ahead, I'm excited to combine my love for collaboration and problem-solving, and contribute to tech innovations that will further my growth!
+                        </p>
                     </div>
 
                     <div class="md:w-full md:order-1 slide-in-left">
@@ -56,7 +64,6 @@
                 <div class="container mx-auto max-w-5xl px-10">
                     <div class="text-center fade-in">
                         <h2 class="text-3xl sm:text-4xl lg:text-5xl mb-6 font-orbitron text-indigo-600 bold-title">My Skills</h2>
-                        <p class="text-gray-700">Here are some of the tech I'm proficient in:</p>
                     </div>
                     <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-8 fade-in">
                         <!-- Python -->
@@ -160,8 +167,9 @@
                     <img src="static\nexclapMockup2.png" alt="Nexclap Logo" class="h-auto w-auto max-w-full md:max-w-xs lg:max-w-sm">
                 </div>
                 <div class="w-full md:w-2/3 lg:w-3/4 md:pl-6">
-                    <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Nexclap - Startup Learning Platform</h2>
-                    <p class="leading-relaxed text-base">Leading the development of Nexclap, integrating new features for an enhanced learning experience and investor engagement.</p>
+                    <h2 class="text-lg lg:text-xl font-roboto-mono font-medium title-font mb-2 font-bold">Nexclap - Startup Learning Platform</h2>
+
+                    <p class="leading-relaxed text-base sans-serif-font">Leading the development of Nexclap 2.0, integrating new features for a second launch to enhance the learning, networking and recruitment experience</p>
                     <a href="{{ url_for('nexclap') }}" class="text-indigo-600 font-bold inline-flex items-center mt-3">View Project<i class="fas fa-arrow-right ml-2"></i></a>
                 </div>
                 </div>
@@ -178,8 +186,8 @@
         <div class="w-full md:w-1/2 px-4 mb-4 md:mb-0">
             <div class="flex border border-rounded-lg p-10 rounded-lg items-center flex-col md:flex-col" style="margin: auto;">
                 <div class="w-full md:w-full lg:w-full md:pl-6 mb-12">
-                    <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Yatsys</h2>
-                    <p class="leading-relaxed text-base">A prototype focused on facial and emotion recognition, part of a larger initiative to enable real-time alert dispatch for parents of children with disabilities</p>
+                    <h2 class="text-lg lg:text-xl font-roboto-mono font-medium title-font mb-2 font-bold">Yatsys</h2>
+                    <p class="leading-relaxed text-base sans-serif-font">A prototype focused on facial and emotion recognition, part of a larger initiative to enable real-time alert dispatch for parents of children with disabilities</p>
                     <a href="{{ url_for('yatsys') }}" class="text-indigo-600 font-bold inline-flex items-center mt-3">View Project<i class="fas fa-arrow-right ml-2"></i></a>
                 </div>
                 <div class="flex justify-center mt-4 md:mt-4">
@@ -192,8 +200,8 @@
         <div class="w-full md:w-1/2 px-4">
             <div class="flex border p-10 rounded-lg border-rounded-lg items-center flex-col md:flex-col h-full" style="margin: auto;">
                 <div class="w-full md:w-full lg:w-full md:pl-6 mb-12">
-                    <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Valentine's Day Card Website</h2>
-                    <p class="leading-relaxed text-base">A personal project combining JavaScript and CSS animations to craft a personalized Valentine's Day card - polaroid pics, music, and confetti included 🎉</p>
+                    <h2 class="text-lg lg:text-xl font-roboto-mono font-medium title-font mb-2 font-bold">Valentine's Day Card Website</h2>
+                    <p class="leading-relaxed text-base sans-serif-font">A personal project combining JavaScript and CSS animations to craft a personalized Valentine's Day card - polaroid pics, music, and confetti included 🎉</p>
                     <a href="{{ url_for('valentines') }}" class="text-indigo-600 font-bold inline-flex items-center mt-3">View Project<i class="fas fa-arrow-right ml-2"></i></a>
                 </div>
                 <div class="md:flex justify-center mt-4 md:mt-4">
@@ -206,14 +214,14 @@
 
         <!-- Coding Instructor Work -->
         <div class="container mx-auto px-5 py-24 fade-in">
-            <div class="xl:w-5/6 lg:w-5/6 md:w-full px-4 mt-0 mx-auto">
-            <h2 class="text-lg text-gray-900 font-medium title-font mb-12 bold-title text-center">Coding Instructor Work</h2>
+            <div class="xl:w-5/6 lg:w-5/6 md:w-full px-4 -mt-10 mx-auto">
+            <h2 class="font-roboto-mono text-2xl md:text-3xl lg:text-3xl mb-12 font-bold text-center">Coding Instructor Work</h2>
             <div class="flex flex-wrap justify-center md:grid md:grid-cols-2 gap-x-5">
                 <!-- Python 2A -->
                 <div class="w-full px-4 mb-8 md:mb-0">
                 <div class="flex flex-col border border-gray-200 p-6 rounded-lg  border-rounded-lg flex-grow" style="min-height: 400px;">
-                    <h3 class="text-md text-gray-900 font-medium bold-title">Python 2A Course: Data Structures & Algorithms</h3>
-                    <p>Data structures and algorithms course material and examples</p>
+                    <h2 class="text-lg lg:text-xl font-roboto-mono font-medium title-font mb-2 font-bold">Python 2A Course: DSA</h3>
+                    <p class="leading-relaxed text-base sans-serif-font">Data structures and algorithms course material</p>
                     <a href="{{ url_for('py2a_dsa') }}" class="mt-auto text-indigo-600 font-bold inline-flex items-center mt-3">Learn More<i class="fas fa-arrow-right ml-2"></i></a>
                 </div>
                 </div>
@@ -222,14 +230,14 @@
                 <div class="w-full px-4">
                     <!-- Introduction to APIs -->
                     <div class="flex flex-col border border-gray-200 p-6 rounded-lg border-rounded-lg mb-4" style="min-height: 200px;">
-                    <h3 class="text-md text-gray-900 font-medium bold-title">Introduction to APIs</h3>
-                    <p>Modules and Assignments</p>
+                    <h2 class="text-lg lg:text-xl font-roboto-mono font-medium title-font mb-2 font-bold">Introduction to APIs</h3>
+                    <p class="leading-relaxed text-base sans-serif-font">Modules and Assignments</p>
                     <a href="{{ url_for('student_api') }}" class="mt-auto text-indigo-600 font-bold inline-flex items-center mt-3">Learn More<i class="fas fa-arrow-right ml-2"></i></a>
                     </div>
                     <!-- Intro to Generative AI Course -->
                     <div class="flex flex-col border border-gray-200 p-6 rounded-lg  border-rounded-lg" style="min-height: 200px;">
-                    <h3 class="text-md text-gray-900 font-medium bold-title">Intro to Generative AI Course</h3>
-                    <p>Teaching 8th-grade advanced Python students topics of Neural Networks, NLP, and Generative AI</p>
+                    <h2 class="text-lg lg:text-xl font-roboto-mono font-medium title-font mb-2 font-bold">Intro to Generative AI Course</h3>
+                    <p class="leading-relaxed text-base sans-serif-font">Teaching 8th-grade advanced Python students topics of Neural Networks, NLP, and Generative AI</p>
                     <a href="{{ url_for('generative_ai') }}" class="mt-auto text-indigo-600 font-bold inline-flex items-center mt-3">Learn More<i class="fas fa-arrow-right ml-2"></i></a>
                     </div>
                 </div>
