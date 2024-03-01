@@ -3,7 +3,6 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
-
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,33 +58,16 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
         <script>
-            document.addEventListener('DOMContentLoaded', (event) => {
-                if(localStorage.getItem('mode') === 'dark-mode') {
-                    document.body.classList.add('dark-mode');
-                    document.getElementById('mode-switcher').checked = true;
-                }
-            });
+            document.addEventListener('DOMContentLoaded', () => {
+                // Set the initial mode based on localStorage or default to dark-mode
+                const savedMode = localStorage.getItem('mode') || 'dark-mode';
+                document.body.classList.toggle('dark-mode', savedMode === 'dark-mode');
+                document.getElementById('mode-switcher').checked = savedMode === 'dark-mode';
     
-            document.getElementById('mode-switcher').addEventListener('click', function() {
-                document.body.classList.toggle('dark-mode');
-    
-                const lightModeIcon = document.querySelector('.light-mode-icon');
-                const darkModeIcon = document.querySelector('.dark-mode-icon');
-                if (document.body.classList.contains('dark-mode')) {
-                    lightModeIcon.style.display = 'none';
-                    darkModeIcon.style.display = 'inline-block';
-                } else {
-                    lightModeIcon.style.display = 'inline-block';
-                    darkModeIcon.style.display = 'none';
-                }
-    
-                var mode;
-                if (document.body.classList.contains('dark-mode')) {
-                    mode = 'dark-mode';
-                } else {
-                    mode = 'light-mode';
-                }
-                localStorage.setItem('mode', mode);
+                document.getElementById('mode-switcher').addEventListener('click', () => {
+                    document.body.classList.toggle('dark-mode');
+                    localStorage.setItem('mode', document.body.classList.contains('dark-mode') ? 'dark-mode' : 'light-mode');
+                });
             });
         </script>
         
@@ -218,25 +200,8 @@
     });
     </script>
 
-<script>
-    //Script for Toggling dark/light mode and remembering the choice
-    (function() {
-        var mode = localStorage.getItem('mode');
-        if (!mode) {
-            document.documentElement.classList.add('dark-mode'); 
-            localStorage.setItem('mode', 'dark-mode'); 
-        } else if (mode === 'dark-mode') {
-            document.documentElement.classList.add('dark-mode'); 
-        }
-
-        document.getElementById('mode-switcher').addEventListener('change', function() {
-            document.documentElement.classList.toggle('dark-mode');
-            var newMode = document.documentElement.classList.contains('dark-mode') ? 'dark-mode' : 'light-mode';
-            localStorage.setItem('mode', newMode);
-        });
-    })();
-</script>
-
-
+        <script src="{{ url_for('static', filename='js/themeSwitcher.js') }}" defer></script>
+        <script src="{{ url_for('static', filename='js/animations.js') }}" defer></script>
+        <script src="{{ url_for('static', filename='js/navigation.js') }}" defer></script>
     </body>
 </html>

@@ -202,33 +202,6 @@ body.dark-mode #transition-layer {
 }
 
 
-.icon-binary {
-    height: 2em;
-    width: 2em;
-    vertical-align: middle;
-    display: none;
-}   
-
-
-.light-mode-icon {
-    display: inline-block;
-}
-
-.dark-mode-icon{
-    height: 2.5em;
-    width: 2.5em;
-}
-
-@media (prefers-color-scheme: dark) {
-    .light-mode-icon {
-        display: none;
-    }
-
-    .dark-mode-icon {
-        display: inline-block;
-    }
-}
-
 .text-2xl {
     margin-top: 0.6em;
 }
