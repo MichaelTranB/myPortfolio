@@ -21,19 +21,19 @@ def student_api():
             'title': 'Introduction to APIs',
             'description': 'With a Simple Weather App',
             'link': 'https://gamma.app/docs/Introduction-to-APIs-with-a-Simple-Weather-App-l6ttjedomwep6qc',
-            'image': '\static\Screenshot 2023-12-20 160859.png'
+            'image': 'static/img/Screenshot 2023-12-20 160859.png'
         },
         {
             'title': 'Cat Facts API',
             'description': 'Mini Project implementing the Cat Facts API',
             'link': 'https://gamma.app/docs/Mini-Project-Random-Cat-Fact-Generator-8het0l1i3fvmy3q',
-            'image': 'static\Screenshot 2023-12-20 165037.png'
+            'image': 'static/img/Screenshot 2023-12-20 165037.png'
         },
         {
             'title': 'Google Maps API Project',
             'description': 'Student Project using the Google Maps API',
             'link': 'https://gamma.app/docs/Google-Maps-API-Project-38pmes92j8ba820',
-            'image': 'static\Screenshot 2023-12-20 160503.png'
+            'image': 'static/img/Screenshot 2023-12-20 160503.png'
         }
     ]
     mode = request.cookies.get('mode', 'light')
@@ -51,25 +51,25 @@ def generative_ai():
             'title': 'Generative Networks: GANs and VAEs',
             'description': 'An introduction to Neural Networks.',
             'link': 'https://gamma.app/docs/w5x6kc483k62dq2',
-            'image': 'static\Screenshot 2023-11-03 205218.png'
+            'image': 'static/img/Screenshot 2023-11-03 205218.png'
         },
         {
             'title': 'NLP: Introduction to Natural Language Processing',
             'description': 'Understanding the basics of Natural Language Processing.',
             'link': 'https://gamma.app/docs/0r46z0in5jnpv1f',
-            'image': 'static\Screenshot 2023-11-03 205339.png'
+            'image': 'static/img/Screenshot 2023-11-03 205339.png'
         },
         {
             'title': 'NLP Chatbot',
             'description': 'A simple chatbot applying the basics of natural language processing ',
             'link': 'https://colab.research.google.com/drive/1zdkPmYsYBVoQN_KWxM3v5AKO8jAuoLTY?usp=sharing',
-            'image': 'static\Screenshot 2023-11-03 213059.png'
+            'image': 'static/img/Screenshot 2023-11-03 213059.png'
         },
         {
             'title': 'TensorFlow Chatbot',
             'description': 'Chatbot using a neural network/TensorFlow ',
             'link': 'https://gamma.app/public/TensorFlow-Chatbot-vc4hp8yz8pwmsdh',
-            'image': 'static\Screenshot 2023-11-03 212134.png'
+            'image': 'static/img/Screenshot 2023-11-03 212134.png'
         }
        
     ]
