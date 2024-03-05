@@ -480,93 +480,47 @@ a.contact-link-effect:hover::after {
 }
 
 
-
-
-.experience-card {
-    transition: all 0.3s ease;
-    height: 80px;
+.experience-card-header {
     background-color: #430d79;
-    color: #f1f5f9; 
+    color: #ffffff;
+    cursor: pointer;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2px;
+    border: none;
+    transition: background-color 1s ease;
 }
-
-.experience-card:hover {
-    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
-}
-
-
-.experience-card.expanded {
-    height: auto;
-    background-color: #740cdc;
-}
-
-
-.experience-card.expanded h3, 
-.experience-card.expanded p, 
-.experience-card.expanded .text-gray-700 {
-    color: inherit; 
-}
-
-.toggle-experience i {
-    transition: transform 0.3s ease;
-}
-
 
 .experience-details {
-    gap: 16px; 
-}
-
-body.dark-mode .experience-card {
-    background-color: #430d79;
-}
-
-
-body.dark-mode .experience-card h3,
-body.dark-mode .experience-card p {
-    color: #f1f5f9;  
-}
-
-
-body.dark-mode .experience-card.expanded {
     background-color: #740cdc;
+    color: #ffffff;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+    padding: 0 20px; /* Include padding in the transition for a smoother effect */
+    margin-top: 4px;
+    border-radius: 8px;
 }
 
-
-body.dark-mode .experience-card.expanded > * {
-    background-color: #740cdc;
+body.dark-mode .experience-card-header, 
+body.dark-mode .experience-card-header.expanded, 
+body.dark-mode .experience-details {
+    background-color: #740cdc !important;
 }
 
-
-body.dark-mode .experience-card.expanded .experience-details * {
-    background-color: #740cdc;
-    color: #f1f5f9;  
+body.dark-mode .experience-card-header {
+    background-color: #430d79 !important;
 }
 
-.experience-card h3.bold-title {
-    color: #f1f5f9;  
+body.dark-mode .experience-card-header *, 
+body.dark-mode .experience-details * {
+    background-color: transparent !important;
+    color: #f1f5f9 !important;
 }
 
-
-
-
-body.dark-mode .experience-card {
-    background-color: #430d79; 
-   
-}
-
-
-body.dark-mode .experience-card.expanded {
-    background-color: #740cdc;
-    color: #f1f5f9; 
-}
-
-body.dark-mode .experience-card * {
-    background-color: inherit;
-    color: inherit; 
-}
-
-body.dark-mode .experience-card.expanded .toggle-experience i.fa-minus {
-    transform: rotate(0); 
-}
 
 
 @media (min-width: 1024px) { 
@@ -656,5 +610,3 @@ body.dark-mode .experience-card.expanded .toggle-experience i.fa-minus {
     }
 
 }
-
-

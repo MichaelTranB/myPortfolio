@@ -246,231 +246,42 @@
   </section>
 
 
-<script>
-   document.addEventListener("DOMContentLoaded", function() {
-    const experienceCards = document.querySelectorAll('.experience-card');
-
-    // Initialize the Siliconvalley4u card as expanded
-    const siliconValleyCard = document.querySelector('.experience-card');
-    siliconValleyCard.classList.add('expanded');
-    siliconValleyCard.querySelector('.toggle-experience i').classList.replace('fa-plus', 'fa-minus');
-
-    experienceCards.forEach(card => {
-        card.addEventListener('click', function() {
-            const details = card.querySelector('.experience-details');
-            const icon = card.querySelector('.toggle-experience i');
-
-            // Toggle hidden class on details
-            details.classList.toggle('hidden');
-
-            // Toggle icon between '+' and '-'
-            if (icon.classList.contains('fa-plus')) {
-                icon.classList.replace('fa-plus', 'fa-minus');
-            } else {
-                icon.classList.replace('fa-minus', 'fa-plus');
-            }
-
-            // Toggle expanded class on card
-            card.classList.toggle('expanded');
-        });
-    });
-});
-
-
-</script>
-
-<section id="experience" class="container mx-auto px-5 md:px-10 py-12">
-    <h2 class="text-5xl mb-12 font-orbitron text-indigo-600 bold-title fade-in">Professional Experience</h2>
-        
-       <!-- Nexclap -->
-       <div class="experience-card mb-2 border border-gray-200 p-6 rounded-lg border-rounded-lg fade-in cursor-pointer">
-        <div class="flex items-center justify-between">
-            <!-- Left content: Job title and duration -->
-            <div class="flex items-center w-11/12 justify-between">
-                <h3 class="text-lg text-gray-900 font-medium title-font mb-2 bold-title">Nexclap - Software Developer</h3>
-                <p class="text-sm ml-auto mt-1">Jan 2024 - Present</p>
-            </div>
-            <!-- Right content: Expand/collapse icon -->
-            <div class="toggle-experience w-1/12 text-center">
-                <i class="fas fa-plus"></i> 
-            </div>
-        </div>
-        <div class="experience-details mt-4 flex"> 
-            <!-- Company Logo -->
-            <div class="flex-none w-1/7 text-right">
-                <img src="{{url_for('static', filename='img/nexclap_logo.jpg')}}" alt="Company Logo" class="w-24 h-24 rounded-full mb-4">
-            </div>
-            <!-- Brief description and location -->
-            <div class="flex-grow w-6/7 ml-8 pt-2">
-                <p class="text-base text-gray-500 mb-2 flex items-center"><i class="fas fa-map-marker-alt mr-2"></i>Remote - San Ramon, CA</p>
-                <!-- Using unordered list for descriptions and text-base for increased font size -->
-                <ul class="text-base text-gray-700 pl-5 list-disc">
-                    <li>Spearheading the expansion of an eLearning platform into an AI-enhanced social network for recruitment and career development, connecting students, job seekers, and recruiters</li>
-                    <li>Developing an in-house chatroom and video conference feature to facilitate direct interaction between recruiters and students</li>
-                    <li>Implementing a custom chatbot service using the OpenAI REST API, Flask, and OpenAI's Python SDK  for career advising and educational support</li>
-                    <li>Modernized development by migrating to a local PostgreSQL environment, resolving dependencies, integrating Mailtrap for email testing, and using Docker for containerization, saving hundreds of development hours and streamlining patch management</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <!-- Siliconvalley4u -->
-    <div class="experience-card mb-2 border border-gray-200 p-6 rounded-lg border-rounded-lg fade-in cursor-pointer">
-        <div class="flex items-center justify-between">
-            <!-- Left content: Job title and duration -->
-            <div class="flex items-center w-11/12 justify-between">
-                <h3 class="text-lg text-gray-900 font-medium title-font mb-2 bold-title">Siliconvalley4u - Coding Instructor</h3>
-                <p class="text-sm ml-auto mt-1">Jan 2023 - Present</p>
-            </div>
-            <!-- Right content: Expand/collapse icon -->
-            <div class="toggle-experience w-1/12 text-center">
-                <i class="fas fa-plus"></i>
-            </div>
-        </div>
-        <div class="experience-details hidden mt-4 flex">
-            <!-- Company Logo -->
-            <div class="flex-none w-1/7 text-right">
-                <img src="{{url_for('static', filename='img/siliconvalley4u_logo.png')}}" alt="Yatsys Logo" class="w-24 h-24 rounded-full mb-4"> 
-            </div>
-            
-            <!-- Brief description -->
-            <div class="flex-grow w-6/7 ml-8 pt-2">
-                <p class="text-base text-gray-500 mb-2 flex items-center"><i class="fas fa-map-marker-alt mr-2"></i>Remote - San Ramon, CA</p>
-                <ul class="text-base text-gray-700 pl-5 list-disc">
-                    <li>Developing comprehensive course material to mentor over 200 middle and high school students in data structures, algorithms, Python, Java, web development, and more</li>
-                    <li>Self-taught introductory Generative AI & NLP principles to teach a semester long class, achieving a 95% student satisfaction rating</li>
-                    <li>Conducting virtual class meetings with coordinated parent scheduling, boosting parent engagement by 30% through timely reminders and weekly progress reports</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
+  <section id="experience" class="container mx-auto px-5 md:px-10 py-12">
+    <h2 class="text-4xl md:text-5xl mb-12 font-orbitron text-indigo-600 bold-title fade-in">Professional Experience</h2>
     
-
-    <!-- Yatsys -->
-    <div class="experience-card mb-2 border border-gray-200 p-6 rounded-lg border-rounded-lg fade-in cursor-pointer">
-        <div class="flex items-center justify-between">
-            <!-- Left content: Job title and duration -->
-            <div class="flex items-center w-11/12 justify-between">
-                <h3 class="text-lg text-gray-900 font-medium title-font mb-2 bold-title">Yatsys – Software Developer</h3>
-                <p class="text-sm ml-auto mt-1">June 2023 – July 2023</p>
-            </div>
-            <!-- Right content: Expand/collapse icon -->
-            <div class="toggle-experience w-1/12 text-center">
-                <i class="fas fa-plus"></i>
+    {% for exp in experiences %}
+    <div class="experience-card-header mb-2 bg-purple-800 text-white p-5 rounded-lg cursor-pointer transition-colors duration-300 ease-in-out flex items-center justify-between">
+        <div class="flex-grow">
+            <div class="flex flex-col md:flex-row items-start">
+                <h3 class="text-md md:text-lg font-medium title-font mb-2 md:mb-0">{{ exp.title }}</h3>
+                <p class="text-xs md:text-sm md:ml-auto md:mr-8">{{ exp.date }}</p>
             </div>
         </div>
-        <div class="experience-details hidden mt-4 flex">
-            <!-- Company Logo -->
-            <div class="flex-none w-1/7 text-right">
-                <img src="{{url_for('static', filename='img/YatsysLogo.jpg')}}" alt="Yatsys Logo" class="w-24 h-24 rounded-full mb-4"> 
+        <div class="toggle-experience md:mr-8">
+            <i class="fas fa-plus"></i>
+        </div>
+    </div>
+    <div class="experience-details hidden mt-4 p-6 bg-purple-700 text-white rounded-lg flex flex-col md:flex-row">
+        <div class="flex flex-col md:flex-row items-center md:items-start">
+            <div class="mb-4 md:mb-0 md:mr-4">
+                <img src="{{ exp.logo }}" alt="Company Logo" class="w-24 h-24 rounded-full">
             </div>
-            
-            <!-- Brief description -->
-            <div class="flex-grow w-6/7 ml-8 pt-2">
-                <p class="text-base text-gray-500 mb-2 flex items-center"><i class="fas fa-map-marker-alt mr-2"></i>Remote - United States</p>
-                <ul class="text-base text-gray-700 pl-5 list-disc">
-                    <li>Contributed to an agile team developing a prototype using Flask and Google Cloud technologies focused on facial and emotion recognition, part of a larger initiative to enable real-time alert dispatch for parents of children with disabilities</li>
-                    <li>Assisted in developing custom deep learning models for personalized emotional cue recognition using TensorFlow.js and a Firebase-backend UI for user uploaded facial data, successfully meeting phase one requirements within a two-month timeline</li>
-                    <li>Authored technical documentation outlining the architecture, providing development recommendations, and ensuring a successful hand-off for future work</li>
+            <div>
+                <p class="text-base mb-4 md:mb-2 text-center md:text-left"><i class="fas fa-map-marker-alt mr-2"></i>{{ exp.location }}</p>
+                <ul class="text-base pl-5 list-disc">
+                    {% for detail in exp.details %}
+                    <li>{{ detail }}</li>
+                    {% endfor %}
                 </ul>
             </div>
         </div>
     </div>
-
-    <!-- DHL Supply Chain -->
-    <div class="experience-card mb-2 border border-gray-200 p-6 rounded-lg border-rounded-lg fade-in cursor-pointer">
-        <div class="flex items-center justify-between">
-            <!-- Left content: Job title and duration -->
-            <div class="flex items-center w-11/12 justify-between">
-                <h3 class="text-lg text-gray-900 font-medium title-font mb-2 bold-title">DHL Supply Chain – Business Data Analyst Intern</h3>
-                <p class="text-sm ml-auto mt-1">June 2021 – July 2021</p>
-            </div>
-            <!-- Right content: Expand/collapse icon -->
-            <div class="toggle-experience w-1/12 text-center">
-                <i class="fas fa-plus"></i>
-            </div>
-        </div>
-        <div class="experience-details hidden mt-4 flex">
-            <!-- Company Logo -->
-            <div class="flex-none w-1/7 text-right">
-                <img src="{{url_for('static', filename='img/DHL_logo.png')}}" alt="Company Logo" class="w-24 h-24 rounded-full mb-4">
-            </div>
-            
-            <!-- Brief description -->
-            <div class="flex-grow w-6/7 ml-8 pt-2">
-                <p class="text-base text-gray-500 mb-2 flex items-center"><i class="fas fa-map-marker-alt mr-2"></i>Fort Worth, TX</p>
-                <!-- Using unordered list for descriptions and text-base for increased font size -->
-                <ul class="text-base text-gray-700 pl-5 list-disc">
-                    <li>Constructed a feasibility analysis model to examine warehouse inefficiencies, advancing the implementation of an RPA solution that reduced labor costs by 20%</li>
-                    <li>Utilized Power BI and Excel for visualization of labor planning and warehouse management data to aid in decision-making and enhanced data reliability</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-     <!-- Zen Distributions -->
-    <div class="experience-card mb-2 border border-gray-200 p-6 rounded-lg border-rounded-lg fade-in cursor-pointer">
-        <div class="flex items-center justify-between">
-            <!-- Left content: Job title and duration -->
-            <div class="flex items-center w-11/12 justify-between">
-                <h3 class="text-lg text-gray-900 font-medium title-font mb-2 bold-title">Zen Distributions – Product Consultant</h3>
-                <p class="text-sm ml-auto mt-1">May 2020 – June 2020</p>
-            </div>
-            <!-- Right content: Expand/collapse icon -->
-            <div class="toggle-experience w-1/12 text-center">
-                <i class="fas fa-plus"></i>
-            </div>
-        </div>
-        <div class="experience-details hidden mt-4 flex">
-            <!-- Company Logo -->
-            <div class="flex-none w-1/7 text-right">
-                <img src="{{url_for('static', filename='img/zendistributionslogo.jpg')}}" alt="Company Logo" class="w-24 h-24 rounded-full mb-4">
-            </div>
-            
-            <!-- Brief description -->
-            <div class="flex-grow w-6/7 ml-8 pt-2">
-                <p class="text-base text-gray-500 mb-2 flex items-center"><i class="fas fa-map-marker-alt mr-2"></i>Dallas, TX</p>
-                <!-- Using unordered list for descriptions and text-base for increased font size -->
-                <ul class="text-base text-gray-700 pl-5 list-disc">
-                    <li>Established an effective distribution channel for medical masks for 14 critical access hospitals and pop-up clinics during a global supply chain crisis, ensuring a reliable supply of PPE when most needed</li>
-                    <li>Contributed to a 15% increase in sales by implementing a CRM system to improve order processing speeds and customer follow-up</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <!-- Kaizen Guest Properties -->
-    <div class="experience-card mb-2 border border-gray-200 p-6 rounded-lg border-rounded-lg fade-in cursor-pointer">
-        <div class="flex items-center justify-between">
-            <!-- Left content: Job title and duration -->
-            <div class="flex items-center w-11/12 justify-between">
-                <h3 class="text-lg text-gray-900 font-medium title-font mb-2 bold-title">Kaizen Guest Properties – Co-Founder & Property Manager</h3>
-                <p class="text-sm ml-auto mt-1">Feb 2019 – Sept 2019</p>
-            </div>
-            <!-- Right content: Expand/collapse icon -->
-            <div class="toggle-experience w-1/12 text-center">
-                <i class="fas fa-plus"></i>
-            </div>
-        </div>
-        <div class="experience-details hidden mt-4 flex">
-            <!-- Company Logo -->
-            <div class="flex-none w-1/7 text-right">
-                <img src="{{url_for('static', filename='img/stayhikaru_logo.jpg')}}" alt="Company Logo" class="w-24 h-24 rounded-full mb-4">
-            </div>
-            
-            <!-- Description -->
-            <div class="flex-grow w-6/7 ml-8 pt-2">
-                <p class="text-base text-gray-500 mb-2 flex items-center"><i class="fas fa-map-marker-alt mr-2"></i>Austin, TX</p>
-                <ul class="text-base text-gray-700 pl-5 list-disc">
-                    <li>Co-founded a property management startup focused on providing fully furnished corporate housing and short-term leases</li>
-                    <li>Directed logistics for the entire property portfolio including four apartment units, one house and a duplex, generating $75,000 in revenue over 4 months</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
+    {% endfor %}
 </section>
+
+
+
+<script src="{{ url_for('static', filename='js/accordian.js') }}" defer></script>
 
 <section id="contact">
     <div class="container mx-auto mt-8 md:mt-0 pt-16 md:pt-24 text-center contact-section fade-in" style="padding-bottom: 100px; min-height: 100vh;">
