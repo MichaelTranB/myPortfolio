@@ -33,14 +33,23 @@ document.addEventListener("DOMContentLoaded", function() {
     // Smooth scrolling for navigation links using native JavaScript
     document.querySelectorAll('a.nav-link').forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href').replace("/", "");
-            const targetElement = document.querySelector(targetId);
+            e.preventDefault(); // Prevent the default anchor behavior
+
+            const targetId = this.getAttribute('href').replace("/", ""); // Get the target ID
+            const targetElement = document.querySelector(targetId); // Select the target element
+
             if (targetElement) {
-                targetElement.scrollIntoView({ behavior: 'smooth' });
+                // Calculate the target position, accounting for the navbar height
+                const navbarHeight = document.getElementById('navbar').offsetHeight;
+                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight - 20;
+
+                // Smooth scroll to the target position
+                window.scrollTo({ top: targetPosition, behavior: 'smooth' });
             }
         });
     });
+
+    
 
     $('#menu-toggle').click(function() {
         $('#mobile-menu').toggle();

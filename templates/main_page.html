@@ -246,11 +246,12 @@
   </section>
 
 
-  <section id="experience" class="container mx-auto px-5 md:px-10 py-12">
+<section id="experience" class="container mx-auto px-5 md:px-10 py-12">
     <h2 class="text-4xl md:text-5xl mb-12 font-orbitron text-indigo-600 bold-title fade-in">Professional Experience</h2>
     
     {% for exp in experiences %}
-    <div class="experience-card-header mb-2 bg-purple-800 text-white p-5 rounded-lg cursor-pointer transition-colors duration-300 ease-in-out flex items-center justify-between">
+    <!-- Header Card -->
+    <div class="experience-card-header mt-2 mb-2 bg-purple-800 text-white p-5 rounded-lg cursor-pointer transition-colors duration-300 ease-in-out flex items-center justify-between">
         <div class="flex-grow">
             <div class="flex flex-col md:flex-row items-start">
                 <h3 class="text-md md:text-lg font-medium title-font mb-2 md:mb-0">{{ exp.title }}</h3>
@@ -261,23 +262,24 @@
             <i class="fas fa-plus"></i>
         </div>
     </div>
-    <div class="experience-details hidden mt-4 p-6 bg-purple-700 text-white rounded-lg flex flex-col md:flex-row">
-        <div class="flex flex-col md:flex-row items-center md:items-start">
-            <div class="mb-4 md:mb-0 md:mr-4">
-                <img src="{{ exp.logo }}" alt="Company Logo" class="w-24 h-24 rounded-full">
-            </div>
-            <div>
-                <p class="text-base mb-4 md:mb-2 text-center md:text-left"><i class="fas fa-map-marker-alt mr-2"></i>{{ exp.location }}</p>
-                <ul class="text-base pl-5 list-disc">
-                    {% for detail in exp.details %}
-                    <li>{{ detail }}</li>
-                    {% endfor %}
-                </ul>
-            </div>
+    <!-- Details Card with adjusted padding and margin -->
+    <div class="experience-details mt-2 py-10 px-6 bg-purple-700 text-white rounded-lg flex flex-col md:flex-row items-center md:items-start">
+        <div class="mb-4 md:mb-0 md:mr-4 flex-shrink-0">
+            <img src="{{ exp.logo }}" alt="Company Logo" class="w-24 h-24 rounded-full object-cover">
+        </div>
+        <div class="flex-grow">
+            <p class="text-base mb-4 md:mb-2 text-center md:text-left"><i class="fas fa-map-marker-alt mr-2"></i>{{ exp.location }}</p>
+            <ul class="text-xs md:text-base pl-5 list-disc space-y-2">
+                {% for detail in exp.details %}
+                <li class="custom-li">{{ detail }}</li>
+                {% endfor %}
+            </ul>
         </div>
     </div>
     {% endfor %}
 </section>
+
+
 
 
 

@@ -479,9 +479,8 @@ a.contact-link-effect:hover::after {
     width: 100%;
 }
 
-
 .experience-card-header {
-    background-color: #430d79;
+    background-color: #6d28d9; /* Default color for header card */
     color: #ffffff;
     cursor: pointer;
     padding: 20px;
@@ -491,28 +490,31 @@ a.contact-link-effect:hover::after {
     align-items: center;
     margin-bottom: 2px;
     border: none;
-    transition: background-color 1s ease;
+    transition: background-color 0.3s ease-in-out; /* Smooth transition for color change */
 }
 
 .experience-details {
-    background-color: #740cdc;
+    background-color: #430d79; /* Color for details card */
     color: #ffffff;
+    visibility: hidden;
     overflow: hidden;
-    max-height: 0;
-    transition: max-height 0.5s ease-out, padding 0.5s ease-out;
-    padding: 0 20px; /* Include padding in the transition for a smoother effect */
+    max-height: 0; /* Start collapsed */
+    transition: max-height 0.5s ease-out, padding 0.5s ease-out; /* Smooth transition for expanding/collapsing */
+    padding: 0 20px; /* Start with no vertical padding, maintain horizontal padding */
     margin-top: 4px;
+    margin-bottom: 1px; 
     border-radius: 8px;
 }
 
+/* Dark mode specific styles */
 body.dark-mode .experience-card-header, 
 body.dark-mode .experience-card-header.expanded, 
 body.dark-mode .experience-details {
-    background-color: #740cdc !important;
+    background-color: #740cdc !important; /* Override color for dark mode if necessary */
 }
 
 body.dark-mode .experience-card-header {
-    background-color: #430d79 !important;
+    background-color: #430d79 !important; /* Default dark mode header card color */
 }
 
 body.dark-mode .experience-card-header *, 
@@ -521,6 +523,9 @@ body.dark-mode .experience-details * {
     color: #f1f5f9 !important;
 }
 
+.custom-li {
+    line-height: 1.2; /* Adjusts the spacing for wrapped lines within a bullet */
+}
 
 
 @media (min-width: 1024px) { 

@@ -11,10 +11,10 @@ def index():
             "date": "Jan 2024 - Present",
             "location": "Remote - San Ramon, CA",
             "details": [
-                "Spearheading the expansion of our platform to incorporate AI-driven features for enhanced user engagement.",
-                "Developing a scalable backend infrastructure using Node.js and MongoDB to support real-time data processing and analytics.",
-                "Implementing a custom chatbot service using the OpenAI GPT-3 model to provide instant support and enhance customer service.",
-                "Leading the migration to a microservices architecture to improve modularity and deployment efficiency."
+                "Spearheading the expansion of an eLearning platform into an AI-enhanced social network designed to connect students with recruiters, utilizing Google Cloud for scalability, data management, and storage",
+                "Implementing a custom chatbot service using the OpenAI REST API & Python SDK with Flask for career and education advising",
+                "Developing an in-house video conference feature and recruiter hub to facilitate direct interaction between students and recruiters",
+                "Modernized development by migrating to a local PostgreSQL environment, using Docker for containerization, and integrating GitHub Actions for automatic deployment and CI/CD, saving hundreds of development hours and streamlining patch management"
             ],
             "logo": "static/img/nexclap_logo.jpg"
         },
@@ -23,26 +23,26 @@ def index():
             "date": "Jan 2023 - Present",
             "location": "Remote - San Ramon, CA",
             "details": [
-                "Developing comprehensive course material to mentor over 200 middle and high school students in data structures, algorithms, Python, Java, web development, and more.",
-                "Self-taught introductory Generative AI & NLP principles to teach a semester-long class, achieving a 95% student satisfaction rating.",
-                "Conducting virtual class meetings with coordinated parent scheduling, boosting parent engagement by 30% through timely reminders and weekly progress reports."
+                "Developing comprehensive course materials to mentor over 200 middle and high school students in data structures, algorithms, Python, Java, web development, and more",
+                "Self-taught introductory Generative AI & NLP principles to teach a semester long class, achieving a 95% student satisfaction rating",
+                "Conducting virtual class meetings with coordinated parent scheduling, boosting parent engagement by 30% through timely reminders and weekly progress reports"
             ],
             "logo": "static/img/siliconvalley4u_logo.png"
         },
         {
-            "title": "Yatsys – Software Developer",
-            "date": "June 2023 – July 2023",
+            "title": "Yatsys - Software Developer",
+            "date": "June 2023 - July 2023",
             "location": "Remote - United States",
             "details": [
-                "Contributed to an agile team developing a prototype using Flask and Google Cloud technologies focused on facial and emotion recognition, part of a larger initiative to enable real-time alert dispatch for parents of children with disabilities.",
-                "Assisted in developing custom deep learning models for personalized emotional cue recognition using TensorFlow.js and a Firebase-backend UI for user uploaded facial data, successfully meeting phase one requirements within a two-month timeline.",
-                "Authored technical documentation outlining the architecture, providing development recommendations, and ensuring a successful hand-off for future work."
+                "Contributed to an agile team developing a prototype using Flask and Google Cloud technologies focused on facial and emotion recognition, part of a larger initiative to enable real-time alert dispatch for parents of children with disabilities",
+                "Assisted in developing custom deep learning models for personalized emotional cue recognition using TensorFlow.js and a Firebase-backend UI for user uploaded facial data, successfully meeting phase one requirements within a two-month timeline",
+                "Authored technical documentation outlining the architecture, providing development recommendations, and ensuring a successful hand-off for future work"
             ],
             "logo": "static/img/YatsysLogo.jpg"
         },
         {
-            "title": "DHL Supply Chain – Business Data Analyst Intern",
-            "date": "June 2021 – July 2021",
+            "title": "DHL Supply Chain - Business Data Analyst Intern",
+            "date": "June 2021 - July 2021",
             "location": "Fort Worth, TX",
             "details": [
                 "Constructed a feasibility analysis model to examine warehouse inefficiencies, advancing the implementation of an RPA solution that reduced labor costs by 20%.",
@@ -51,8 +51,8 @@ def index():
             "logo": "static/img/DHL_logo.png"
         },
         {
-            "title": "Zen Distributions – Product Consultant",
-            "date": "May 2020 – June 2020",
+            "title": "Zen Distributions - Product Consultant",
+            "date": "May 2020 - June 2020",
             "location": "Dallas, TX",
             "details": [
                 "Established an effective distribution channel for medical masks for 14 critical access hospitals and pop-up clinics during a global supply chain crisis, ensuring a reliable supply of PPE when most needed.",
@@ -61,8 +61,8 @@ def index():
             "logo": "static/img/zendistributionslogo.jpg"
         },
         {
-            "title": "Kaizen Guest Properties – Co-Founder & Property Manager",
-            "date": "Feb 2019 – Sept 2019",
+            "title": "Kaizen Guest Properties - Co-Founder & Property Manager",
+            "date": "Feb 2019 - Sept 2019",
             "location": "Austin, TX",
             "details": [
                 "Co-founded a property management startup focused on providing fully furnished corporate housing and short-term leases.",
