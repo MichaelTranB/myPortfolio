@@ -528,6 +528,22 @@ body.dark-mode .experience-details * {
 }
 
 
+.custom-note-bg,
+.custom-note-bg * { /* This targets the container and all child elements */
+    background-color: #ccffbd !important; /* Ensures the background color stays consistent */
+    border-color: #4caf50 !important; /* Ensures the border color stays consistent */
+    color: #2d6a4f !important; /* Ensures the text color stays consistent */
+}
+
+body.dark-mode .custom-note-bg,
+body.dark-mode .custom-note-bg * { /* Ensures the styles remain the same in dark mode */
+    background-color: #ccffbd !important; /* Keeps the background color the same in dark mode */
+    border-color: #4caf50 !important; /* Keeps the border color the same in dark mode */
+    color: #2d6a4f !important; /* Keeps the text color the same in dark mode */
+}
+
+
+
 @media (min-width: 1024px) { 
     body {
         padding-top: 0px !important; 

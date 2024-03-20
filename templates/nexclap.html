@@ -8,9 +8,14 @@
             <div class="w-full lg:w-1/2">
                 <h2 class="text-6xl sm:text-7xl lg:text-8xl font-bold font-orbitron text-indigo-600 mt-8 mb-14">Nexclap 2.0</h2>
                 <p class="sans-serif-font text-base md:text-lg mb-8">
-                    Nexclap is an eLearning platform partnered with Siliconvalley4u that offers a wide range of courses. I'm excited to be part of the team that's transforming Nexclap into an innovative, AI-powered social network aimed at enhancing recruitment and career development. 
+                    Nexclap is an eLearning platform partnered with Siliconvalley4u that offers a wide range of courses. I'm currently part of the team that's transforming Nexclap into an innovative, AI-powered social network aimed at enhancing recruitment and career development. 
                     Our goal is to create a dynamic space that connects students, job seekers, and recruiters, effectively closing the gap between education and employment.
                 </p>
+
+                <div class="custom-note-bg bg-green-100 border-l-4 border-green-500 text-green-700 sans-serif-font p-4 mb-4 text-sm" role="alert">
+                    <p class="font-bold">Note:</p>
+                    <p>The new features for Nexclap 2.0 are currently in the development phase. However, you can find an overview of the project and the features I'm working on below. I will be updating this page once we have a demo!</p>
+                </div>
             </div>
             
             <div class="w-full lg:w-1/2">
@@ -34,52 +39,48 @@
         </div>
 
         <div class="w-full px-4 sm:px-10 mt-20 sans-serif-font">
-            <img src="{{ url_for('static', filename='img/nexclap_page1.png') }}" alt="Project Screenshot" class="rounded-lg shadow-lg mb-5" style="max-width: 100%; height: auto;">
-            <p class="sans-serif-font text-base md:text-lg mt-12 mb-12">
-                Currently in its early startup phase, Nexclap has already established partnerships with various companies across different sectors in the San Francisco Bay Area. Our vision extends to incorporating career advisors into our platform, enabling users to easily schedule sessions for advice, consulting, and more. 
-                Through our strong partnerships, we aim to facilitate direct job placements, enriching our community's career opportunities.
-            </p>
-            <img src="{{ url_for('static', filename='img/nexclap_page2.png') }}" alt="Project Screenshot" class="rounded-lg shadow-lg mb-5" style="max-width: 100%; height: auto;">
+            
+            <!-- First text and image section -->
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <p class="sans-serif-font text-base md:text-lg md:w-5/12">
+                    Currently in its early startup phase, Nexclap has already established partnerships with various companies across different sectors in the San Francisco Bay Area. Our vision extends to incorporating career advisors into our platform, enabling users to easily schedule sessions for advice, consulting, and more. 
+                    Through our strong partnerships, we aim to facilitate direct job placements, enriching our community's career opportunities.
+                </p>
+                <div class="md:w-7/12">
+                    <img src="{{ url_for('static', filename='img/nexclap_page2.png') }}" alt="Project Screenshot" class="rounded-lg shadow-lg" style="width: 100%; height: auto;">
+                </div>
+            </div>
+        
+            <!-- Second text and image section -->
+            <div class="flex flex-col md:flex-row items-center gap-8 mt-12">
+                <div class="md:w-5/12">
+                    <p class="sans-serif-font text-base md:text-lg">
+                        On the technical front, I'm working on developing core features such as an in-house chatroom and video conferencing tool, as well as a dashboard and a community-driven social network feed. This setup is designed to facilitate direct interactions between recruiters and students. Moreover, it enables students to showcase their portfolios, and post content or other project work directly to a network of active recruiters.
+                    </p>
+                </div>
+                <div class="md:w-7/12">
+                    <img src="{{ url_for('static', filename='img/nexclap_page1.png') }}" alt="Project Screenshot" class="rounded-lg shadow-lg mb-5 md:mb-0" style="width: 100%; height: auto;">
+                </div>
+            </div>
+        
+            <!-- Third text and image section -->
+            <div class="flex flex-col md:flex-row items-center gap-8 mt-12">
+                <div class="md:w-5/12">
+                    <p class="sans-serif-font text-base md:text-lg">
+                        These tools are designed to streamline the interactions between career advisors, recruiters, and our users, simplifying the recruitment and career advising process and making it more interactive. With over 1000 students and current active users ready to participate in our initial launch, we're gearing up to expand our user base and make Nexclap a cornerstone for career development and recruitment.
+                    </p>
+                </div>
+                <div class="md:w-7/12">
+                    <img src="{{ url_for('static', filename='img/nexclapsstemp.png') }}" alt="Project Screenshot" class="rounded-lg shadow-lg mb-5 md:mb-0" style="width: 100%; height: auto;">
+                </div>
+            </div>
+                            
         </div>
-        <p class="sans-serif-font text-base md:text-lg mb-4">
-            On the technical front, I'm working on developing core features such as an in-house chatroom and video conferencing tool, as well as a dashboard and a community-driven social network feed. This setup is designed to facilitate direct interactions between recruiters and students. 
-            Moreover, it enables students to showcase their portfolios, and post content or other project work directly to a network of active recruiters.
-        </p>
-        <p class="sans-serif-font text-base md:text-lg mb-4">
-            These tools are designed to  streamline the interactions between career advisors, recruiters, and our users, simplifying the recruitment and career advising process and making it more interactive.
-        </p>
-        <p class="sans-serif-font text-base md:text-lg mb-4">
-            With over 1000 students and current active users ready to participate in our initial launch, we're gearing up to expand our user base and make Nexclap a cornerstone for career development and recruitment.
-        </p>
     </div>
 </section>
-
-
 
 
 {% endblock %}
 
 
 
-<div class="w-4/5 pr-10">
-    <h2 class="text-5xl font-bold font-orbitron text-indigo-600 mb-12">Nexclap</h2>
-        <p class="font-orbitron text-base mb-4">
-            Nexclap is an eLearning platform developed by Siliconvalley4u that offers a wide range of courses. I'm excited to be part of the team that's transforming Nexclap into an innovative, AI-powered social network aimed at enhancing recruitment and career development. 
-            Our goal is to create a dynamic space that connects students, job seekers, and recruiters, effectively closing the gap between education and employment.
-        </p>
-        <p class="font-orbitron text-base mb-4">
-            Currently in its early startup phase, Nexclap has already established partnerships with various companies across different sectors in the San Francisco Bay Area. Our vision extends to incorporating career advisors into our platform, enabling users to easily schedule sessions for advice, consulting, and more. Through our strong partnerships, we aim to facilitate direct job placements, enriching our community's career opportunities.
-        </p>
-        <p class="font-orbitron text-base mb-4">
-            Moreover, we're excited about introducing a unique system of badges. These badges serve as certifications or merits, highlighting a user's skills and achievements, thereby increasing their visibility and credibility to potential employers.
-        </p>
-        <p class="font-orbitron text-base mb-4">
-            On the technical front, I'm working on developing core features such as an in-house chatroom, video conferencing, and a dashboard. These tools are designed to streamline the interaction between career advisors, recruiters, and our users, making the process of scheduling appointments and meetings seamless.
-        </p>
-        <p class="font-orbitron text-base mb-4">
-            With over 800 students and active users ready to participate in our initial launch, we're gearing up to expand our user base and make Nexclap a cornerstone for career development and recruitment. Through innovation and technology, we're on a mission to revolutionize how people connect, learn, and advance in their careers.
-        </p>
-        <a href="https://www.nexclap.com/" class="inline-block bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-2 px-4 rounded transition-colors duration-200">
-            Open Project
-        </a>
-    </div>
