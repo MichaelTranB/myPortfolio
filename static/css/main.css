@@ -1,6 +1,3 @@
-
-
-
 nav .my-name {
     font-size: 1.6em;
     margin-left: 3em;
@@ -480,7 +477,7 @@ a.contact-link-effect:hover::after {
 }
 
 .experience-card-header {
-    background-color: #430d79; 
+    background-color: #430d79;  /* Switch to #562586 if too dark in light mode */
     color: #ffffff;
     cursor: pointer;
     padding: 20px;
@@ -494,7 +491,7 @@ a.contact-link-effect:hover::after {
 }
 
 .experience-details {
-    background-color: #740cdc;
+    background-color: #603ec3;
     color: #ffffff;
     visibility: hidden;
     overflow: hidden;
