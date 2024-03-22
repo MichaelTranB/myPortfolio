@@ -43,7 +43,7 @@
     
                         <p class="text-gray-700 text-base md:text-lg mb-4">
                             This journey has helped me discover my passion, expand my technical skills, and fuel my continuous drive to learn. 
-                            Looking ahead, I'm excited to combine my love for collaboration and problem-solving, and contribute to tech innovations that will further my growth!
+                            Looking ahead, I'm excited to continue my career growth and work on some cool projects!
                         </p>
                     </div>
 
@@ -166,8 +166,8 @@
                     <img src="static/img/nexclapMockup2.png" alt="Nexclap Logo" class="h-auto w-auto max-w-full md:max-w-xs lg:max-w-sm">
                 </div>
                 <div class="w-full md:w-2/3 lg:w-3/4 md:pl-6">
-                    <h2 class="text-lg lg:text-xl font-roboto-mono font-medium title-font mb-2 font-bold">Nexclap - Startup Learning Platform</h2>
-                    <p class="leading-relaxed text-base sans-serif-font">Leading the development of Nexclap 2.0, integrating new features for a second launch to enhance the learning, networking and recruitment experience</p>
+                    <h2 class="text-lg lg:text-xl font-roboto-mono font-medium title-font mb-2 font-bold">Nexclap - eLearning Platform Startup</h2>
+                    <p class="leading-relaxed text-base sans-serif-font">Leading the development of Nexclap 2.0, integrating new features for a second launch to enhance the education, networking and recruitment experience for students and recruiters</p>
                     <a href="{{ url_for('nexclap') }}" class="text-indigo-600 font-bold inline-flex items-center mt-3">View Project<i class="fas fa-arrow-right ml-2"></i></a>
                 </div>
                 </div>
@@ -194,7 +194,7 @@
         <div class="w-full md:w-1/2 px-4">
             <div class="flex border p-10 rounded-lg border-rounded-lg items-center flex-col md:flex-col h-full" style="margin: auto;">
                 <div class="w-full md:w-full lg:w-full md:pl-6 mb-12">
-                    <h2 class="text-lg lg:text-xl font-roboto-mono font-medium title-font mb-2 font-bold">Valentine's Day Card Website</h2>
+                    <h2 class="text-lg lg:text-xl font-roboto-mono font-medium title-font mb-2 font-bold">Valentine's Card Website</h2>
                     <p class="leading-relaxed text-base sans-serif-font">A personal project combining JavaScript and CSS animations to craft a personalized Valentine's Day card - polaroid pics, music, and confetti included 🎉</p>
                     <a href="{{ url_for('valentines') }}" class="text-indigo-600 font-bold inline-flex items-center mt-3">View Project<i class="fas fa-arrow-right ml-2"></i></a>
                 </div>
@@ -251,7 +251,7 @@
     
     {% for exp in experiences %}
     <!-- Header Card -->
-    <div class="experience-card-header mt-2 mb-2 bg-purple-800 text-white p-5 rounded-lg cursor-pointer transition-colors duration-300 ease-in-out flex items-center justify-between">
+    <div class="experience-card-header mt-2 mb-2 text-white p-5 rounded-lg cursor-pointer transition-colors duration-300 ease-in-out flex items-center justify-between">
         <div class="flex-grow">
             <div class="flex flex-col md:flex-row items-start">
                 <h3 class="text-md md:text-lg font-medium title-font mb-2 md:mb-0">{{ exp.title }}</h3>
@@ -263,7 +263,7 @@
         </div>
     </div>
     <!-- Details Card with adjusted padding and margin -->
-    <div class="experience-details mt-2 py-10 px-6 bg-purple-700 text-white rounded-lg flex flex-col md:flex-row items-center md:items-start">
+    <div class="experience-details mt-2 py-10 px-6 text-white rounded-lg flex flex-col md:flex-row items-center md:items-start">
         <div class="mb-4 md:mb-0 md:mr-4 flex-shrink-0">
             <img src="{{ exp.logo }}" alt="Company Logo" class="w-24 h-24 rounded-full object-cover">
         </div>

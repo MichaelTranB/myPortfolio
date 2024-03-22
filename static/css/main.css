@@ -480,7 +480,7 @@ a.contact-link-effect:hover::after {
 }
 
 .experience-card-header {
-    background-color: #6d28d9; /* Default color for header card */
+    background-color: #430d79; 
     color: #ffffff;
     cursor: pointer;
     padding: 20px;
@@ -490,56 +490,95 @@ a.contact-link-effect:hover::after {
     align-items: center;
     margin-bottom: 2px;
     border: none;
-    transition: background-color 0.3s ease-in-out; /* Smooth transition for color change */
+    transition: background-color 0.3s ease-in-out; 
 }
 
 .experience-details {
-    background-color: #430d79; /* Color for details card */
+    background-color: #740cdc;
     color: #ffffff;
     visibility: hidden;
     overflow: hidden;
-    max-height: 0; /* Start collapsed */
-    transition: max-height 0.5s ease-out, padding 0.5s ease-out; /* Smooth transition for expanding/collapsing */
-    padding: 0 20px; /* Start with no vertical padding, maintain horizontal padding */
+    max-height: 0; 
+    transition: max-height 0.5s ease-out, padding 0.5s ease-out; 
+    padding: 0 20px; 
     margin-top: 4px;
     margin-bottom: 1px; 
     border-radius: 8px;
 }
 
 /* Dark mode specific styles */
-body.dark-mode .experience-card-header, 
-body.dark-mode .experience-card-header.expanded, 
-body.dark-mode .experience-details {
-    background-color: #740cdc !important; /* Override color for dark mode if necessary */
+body.dark-mode .experience-card-header {
+    background-color: #430d79; 
 }
 
-body.dark-mode .experience-card-header {
-    background-color: #430d79 !important; /* Default dark mode header card color */
+body.dark-mode .experience-details {
+    background-color: #241d41; 
+}
+
+body.dark-mode .experience-card-header.expanded {
+    background-color: #740cdc; 
 }
 
 body.dark-mode .experience-card-header *, 
 body.dark-mode .experience-details * {
-    background-color: transparent !important;
-    color: #f1f5f9 !important;
+    color: #f1f5f9; 
+    background-color: transparent; 
 }
 
+
+
 .custom-li {
-    line-height: 1.2; /* Adjusts the spacing for wrapped lines within a bullet */
+    line-height: 1.2;
 }
 
 
 .custom-note-bg,
-.custom-note-bg * { /* This targets the container and all child elements */
-    background-color: #ccffbd !important; /* Ensures the background color stays consistent */
-    border-color: #4caf50 !important; /* Ensures the border color stays consistent */
-    color: #2d6a4f !important; /* Ensures the text color stays consistent */
+.custom-note-bg * { 
+    background-color: #ccffbd !important; 
+    border-color: #4caf50 !important; 
+    color: #2d6a4f !important; 
 }
 
 body.dark-mode .custom-note-bg,
-body.dark-mode .custom-note-bg * { /* Ensures the styles remain the same in dark mode */
-    background-color: #ccffbd !important; /* Keeps the background color the same in dark mode */
-    border-color: #4caf50 !important; /* Keeps the border color the same in dark mode */
-    color: #2d6a4f !important; /* Keeps the text color the same in dark mode */
+body.dark-mode .custom-note-bg * { 
+    background-color: #ccffbd; 
+    border-color: #4caf50;
+    color: #2d6a4f !important; 
+}
+
+.bg-purple-100, .border-purple-500, .text-purple-700, .bg-purple-100 *, .border-purple-500 *, .text-purple-700 * {
+    background-color: #e9d8fd !important; 
+    border-color: #805ad5 !important; 
+    color: #6b46c1 !important; 
+}
+
+.bg-orange-100, .border-orange-500, .text-orange-700, .bg-orange-100 *, .border-orange-500 *, .text-orange-700 * {
+    background-color: #fefcbf !important; 
+    border-color: #f6e05e !important; 
+    color: #b7791f !important;
+}
+
+body.dark-mode .bg-orange-100,
+body.dark-mode .border-orange-500,
+body.dark-mode .text-orange-700,
+body.dark-mode .bg-orange-100 *,
+body.dark-mode .border-orange-500 *,
+body.dark-mode .text-orange-700 * {
+    background-color: #fefcbf !important; /* Keeps the background color the same in dark mode */
+    border-color: #f6e05e !important; /* Keeps the border color the same in dark mode */
+    color: #b7791f !important; /* Keeps the text color the same in dark mode */
+}
+
+
+body.dark-mode .bg-purple-100,
+body.dark-mode .border-purple-500,
+body.dark-mode .text-purple-700,
+body.dark-mode .bg-purple-100 *,
+body.dark-mode .border-purple-500 *,
+body.dark-mode .text-purple-700 * {
+    background-color: #e9d8fd !important; /* Keeps the background color the same in dark mode */
+    border-color: #805ad5 !important; /* Keeps the border color the same in dark mode */
+    color: #6b46c1 !important; /* Keeps the text color the same in dark mode */
 }
 
 
