@@ -648,10 +648,11 @@ body.dark-mode .text-purple-700 * {
     }
 
      #home h2 {
-        font-size: 1.8rem; 
+        font-size: 1.7rem; 
         margin: 0;
-        padding: -30px; 
+        padding-left: -30px; 
         margin-bottom: 10px;
+        margin-left: -10px;
         text-align: left; 
     }
 
@@ -659,11 +660,19 @@ body.dark-mode .text-purple-700 * {
         font-size: 1rem; 
         margin: 0;
         padding: 0 5px; 
-        margin-left: -25px;
+        margin-left: -20px;
         text-align: left; 
         display: block;
 
         overflow: visible;
+    }
+
+    .skills-section .page-content-wrapper {
+        padding-bottom: 0px !important;
+    }
+    
+    #work {
+        padding-top: 0px !important; 
     }
 
 }
