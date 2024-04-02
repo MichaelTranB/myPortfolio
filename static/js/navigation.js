@@ -1,4 +1,13 @@
 document.addEventListener("DOMContentLoaded", function() {
+    function debounce(func, wait) {
+        let timeout;
+        return function() {
+            const context = this, args = arguments;
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func.apply(context, args), wait);
+        };
+    }
+
     function updateBodyPadding() {
         const navbarHeight = document.getElementById('navbar').offsetHeight;
         const isMobileView = window.innerWidth < 640;
@@ -7,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     updateBodyPadding();
-    window.addEventListener('resize', updateBodyPadding);
+    window.addEventListener('resize', debounce(updateBodyPadding, 100)); // Using debounce here
 
     // Scroll To Top Button Logic
     const scrollToTopButton = document.getElementById('scrollToTop');
@@ -23,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
             } else {
                 scrollToTopButton.style.display = 'none';
             }
-        });
+        }, { passive: true }); // Added passive here
     }
 
     // Smooth scrolling for all navigation links
@@ -31,9 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
         link.addEventListener('click', function(e) {
             const targetId = this.getAttribute('href').split('#')[1];
             
-            // Check if we're already on the main page or another page
             if (window.location.pathname === '/' || window.location.pathname.endsWith('main_page.html')) {
-                // Prevent default if we are on the main page to handle smooth scroll
                 e.preventDefault();
                 
                 const targetElement = document.getElementById(targetId);
@@ -44,9 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     window.scrollTo({ top: targetPosition, behavior: 'smooth' });
                 }
             } else {
-                // If we're not on the main page, redirect and append the hash to URL
-                // This will not prevent the default action, allowing the link to work naturally
-                window.location.href = '/' + '#'+ targetId; // Adjust the path as necessary
+                window.location.href = '/' + '#' + targetId; // No change needed here
             }
         });
     });
@@ -61,7 +66,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    // Animation Visibility Check
     function checkAnimations() {
         document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(element => {
             if (isElementInViewport(element)) {
@@ -80,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function() {
         );
     }
 
-    window.addEventListener('scroll', checkAnimations);
+    window.addEventListener('scroll', checkAnimations, { passive: true });
     checkAnimations();
 
     // Home Link Smooth Scroll to Top
@@ -88,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (homeLink) {
         homeLink.addEventListener('click', function(e) {
             e.preventDefault();
-            if(window.location.pathname !== '/') {
+            if (window.location.pathname !== '/') {
                 window.location.href = '/';
             } else {
                 window.scrollTo({
