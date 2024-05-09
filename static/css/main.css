@@ -1,6 +1,7 @@
 html, body {
     margin: 0;
     padding: 0;
+    height: 100%;
     overflow-x: hidden; /* Prevent horizontal overflow */
     font-family: 'Roboto Mono', monospace;
     background-color: white;
@@ -8,8 +9,7 @@ html, body {
 
 body {
     min-height: 100vh; /* Ensure full viewport height */
-    overflow-y: auto; /* Allow vertical scroll */
-    font-family: 'Roboto Mono', monospace;
+    overflow-y: auto; 
 }
 
 nav .my-name {
@@ -330,6 +330,11 @@ p {
     margin-top: -4.5em; 
 }
 
+.typing-effect {
+    min-height: 4em; /* Increased min-height to ensure visibility */
+    overflow: visible; /* Ensures that overflow content is visible */
+}
+
 .typing-effect .line {
     display: block;
     white-space: nowrap;
@@ -580,6 +585,45 @@ body.dark-mode .text-purple-700 * {
     background-color: #e9d8fd !important; /* Keeps the background color the same in dark mode */
     border-color: #805ad5 !important; /* Keeps the border color the same in dark mode */
     color: #6b46c1 !important; /* Keeps the text color the same in dark mode */
+}
+
+
+/* Initial state for animatable elements */
+.fade-in, .slide-in-left, .slide-in-right {
+    opacity: 0;
+    transform: translateY(20px);  /* Start 'below' for fade-in, adjust if necessary */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;  /* Smooth transition */
+}
+
+/* State when elements become active through scrolling */
+.fade-in.active, .slide-in-left.active, .slide-in-right.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Specific animations for sliding in from the left or right */
+.slide-in-left {
+    transform: translateX(-100px);  /* Start to the left */
+}
+
+.slide-in-left.active {
+    transform: translateX(0);  /* End at normal position */
+}
+
+.slide-in-right {
+    transform: translateX(100px);  /* Start to the right */
+}
+
+.slide-in-right.active {
+    transform: translateX(0);  /* End at normal position */
+}
+
+@keyframes ensureVisible {
+    to {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
 }
 
 

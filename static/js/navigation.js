@@ -16,42 +16,34 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     updateBodyPadding();
-    window.addEventListener('resize', debounce(updateBodyPadding, 100)); // Using debounce here
+    window.addEventListener('resize', debounce(updateBodyPadding, 100));
 
-    // Scroll To Top Button Logic
-    const scrollToTopButton = document.getElementById('scrollToTop');
-    if (scrollToTopButton) {
-        scrollToTopButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        window.addEventListener('scroll', function() {
-            if (window.pageYOffset > 200) {
-                scrollToTopButton.style.display = 'block';
-            } else {
-                scrollToTopButton.style.display = 'none';
-            }
-        }, { passive: true }); // Added passive here
+    function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
     }
 
     // Smooth scrolling for all navigation links
     document.querySelectorAll('a.nav-link, #mobile-menu a').forEach(link => {
         link.addEventListener('click', function(e) {
-            const targetId = this.getAttribute('href').split('#')[1];
-            
-            if (window.location.pathname === '/' || window.location.pathname.endsWith('main_page.html')) {
+            const href = this.getAttribute('href');
+            if (href.startsWith('#')) {
                 e.preventDefault();
-                
+                const targetId = href.split('#')[1];
                 const targetElement = document.getElementById(targetId);
                 if (targetElement) {
-                    document.getElementById('mobile-menu').style.display = 'none';
-                    const navbarHeight = document.getElementById('navbar').offsetHeight;
-                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
-                    window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                    // Force visibility and position adjustments if necessary
+                    targetElement.classList.add('active'); // Ensure it is visible
+                    window.scrollTo({
+                        top: targetElement.offsetTop - document.getElementById('navbar').offsetHeight,
+                        behavior: 'smooth'
+                    });
                 }
-            } else {
-                window.location.href = '/' + '#' + targetId; // No change needed here
             }
         });
     });
@@ -66,6 +58,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
+    // Checks animations and makes sure they are triggered as expected
     function checkAnimations() {
         document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(element => {
             if (isElementInViewport(element)) {
@@ -74,14 +67,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 element.classList.remove('active');
             }
         });
-    }
-
-    function isElementInViewport(el) {
-        const rect = el.getBoundingClientRect();
-        return (
-            rect.top <= (window.innerHeight || document.documentElement.clientHeight) + 100 &&
-            rect.bottom >= 0
-        );
     }
 
     window.addEventListener('scroll', checkAnimations, { passive: true });
