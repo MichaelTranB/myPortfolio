@@ -1,90 +1,49 @@
 document.addEventListener("DOMContentLoaded", function() {
-    function debounce(func, wait) {
-        let timeout;
-        return function() {
-            const context = this, args = arguments;
-            clearTimeout(timeout);
-            timeout = setTimeout(() => func.apply(context, args), wait);
-        };
-    }
+    console.log("Document is ready.");
 
     function updateBodyPadding() {
         const navbarHeight = document.getElementById('navbar').offsetHeight;
         const isMobileView = window.innerWidth < 640;
         const additionalPadding = isMobileView ? 20 : 10;
         document.body.style.paddingTop = `${navbarHeight + additionalPadding}px`;
+        console.log("Body padding updated:", document.body.style.paddingTop);
     }
 
     updateBodyPadding();
-    window.addEventListener('resize', debounce(updateBodyPadding, 100));
+    window.addEventListener('resize', function() {
+        updateBodyPadding();
+    });
 
-    function isElementInViewport(el) {
-        const rect = el.getBoundingClientRect();
-        return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-        );
-    }
-
-    // Smooth scrolling for all navigation links
     document.querySelectorAll('a.nav-link, #mobile-menu a').forEach(link => {
         link.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
+            let href = this.getAttribute('href');
+            console.log("Link clicked:", href);
+            if (href.startsWith('/#')) { // Correcting for full path in href
+                href = href.substring(1); // Remove the leading slash
+            }
             if (href.startsWith('#')) {
                 e.preventDefault();
-                const targetId = href.split('#')[1];
+                const targetId = href.substring(1); // Get the ID without the hash
                 const targetElement = document.getElementById(targetId);
+                console.log("Target element:", targetElement);
                 if (targetElement) {
-                    // Force visibility and position adjustments if necessary
-                    targetElement.classList.add('active'); // Ensure it is visible
-                    window.scrollTo({
-                        top: targetElement.offsetTop - document.getElementById('navbar').offsetHeight,
-                        behavior: 'smooth'
+                    console.log(`Attempting to scroll to ${targetId} at position ${targetElement.offsetTop}`);
+                    // Alternative method for smooth scrolling
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
                     });
                 }
             }
         });
     });
 
-    // Toggle the mobile menu
-    document.getElementById('menu-toggle').addEventListener('click', function() {
-        var mobileMenu = document.getElementById('mobile-menu');
-        if (mobileMenu.style.display === "block") {
-            mobileMenu.style.display = "none";
-        } else {
-            mobileMenu.style.display = "block";
-        }
-    });
-
-    // Checks animations and makes sure they are triggered as expected
-    function checkAnimations() {
-        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(element => {
-            if (isElementInViewport(element)) {
-                element.classList.add('active', 'animated');
-            } else if (!element.classList.contains('animated')) {
-                element.classList.remove('active');
-            }
-        });
-    }
-
-    window.addEventListener('scroll', checkAnimations, { passive: true });
-    checkAnimations();
-
-    // Home Link Smooth Scroll to Top
-    const homeLink = document.getElementById('home-link');
-    if (homeLink) {
-        homeLink.addEventListener('click', function(e) {
-            e.preventDefault();
-            if (window.location.pathname !== '/') {
-                window.location.href = '/';
-            } else {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            }
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', function() {
+            mobileMenu.style.display = (mobileMenu.style.display === "block" ? "none" : "block");
+            console.log("Mobile menu toggled:", mobileMenu.style.display);
         });
     }
 });
