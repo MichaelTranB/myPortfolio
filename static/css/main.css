@@ -1,7 +1,6 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%;
     overflow-x: hidden; /* Prevent horizontal overflow */
     font-family: 'Roboto Mono', monospace;
     background-color: white;
@@ -9,7 +8,7 @@ html, body {
 
 body {
     min-height: 100vh; /* Ensure full viewport height */
-    overflow-y: auto; 
+    overflow-y: auto; /* Allows vertical scrolling */
 }
 
 html {
@@ -509,7 +508,7 @@ a.contact-link-effect:hover::after {
     visibility: hidden;
     overflow: hidden;
     max-height: 0; 
-    transition: max-height 0.5s ease-out, padding 0.5s ease-out; 
+    transition: max-height 0.5s ease-out, padding 0.5s ease-out, margin 0.5s ease-out, visibility 0.5s ease-out;
     padding: 0 20px; 
     margin-top: 4px;
     margin-bottom: 1px; 
