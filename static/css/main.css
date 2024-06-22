@@ -1,14 +1,14 @@
 html, body {
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Prevent horizontal overflow */
+    overflow-x: hidden; 
     font-family: 'Roboto Mono', monospace;
     background-color: white;
 }
 
 body {
-    min-height: 100vh; /* Ensure full viewport height */
-    overflow-y: auto; /* Allows vertical scrolling */
+    min-height: 100vh; 
+    overflow-y: hidden; 
 }
 
 html {
