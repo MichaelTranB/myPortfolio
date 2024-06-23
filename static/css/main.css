@@ -637,10 +637,11 @@ body.dark-mode .text-purple-700 * {
     }
 }
 
-@media (max-width: 769px) {
 
-    body, html {
-        overflow-y: auto; /* Ensure smooth scrolling on mobile devices */
+@media (max-width: 768px) {
+
+    html, body {
+        overflow-y: hidden;
     }
    
     nav#navbar {
