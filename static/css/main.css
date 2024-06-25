@@ -640,10 +640,6 @@ body.dark-mode .text-purple-700 * {
 
 @media (max-width: 768px) {
 
-    html, body {
-        overflow-y: hidden;
-    }
-   
     nav#navbar {
         padding: 0 5px; 
         display: flex;
